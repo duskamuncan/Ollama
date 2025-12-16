@@ -1,0 +1,5 @@
+node_modules/
+faiss-db/
+.env
+debug_cim_context.txt
+*.log
