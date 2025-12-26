@@ -6,16 +6,26 @@ import { HumanMessage, SystemMessage } from "@langchain/core/messages";
 import { StateGraph, Annotation, messagesStateReducer, START, END } from "@langchain/langgraph";
 import { XMLParser } from "fast-xml-parser";
 
-
 const FAISS_PATH = "faiss-db";
 const SEARCH_K = 8;
 
 const embeddings = new OllamaEmbeddings({ model: "nomic-embed-text" });
-const modelLowTemp = new ChatOllama({ model: "gemma3:1b", temperature: 0.1 });
-const modelHighTemp = new ChatOllama({ model: "gemma3:1b", temperature: 0.5 });
+
+const modelLowTemp = new ChatOllama({
+  model: "gemma3:1b",
+  temperature: 0.1,
+});
+
+const modelHighTemp = new ChatOllama({
+  model: "gemma3:1b",
+  temperature: 0.5,
+});
 
 const annotation = Annotation.Root({
-  messages: Annotation({ reducer: messagesStateReducer, default: () => [] }),
+  messages: Annotation({
+    reducer: messagesStateReducer,
+    default: () => [],
+  }),
   user_query: Annotation(),
   cim_context: Annotation(),
   entsoe_string: Annotation(),
@@ -23,6 +33,7 @@ const annotation = Annotation.Root({
   sparql_explanation: Annotation(),
   extraction_result: Annotation(),
 });
+
 
 const generatePrompt = new SystemMessage(`
 You are a CIM/CGMES SPARQL generator.
@@ -40,6 +51,7 @@ SPARQL cannot be generated from available CIM context.
 const explainPrompt = new SystemMessage(`
 Explain the SPARQL query in 3–6 clear sentences.
 Use the CIM context as reference.
+Use provided comments to explain meaning of class.
 Do not add extra information.
 `);
 
@@ -58,15 +70,17 @@ RULES:
 
 async function generateSparql(state) {
   const userMsg = new HumanMessage(`
+CIM CONTEXT:
+${state.cim_context}
+
 QUESTION:
 ${state.user_query}
 
 Task:
 - Construct a valid SPARQL query using class/property names from CIM ontology.
 
-
 Output only SPARQL.
-  `);
+`);
 
   const messages = [generatePrompt, ...state.messages, userMsg];
   const res = await modelLowTemp.invoke(messages);
@@ -101,34 +115,28 @@ Explain the SPARQL query clearly in 3–6 sentences.
 }
 
 async function extractFromEntsoe(state) {
-  let targetClass = null;
+  if (!state.sparql_query || state.sparql_query.startsWith("SPARQL cannot")) {
+    return {
+      extraction_result: {
+        matches: [],
+        count: 0,
+        targetClass: null,
+      },
+      messages: [],
+    };
+  }
 
   const sparql = state.sparql_query;
-  if (sparql && !sparql.includes("cannot be generated")) {
-    const classMatch = sparql.match(/\?(\w+)/);
-    if (classMatch) targetClass = classMatch[1];
-  }
+  let targetClass = null;
 
-  if (!targetClass) {
-    const question = state.user_query;
-    const match = question.match(/all (\w+)/i);
-    targetClass = match ? match[1] : null;
-
-    if (!targetClass) {
-      return {
-        extraction_result: { error: "Could not determine target class/property from SPARQL or question." },
-        messages: [],
-      };
-    }
-  }
-
-  const xmlData = state.entsoe_string;
+  const classMatch = sparql.match(/\?(\w+)/);
+  if (classMatch) targetClass = classMatch[1];
 
   const parser = new XMLParser({ ignoreAttributes: false });
   let xmlObj;
   try {
-    xmlObj = parser.parse(xmlData);
-  } catch (err) {
+    xmlObj = parser.parse(state.entsoe_string);
+  } catch {
     return {
       extraction_result: { error: "Invalid XML provided." },
       messages: [],
@@ -137,7 +145,6 @@ async function extractFromEntsoe(state) {
 
   function findInstances(obj, className) {
     let results = [];
-
     if (typeof obj !== "object" || obj === null) return results;
 
     for (const key of Object.keys(obj)) {
@@ -148,11 +155,10 @@ async function extractFromEntsoe(state) {
         results.push(...findInstances(obj[key], className));
       }
     }
-
     return results;
   }
 
-  const matches = findInstances(xmlObj, targetClass);
+  const matches = targetClass ? findInstances(xmlObj, targetClass) : [];
 
   return {
     extraction_result: {
@@ -164,57 +170,35 @@ async function extractFromEntsoe(state) {
   };
 }
 
-const builder = new StateGraph(annotation)
+
+const graph = new StateGraph(annotation)
   .addNode("generate_sparql", generateSparql)
   .addNode("explain_sparql", explainSparql)
-  .addNode("extract_from_entsoe", extractFromEntsoe) 
+  .addNode("extract_from_entsoe", extractFromEntsoe)
   .addEdge(START, "generate_sparql")
   .addEdge("generate_sparql", "explain_sparql")
   .addEdge("explain_sparql", "extract_from_entsoe")
-  .addEdge("extract_from_entsoe", END);
+  .addEdge("extract_from_entsoe", END)
+  .compile();
 
-const graph = builder.compile();
 
-async function askGraph(question, cimContext, entsoeString) {
-  const result = await graph.invoke({
+export async function runRag(question, entsoeFilePath) {
+  const store = await FaissStore.load(FAISS_PATH, embeddings);
+  const normalizedQuestion = question.toLowerCase().replace(/[^a-z0-9]/g, " ");
+  const results = await store.similaritySearch(normalizedQuestion, SEARCH_K);
+  const cimContext = results.map(r => r.pageContent).join("\n");
+
+  const entsoeString = fs.readFileSync(entsoeFilePath, "utf-8");
+
+  const out = await graph.invoke({
     user_query: question,
     cim_context: cimContext,
     entsoe_string: entsoeString,
   });
 
   return {
-    sparql: result.sparql_query,
-    explanation: result.sparql_explanation,
-    extraction: result.extraction_result,
+    sparql: out.sparql_query,
+    explanation: out.sparql_explanation,
+    extraction: out.extraction_result,
   };
 }
-
-const entsoePath = process.argv[2];
-let entsoeString = "";
-if (entsoePath) entsoeString = fs.readFileSync(entsoePath, "utf8");
-
-const question = process.argv[3] || "List all BaseVoltage in the model.";
-
-async function main() {
-  console.log("\n=== Question:", question);
-
-  const store = await FaissStore.load(FAISS_PATH, embeddings);
-  const normalizedQuestion = question.toLowerCase().replace(/[^a-z0-9]/g, " ");
-  const results = await store.similaritySearch(normalizedQuestion, SEARCH_K);
-
-  console.log(`\n--- CIM Context Retrieved: ${results.length} chunks ---`);
-  results.forEach((r, i) =>
-    console.log(`[${i + 1}]`, r.pageContent.substring(0, 200), "...")
-  );
-
-  const cimContext = results.map(r => r.pageContent).join("\n");
-  fs.writeFileSync("debug_cim_context.txt", cimContext);
-
-  const out = await askGraph(question, cimContext, entsoeString);
-
-  console.log("\n=== SPARQL ===\n", out.sparql);
-  console.log("\n=== Explanation ===\n", out.explanation);
-  console.log("\n=== Extraction ===\n", out.extraction);
-}
-
-main();

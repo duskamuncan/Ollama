@@ -1,5 +1,6 @@
 node_modules/
 faiss-db/
+uploads/
 .env
 debug_cim_context.txt
 *.log

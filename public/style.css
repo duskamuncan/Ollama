@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #eef2f7, #d9e4f5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="text"],
+input[type="file"] {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+button {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #1e40af;
+}
+
+
+
+.answer-box {
+  margin-top: 25px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.answer-box h3 {
+  margin-top: 0;
+  color: #2563eb;
+}
+
+pre {
+  background: #f1f5f9;
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
