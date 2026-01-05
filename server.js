@@ -15,7 +15,6 @@ app.post("/ask", upload.single("file"), async (req, res) => {
 
     const answer = await runRag(question, filePath);
 
-    // Obrisati fajl odmah nakon što se obradi
     fs.unlinkSync(filePath);
 
     res.json({ answer });

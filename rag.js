@@ -3,23 +3,32 @@ import fs from "fs";
 import { FaissStore } from "@langchain/community/vectorstores/faiss";
 import { OllamaEmbeddings, ChatOllama } from "@langchain/ollama";
 import { HumanMessage, SystemMessage } from "@langchain/core/messages";
-import { StateGraph, Annotation, messagesStateReducer, START, END } from "@langchain/langgraph";
+import {
+  StateGraph,
+  Annotation,
+  messagesStateReducer,
+  START,
+  END,
+} from "@langchain/langgraph";
 import { XMLParser } from "fast-xml-parser";
 
 const FAISS_PATH = "faiss-db";
 const SEARCH_K = 8;
 
-const embeddings = new OllamaEmbeddings({ model: "nomic-embed-text" });
+const embeddings = new OllamaEmbeddings({
+  model: "nomic-embed-text",
+});
 
 const modelLowTemp = new ChatOllama({
   model: "gemma3:1b",
-  temperature: 0.1,
+  temperature: 0.05,
 });
 
 const modelHighTemp = new ChatOllama({
   model: "gemma3:1b",
-  temperature: 0.5,
+  temperature: 0.4,
 });
+
 
 const annotation = Annotation.Root({
   messages: Annotation({
@@ -40,7 +49,7 @@ You are a CIM/CGMES SPARQL generator.
 
 RULES:
 1. Use ONLY classes and properties that appear in the CIM CONTEXT.
-2. Use the EXACT names as found in the CIM context (e.g. BaseVoltage, BaseVoltage.nominalVoltage, rdfs:label, rdf:type).
+2. Use the EXACT names as found in the CIM context 
 3. Output ONLY SPARQL (no explanations).
 
 If a SPARQL query cannot be generated from the available CIM context,
@@ -52,61 +61,64 @@ const explainPrompt = new SystemMessage(`
 Explain the SPARQL query in 3–6 clear sentences.
 Use the CIM context as reference.
 Use provided comments to explain meaning of class.
-Do not add extra information.
+Do not add extra information
 `);
 
 const extractionPrompt = new SystemMessage(`
-You are an ENTSO-E CGMES expert reading raw RDF/XML.
+You are an ENTSO-E CGMES expert.
 
 TASK:
-- You are given a SPARQL query and ENTSO-E RDF/XML data.
-- Extract ONLY elements that MATCH the SPARQL pattern (class/property names from SPARQL).
-- Do NOT hallucinate or invent data.
+- Given a SPARQL query and RDF/XML data,
+  extract ONLY instances that match rdf:type ClassName.
 
 RULES:
-- If no match exists, return: { "matches": [], "count": 0, "targetClass": "<class_from_sparql>" }.
-- Output JSON only, do NOT include text explanations.
+- Do NOT infer or guess.
+- If no matches exist, return:
+  { "matches": [], "count": 0, "targetClass": "<class>" }
+- Output JSON only.
 `);
 
+
 async function generateSparql(state) {
-  const userMsg = new HumanMessage(`
+  const msg = new HumanMessage(`
 CIM CONTEXT:
 ${state.cim_context}
 
 QUESTION:
 ${state.user_query}
 
-Task:
-- Construct a valid SPARQL query using class/property names from CIM ontology.
-
-Output only SPARQL.
+Generate a valid SPARQL query.
 `);
 
-  const messages = [generatePrompt, ...state.messages, userMsg];
-  const res = await modelLowTemp.invoke(messages);
+  const res = await modelLowTemp.invoke([generatePrompt, msg]);
 
   let sparql = (res.content || "").trim();
   sparql = sparql.replace(/^```(sparql)?/i, "").replace(/```$/, "").trim();
 
   return {
     sparql_query: sparql,
-    messages: [userMsg, res],
+    messages: [msg, res],
   };
 }
 
+
 async function explainSparql(state) {
+  if (state.sparql_query.startsWith("SPARQL cannot")) {
+    return {
+      sparql_explanation: "SPARQL query could not be generated from the available CIM context.",
+      messages: [],
+    };
+  }
+
   const msg = new HumanMessage(`
-SPARQL:
+SPARQL QUERY:
 ${state.sparql_query}
 
-CIM CONTEXT (informative):
+CIM CONTEXT:
 ${state.cim_context}
-
-Explain the SPARQL query clearly in 3–6 sentences.
 `);
 
-  const messages = [explainPrompt, ...state.messages, msg];
-  const res = await modelHighTemp.invoke(messages);
+  const res = await modelHighTemp.invoke([explainPrompt, msg]);
 
   return {
     sparql_explanation: res.content || "",
@@ -182,9 +194,14 @@ const graph = new StateGraph(annotation)
   .compile();
 
 
+
 export async function runRag(question, entsoeFilePath) {
   const store = await FaissStore.load(FAISS_PATH, embeddings);
-  const normalizedQuestion = question.toLowerCase().replace(/[^a-z0-9]/g, " ");
+
+  const normalizedQuestion = question
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, " ");
+
   const results = await store.similaritySearch(normalizedQuestion, SEARCH_K);
   const cimContext = results.map(r => r.pageContent).join("\n");
 
