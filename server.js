@@ -1,21 +1,27 @@
+
 import express from "express";
-import multer from "multer";
 import fs from "fs";
+import path from "path";
 import { runRag } from "./rag.js";
 
 const app = express();
-const upload = multer({ dest: "uploads/" });
 
+app.use(express.json());
 app.use(express.static("public"));
 
-app.post("/ask", upload.single("file"), async (req, res) => {
+app.post("/ask", async (req, res) => {
   try {
-    const question = req.body.question;
-    const filePath = req.file.path;
+    const { question, fileName } = req.body;
+    if (!question || !fileName) {
+      return res.status(400).json({ error: "Missing question or fileName" });
+    }
+
+    const filePath = path.join(process.cwd(), fileName);
+    if (!fs.existsSync(filePath)) {
+      return res.status(400).json({ error: "File does not exist" });
+    }
 
     const answer = await runRag(question, filePath);
-
-    fs.unlinkSync(filePath);
 
     res.json({ answer });
   } catch (err) {

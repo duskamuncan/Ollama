@@ -1,32 +1,42 @@
 document.getElementById("askBtn").addEventListener("click", async () => {
   const question = document.getElementById("questionInput").value;
-  const fileInput = document.getElementById("fileInput").files[0];
+  const fileName = document.getElementById("fileInput").value.split("\\").pop(); // uzimamo ime fajla iz file inputa
 
-  if (!question || !fileInput) {
+  if (!question || !fileName) {
     alert("Ask question and choose ENTSO-E file.");
     return;
   }
 
-  const formData = new FormData();
-  formData.append("question", question);
-  formData.append("file", fileInput);
-
   const res = await fetch("/ask", {
     method: "POST",
-    body: formData
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      question,
+      fileName
+    })
   });
 
   const data = await res.json();
   const answer = data.answer;
 
-  document.getElementById("answer").innerHTML = `
-    <h3>SPARQL</h3>
-    <pre>${answer.sparql}</pre>
+  let html = "";
 
-    <h3>Explanation</h3>
-    <p>${answer.explanation}</p>
+  if (answer.mode === "MODE_1") {
+    html += `
+      <h3>Explanation</h3>
+      <p>${answer.answer}</p>
+    `;
+  }
 
-    <h3>Extraction</h3>
-    <pre>${JSON.stringify(answer.extraction, null, 2)}</pre>
-  `;
+  if (answer.mode === "MODE_2") {
+    html += `
+      <h3>SPARQL</h3>
+      <pre>${answer.sparql}</pre>
+
+      <h3>Extraction</h3>
+      <pre>${JSON.stringify(answer.result, null, 2)}</pre>
+    `;
+  }
+
+  document.getElementById("answer").innerHTML = html;
 });

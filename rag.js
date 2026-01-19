@@ -1,221 +1,162 @@
-
 import fs from "fs";
+import path from "path";
+
 import { FaissStore } from "@langchain/community/vectorstores/faiss";
 import { OllamaEmbeddings, ChatOllama } from "@langchain/ollama";
 import { HumanMessage, SystemMessage } from "@langchain/core/messages";
-import {
-  StateGraph,
-  Annotation,
-  messagesStateReducer,
-  START,
-  END,
-} from "@langchain/langgraph";
-import { XMLParser } from "fast-xml-parser";
+//import { QueryEngine } from "@comunica/query-sparql";
+
+import { QueryEngine } from "@comunica/query-sparql-file";
+import { pathToFileURL } from "url";
+
 
 const FAISS_PATH = "faiss-db";
-const SEARCH_K = 8;
+const SEARCH_K = 170; 
 
-const embeddings = new OllamaEmbeddings({
-  model: "nomic-embed-text",
-});
+const embeddings = new OllamaEmbeddings({ model: "nomic-embed-text" });
+const model = new ChatOllama({ model: "gemma3:1b", temperature: 0.0 });
 
-const modelLowTemp = new ChatOllama({
-  model: "gemma3:1b",
-  temperature: 0.05,
-});
+const SPARQL_PREFIXES = `
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+`;
 
-const modelHighTemp = new ChatOllama({
-  model: "gemma3:1b",
-  temperature: 0.4,
-});
+const sparqlTemplatePrompt = new SystemMessage(`
+SPECIAL MODE — SPARQL GENERATION (STRICT)
 
+OUTPUT:
+- Use ONLY given templates, with classes from question
+- Use FILTER instead of '='
+- Do NOT add explanation, markdown, or extra text
+- Before every query, use this prefixes:
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
 
-const annotation = Annotation.Root({
-  messages: Annotation({
-    reducer: messagesStateReducer,
-    default: () => [],
-  }),
-  user_query: Annotation(),
-  cim_context: Annotation(),
-  entsoe_string: Annotation(),
-  sparql_query: Annotation(),
-  sparql_explanation: Annotation(),
-  extraction_result: Annotation(),
-});
+TEMPLATES:
 
+# 1) All instances of a class
+SELECT ?instance WHERE { ?instance rdf:type cim:ClassName . }
 
-const generatePrompt = new SystemMessage(`
-You are a CIM/CGMES SPARQL generator.
+# 2) All connected elements via ConnectivityNode and Terminal
+SELECT ?source ?connected WHERE {
+  ?source rdf:type cim:ConductingEquipment .
+  ?source cim:Terminal ?terminal1 .
+  ?terminal1 cim:ConnectivityNode ?node .
 
-RULES:
-1. Use ONLY classes and properties that appear in the CIM CONTEXT.
-2. Use the EXACT names as found in the CIM context 
-3. Output ONLY SPARQL (no explanations).
+  ?connected rdf:type cim:ConductingEquipment .
+  ?connected cim:Terminal ?terminal2 .
+  ?terminal2 cim:ConnectivityNode ?node .
 
-If a SPARQL query cannot be generated from the available CIM context,
-output EXACTLY:
-SPARQL cannot be generated from available CIM context.
-`);
+}
 
-const explainPrompt = new SystemMessage(`
-Explain the SPARQL query in 3–6 clear sentences.
-Use the CIM context as reference.
-Use provided comments to explain meaning of class.
-Do not add extra information
-`);
-
-const extractionPrompt = new SystemMessage(`
-You are an ENTSO-E CGMES expert.
-
-TASK:
-- Given a SPARQL query and RDF/XML data,
-  extract ONLY instances that match rdf:type ClassName.
-
-RULES:
-- Do NOT infer or guess.
-- If no matches exist, return:
-  { "matches": [], "count": 0, "targetClass": "<class>" }
-- Output JSON only.
+# 3) Maximum value of a property of instances
+SELECT (MAX(?value) AS ?maxValue) WHERE {
+  ?instance rdf:type cim:ClassName .
+  ?instance cim:propertyName ?value .
+}
 `);
 
 
-async function generateSparql(state) {
+function shouldGenerateSparql(question) {
+  return [
+    "write a sparql",
+    "generate a sparql",
+    "sparql query for",
+  ].some(t => question.toLowerCase().includes(t));
+}
+
+
+async function getContextFromFaiss(question) {
+  const store = await FaissStore.load(FAISS_PATH, embeddings);
+  const results = await store.similaritySearch(question, SEARCH_K);
+
+  return results
+    .map(r => r.pageContent?.trim())
+    .filter(Boolean)
+    .join("\n\n");
+}
+
+
+async function generateAnswer(context, question) {
   const msg = new HumanMessage(`
+You are answering STRICTLY from the provided CIM context.
+
+Rules:
+- Use ONLY the context below.
+- Write whole descriprion.
+- If the concept is NOT present, say exactly:
+  "Concept not found in FAISS knowledge base."
+
 CIM CONTEXT:
-${state.cim_context}
+${context}
 
 QUESTION:
-${state.user_query}
-
-Generate a valid SPARQL query.
+${question}
 `);
 
-  const res = await modelLowTemp.invoke([generatePrompt, msg]);
-
-  let sparql = (res.content || "").trim();
-  sparql = sparql.replace(/^```(sparql)?/i, "").replace(/```$/, "").trim();
-
-  return {
-    sparql_query: sparql,
-    messages: [msg, res],
-  };
+  const response = await model.invoke([msg]);
+  return response.content.trim();
 }
 
 
-async function explainSparql(state) {
-  if (state.sparql_query.startsWith("SPARQL cannot")) {
-    return {
-      sparql_explanation: "SPARQL query could not be generated from the available CIM context.",
-      messages: [],
-    };
-  }
+async function generateSparqlQuery(question) {
+  const msg = new HumanMessage(question);
+  const response = await model.invoke([sparqlTemplatePrompt, msg]);
 
-  const msg = new HumanMessage(`
-SPARQL QUERY:
-${state.sparql_query}
+  let sparql = response.content.trim();
 
-CIM CONTEXT:
-${state.cim_context}
-`);
+  sparql = sparql.replace(/```sparql/gi, "");
+  sparql = sparql.replace(/```/g, "");
+  sparql = sparql.replace(/^sparql\s+/i, "");
+  sparql = sparql.replace(/PREFIX\s+\w+:.*\n/gi, "").trim();
 
-  const res = await modelHighTemp.invoke([explainPrompt, msg]);
-
-  return {
-    sparql_explanation: res.content || "",
-    messages: [msg, res],
-  };
+  console.log("Final SPARQL sent to parser:\n", sparql);
+  return (SPARQL_PREFIXES + "\n" + sparql).trim();
 }
 
-async function extractFromEntsoe(state) {
-  if (!state.sparql_query || state.sparql_query.startsWith("SPARQL cannot")) {
-    return {
-      extraction_result: {
-        matches: [],
-        count: 0,
-        targetClass: null,
-      },
-      messages: [],
-    };
-  }
 
-  const sparql = state.sparql_query;
-  let targetClass = null;
+async function executeSparqlQuery(sparqlQuery, entsoeFilePath) {
+  const engine = new QueryEngine();
 
-  const classMatch = sparql.match(/\?(\w+)/);
-  if (classMatch) targetClass = classMatch[1];
+  const filePath = path.resolve(entsoeFilePath);
 
-  const parser = new XMLParser({ ignoreAttributes: false });
-  let xmlObj;
-  try {
-    xmlObj = parser.parse(state.entsoe_string);
-  } catch {
-    return {
-      extraction_result: { error: "Invalid XML provided." },
-      messages: [],
-    };
-  }
+  const result = await engine.queryBindings(sparqlQuery, {
+    sources: [
+      { type: "file", value: filePath } 
+    ],
+  });
 
-  function findInstances(obj, className) {
-    let results = [];
-    if (typeof obj !== "object" || obj === null) return results;
+  const bindings = await result.toArray();
 
-    for (const key of Object.keys(obj)) {
-      if (key.toLowerCase().includes(className.toLowerCase())) {
-        const value = Array.isArray(obj[key]) ? obj[key] : [obj[key]];
-        results.push(...value);
-      } else if (typeof obj[key] === "object") {
-        results.push(...findInstances(obj[key], className));
-      }
+  return bindings.map(b => {
+    const row = {};
+    for (const [key, value] of b.entries()) {
+      row[key] = value.value;
     }
-    return results;
-  }
-
-  const matches = targetClass ? findInstances(xmlObj, targetClass) : [];
-
-  return {
-    extraction_result: {
-      targetClass,
-      count: matches.length,
-      matches,
-    },
-    messages: [],
-  };
+    return row;
+  });
 }
-
-
-const graph = new StateGraph(annotation)
-  .addNode("generate_sparql", generateSparql)
-  .addNode("explain_sparql", explainSparql)
-  .addNode("extract_from_entsoe", extractFromEntsoe)
-  .addEdge(START, "generate_sparql")
-  .addEdge("generate_sparql", "explain_sparql")
-  .addEdge("explain_sparql", "extract_from_entsoe")
-  .addEdge("extract_from_entsoe", END)
-  .compile();
-
 
 
 export async function runRag(question, entsoeFilePath) {
-  const store = await FaissStore.load(FAISS_PATH, embeddings);
+  const mode = shouldGenerateSparql(question) ? "MODE_2" : "MODE_1";
 
-  const normalizedQuestion = question
-    .toLowerCase()
-    .replace(/[^a-z0-9]/g, " ");
+  if (mode === "MODE_1") {
+    const cimContext = await getContextFromFaiss(question);
+    const answer = await generateAnswer(cimContext, question);
+    return { mode, answer };
+  }
 
-  const results = await store.similaritySearch(normalizedQuestion, SEARCH_K);
-  const cimContext = results.map(r => r.pageContent).join("\n");
-
-  const entsoeString = fs.readFileSync(entsoeFilePath, "utf-8");
-
-  const out = await graph.invoke({
-    user_query: question,
-    cim_context: cimContext,
-    entsoe_string: entsoeString,
-  });
+  let sparqlQuery = '';
+  sparqlQuery = await generateSparqlQuery(question);
+  if (!sparqlQuery.trim()) {
+    throw new Error("Generated SPARQL is empty. Cannot execute query.");
+  }
+  const results = await executeSparqlQuery(sparqlQuery, entsoeFilePath);
 
   return {
-    sparql: out.sparql_query,
-    explanation: out.sparql_explanation,
-    extraction: out.extraction_result,
+    mode,
+    sparql: sparqlQuery,
+    result: results,
   };
 }

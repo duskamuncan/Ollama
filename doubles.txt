@@ -1,0 +1,547 @@
+Concept: EquipmentVersion
+Description: Version details.
+
+Concept: String
+Description: A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited.
+
+Concept: Date
+Description: Date as "yyyy-mm-dd", which conforms with ISO 8601. UTC time zone is specified as "yyyy-mm-ddZ". A local timezone relative UTC is specified as "yyyy-mm-dd(+/-)hh:mm".
+
+Concept: ACDCConverter
+Description: A unit with valves for three phases, together with unit control equipment, essential protective and switching devices, DC storage capacitors, phase reactors and auxiliaries, if any, used for conversion.
+
+Concept: ApparentPower
+Description: Product of the RMS value of the voltage and the RMS value of the current.
+
+Concept: Float
+Description: A floating point number. The range is unspecified and not limited.
+
+Concept: UnitSymbol
+Description: The units defined for usage in the CIM.
+
+Concept: UnitMultiplier
+Description: The unit multipliers defined for the CIM.
+
+Concept: ActivePower
+Description: Product of RMS value of the voltage and the RMS value of the in-phase component of the current.
+
+Concept: Voltage
+Description: Electrical voltage, can be both AC and DC.
+
+Concept: Integer
+Description: An integer number. The range is unspecified and not limited.
+
+Concept: Resistance
+Description: Resistance (real part of impedance).
+
+Concept: ACDCConverterDCTerminal
+Description: A DC electrical connection point at the AC/DC converter. The AC/DC converter is electrically connected also to the AC side. The AC connection is inherited from the AC conducting equipment in the same way as any other AC equipment. The AC/DC converter DC terminal is separate from generic DC terminal to restrict the connection with the AC side to AC/DC converter and so that no other DC conducting equipment can be connected to the AC side.
+
+Concept: DCPolarityKind
+Description: Polarity for DC circuits.
+
+Concept: CsConverter
+Description: DC side of the current source converter (CSC).
+
+Concept: AngleDegrees
+Description: Measurement of angle in degrees.
+
+Concept: CurrentFlow
+Description: Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC.
+
+Concept: DCBaseTerminal
+Description: An electrical connection point at a piece of DC conducting equipment. DC terminals are connected at one physical DC node that may have multiple DC terminals connected. A DC node is similar to an AC connectivity node. The model enforces that DC connections are distinct from AC connections.
+
+Concept: DCBreaker
+Description: A breaker within a DC system.
+
+Concept: DCBusbar
+Description: A busbar within a DC system.
+
+Concept: DCChopper
+Description: Low resistance equipment used in the internal DC circuit to balance voltages. It has typically positive and negative pole terminals and a ground.
+
+Concept: DCConductingEquipment
+Description: The parts of the DC power system that are designed to carry current or that are conductively connected through DC terminals.
+
+Concept: DCConverterOperatingModeKind
+Description: The operating mode of an HVDC bipole.
+
+Concept: DCConverterUnit
+Description: Indivisible operative unit comprising all equipment between the point of common coupling on the AC side and the point of common coupling – DC side, essentially one or more converters, together with one or more converter transformers, converter control equipment, essential protective and switching devices and auxiliaries, if any, used for conversion.
+
+Concept: DCDisconnector
+Description: A disconnector within a DC system.
+
+Concept: DCEquipmentContainer
+Description: A modeling construct to provide a root class for containment of DC as well as AC equipment. The class differ from the EquipmentContaner for AC in that it may also contain DCNodes. Hence it can contain both AC and DC equipment.
+
+Concept: DCGround
+Description: A ground within a DC system.
+
+Concept: Inductance
+Description: Inductive part of reactance (imaginary part of impedance), at rated frequency.
+
+Concept: DCLine
+Description: Overhead lines and/or cables connecting two or more HVDC substations.
+
+Concept: DCLineSegment
+Description: A wire or combination of wires not insulated from one another, with consistent electrical characteristics, used to carry direct current between points in the DC region of the power system.
+
+Concept: Capacitance
+Description: Capacitive part of reactance (imaginary part of impedance), at rated frequency.
+
+Concept: Length
+Description: Unit of length. Never negative.
+
+Concept: DCNode
+Description: DC nodes are points where terminals of DC conducting equipment are connected together with zero impedance.
+
+Concept: DCSeriesDevice
+Description: A series device within the DC system, typically a reactor used for filtering or smoothing.  Needed for transient and short circuit studies.
+
+Concept: DCShunt
+Description: A shunt device within the DC system, typically used for filtering.  Needed for transient and short circuit studies.
+
+Concept: DCSwitch
+Description: A switch within the DC system.
+
+Concept: DCTerminal
+Description: An electrical connection point to generic DC conducting equipment.
+
+Concept: CapacitancePerLength
+Description: Capacitance per unit of length.
+
+Concept: InductancePerLength
+Description: Inductance per unit of length.
+
+Concept: ResistancePerLength
+Description: Resistance (real part of impedance) per unit of length.
+
+Concept: VsCapabilityCurve
+Description: The P-Q capability curve for a voltage source converter, with P on x-axis and Qmin and Qmax on y1-axis and y2-axis.
+
+Concept: VsConverter
+Description: DC side of the voltage source converter (VSC).
+
+Concept: Simple_Float
+Description: A floating point number. The range is unspecified and not limited.
+
+Concept: BusNameMarker
+Description: Used to apply user standard names to topology buses. Typically used for "bus/branch" case generation. Associated with one or more terminals that are normally connected with the bus name.    The associated terminals are normally connected by non-retained switches. For a ring bus station configuration, all busbar terminals in the ring are typically associated.   For a breaker and a half scheme, both busbars would normally be associated.  For a ring bus, all busbars would normally be associated.  For a "straight" busbar configuration, normally only the main terminal at the busbar would be associated.
+
+Concept: Boolean
+Description: A type with the value space "true" and "false".
+
+Concept: DateTime
+Description: Date and time as "yyyy-mm-ddThh:mm:ss.sss", which conforms with ISO 8601. UTC time zone is specified as "yyyy-mm-ddThh:mm:ss.sssZ". A local timezone relative UTC is specified as "yyyy-mm-ddThh:mm:ss.sss-hh:mm". The second component (shown here as "ss.sss") could have any number of digits in its fractional part to allow any kind of precision beyond seconds.
+
+Concept: PhaseCode
+Description: Enumeration of phase identifiers. Allows designation of phases for both transmission and distribution equipment, circuits and loads.
+Residential and small commercial loads are often served from single-phase, or split-phase, secondary circuits. For example of s12N, phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single-phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three-phase loads, use the A, B, C phase codes instead of s12N.
+
+Concept: PerCent
+Description: Percentage on a defined base.   For example, specify as 100 to indicate at the defined base.
+
+Concept: Source
+Description: Source gives information related to the origin of a value.
+
+Concept: Validity
+Description: Validity for MeasurementValue.
+
+Concept: EnergySchedulingType
+Description: Used to define the type of generation for scheduling purposes.
+
+Concept: EnergySource
+Description: A generic equivalent for an energy supplier on a transmission or distribution voltage level.
+
+Concept: AngleRadians
+Description: Phase angle in radians.
+
+Concept: Reactance
+Description: Reactance (imaginary part of impedance), at rated frequency.
+
+Concept: FossilFuel
+Description: The fossil fuel consumed by the non-nuclear thermal generating unit.   For example, coal, oil, gas, etc.   This a the specific fuels that the generating unit can consume.
+
+Concept: FuelType
+Description: Type of fuel.
+
+Concept: GeneratingUnit
+Description: A single or set of synchronous machines for converting mechanical power into alternating-current power. For example, individual machines within a set may be defined for scheduling purposes while a single control signal is derived for the set. In this case there would be a GeneratingUnit for each member of the set and an additional GeneratingUnit corresponding to the set.
+
+Concept: GeneratorControlSource
+Description: The source of controls for a generating unit.
+
+Concept: Money
+Description: Amount of money.
+
+Concept: Currency
+Description: Monetary currencies. Apologies for this list not being exhaustive.
+
+Concept: Decimal
+Description: Decimal is the base-10 notational system for representing real numbers.
+
+Concept: HydroEnergyConversionKind
+Description: Specifies the capability of the hydro generating unit to convert energy as a generator or pump.
+
+Concept: HydroGeneratingUnit
+Description: A generating unit whose prime mover is a hydraulic turbine (e.g., Francis, Pelton, Kaplan).
+
+Concept: HydroPlantStorageKind
+Description: The type of hydro power plant.
+
+Concept: HydroPowerPlant
+Description: A hydro power station which can generate or pump. When generating, the generator turbines receive water from an upper reservoir. When pumping, the pumps receive their water from a lower reservoir.
+
+Concept: HydroPump
+Description: A synchronous motor-driven pump, typically associated with a pumped storage plant.
+
+Concept: NuclearGeneratingUnit
+Description: A nuclear generating unit.
+
+Concept: SolarGeneratingUnit
+Description: A solar thermal generating unit.
+
+Concept: ThermalGeneratingUnit
+Description: A generating unit whose prime mover could be a steam turbine, combustion turbine, or diesel engine.
+
+Concept: WindGeneratingUnit
+Description: A wind driven generating unit.  May be used to represent a single turbine or an aggregation.
+
+Concept: WindGenUnitKind
+Description: Kind of wind generating unit.
+
+Concept: ACDCTerminal
+Description: An electrical connection point (AC or DC) to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes.
+
+Concept: BaseVoltage
+Description: Defines a system base voltage which is referenced.
+
+Concept: BasicIntervalSchedule
+Description: Schedule of values at points in time.
+
+Concept: ConductingEquipment
+Description: The parts of the AC power system that are designed to carry current or that are conductively connected through terminals.
+
+Concept: ConnectivityNodeContainer
+Description: A base class for all objects that may contain connectivity nodes or topological nodes.
+
+Concept: Curve
+Description: A multi-purpose curve or functional relationship between an independent variable (X-axis) and dependent (Y-axis) variables.
+
+Concept: CurveStyle
+Description: Style or shape of curve.
+
+Concept: CurveData
+Description: Multi-purpose data points for defining a curve.  The use of this generic class is discouraged if a more specific class  can be used to specify the x and y axis values along with their specific data types.
+
+Concept: Equipment
+Description: The parts of a power system that are physical devices, electronic or mechanical.
+
+Concept: EquipmentContainer
+Description: A modeling construct to provide a root class for containing equipment.
+
+Concept: GeographicalRegion
+Description: A geographical region of a power system network model.
+
+Concept: IdentifiedObject
+Description: This is a root class to provide common identification for all classes needing identification and naming attributes.
+
+Concept: PowerSystemResource
+Description: A power system resource can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated.
+
+Concept: RegularIntervalSchedule
+Description: The schedule has time points where the time between them is constant.
+
+Concept: Seconds
+Description: Time, in seconds.
+
+Concept: ReportingGroup
+Description: A reporting group is used for various ad-hoc groupings used for reporting.
+
+Concept: SubGeographicalRegion
+Description: A subset of a geographical region of a power system network model.
+
+Concept: Substation
+Description: A collection of equipment for purposes other than generation or utilization, through which electric energy in bulk is passed for the purposes of switching or modifying its characteristics.
+
+Concept: Terminal
+Description: An AC electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes.
+
+Concept: VoltageLevel
+Description: A collection of equipment at one common system voltage forming a switchgear. The equipment typically consist of breakers, busbars, instrumentation, control, regulation and protection devices as well as assemblies of all these.
+
+Concept: CurrentLimit
+Description: Operational limit on current.
+
+Concept: LimitTypeKind
+Description: The enumeration defines the kinds of the limit types.
+
+Concept: OperationalLimit
+Description: A value associated with a specific kind of limit. 
+The sub class value attribute shall be positive. 
+The sub class value attribute is inversely proportional to OperationalLimitType.acceptableDuration (acceptableDuration for short). A pair of value_x and acceptableDuration_x are related to each other as follows:
+if value_1 &gt; value_2 &gt; value_3 &gt;... then
+acceptableDuration_1 &lt; acceptableDuration_2 &lt; acceptableDuration_3 &lt; ...
+A value_x with direction="high" shall be greater than a value_y with direction="low".
+
+Concept: OperationalLimitDirectionKind
+Description: The direction attribute describes the side of  a limit that is a violation.
+
+Concept: OperationalLimitSet
+Description: A set of limits associated with equipment.  Sets of limits might apply to a specific temperature, or season for example. A set of limits may contain different severities of limit levels that would apply to the same equipment. The set may contain limits of different types such as apparent power and current limits or high and low voltage limits  that are logically applied together as a set.
+
+Concept: OperationalLimitType
+Description: The operational meaning of a category of limits.
+
+Concept: VoltageLimit
+Description: Operational limit applied to voltage.
+
+Concept: ACLineSegment
+Description: A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.
+For symmetrical, transposed 3ph lines, it is sufficient to use  attributes of the line segment, which describe impedances and admittances for the entire length of the segment.  Additionally impedances can be computed by using length and associated per length impedances.
+The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same BaseVoltage.nominalVoltage. However, boundary lines  may have slightly different BaseVoltage.nominalVoltages and  variation is allowed. Larger voltage difference in general requires use of an equivalent branch.
+
+Concept: Susceptance
+Description: Imaginary part of admittance.
+
+Concept: Conductance
+Description: Factor by which voltage must be multiplied to give corresponding power lost from a circuit. Real part of admittance.
+
+Concept: Temperature
+Description: Value of temperature in degrees Celsius.
+
+Concept: AsynchronousMachine
+Description: A rotating machine whose shaft rotates asynchronously with the electrical field.  Also known as an induction machine with no external connection to the rotor windings, e.g squirrel-cage induction machine.
+
+Concept: Frequency
+Description: Cycles per second.
+
+Concept: RotationSpeed
+Description: Number of revolutions per second.
+
+Concept: Breaker
+Description: A mechanical switching device capable of making, carrying, and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking currents under specified abnormal circuit conditions e.g.  those of short circuit.
+
+Concept: BusbarSection
+Description: A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation. 
+Voltage measurements are typically obtained from VoltageTransformers that are connected to busbar sections. A bus bar section may have many physical terminals but for analysis is modelled with exactly one logical terminal.
+
+Concept: Conductor
+Description: Combination of conducting material with consistent electrical characteristics, building a single electrical system, used to carry current between points in the power system.
+
+Concept: Connector
+Description: A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation and are modelled with a single logical terminal.
+
+Concept: Disconnector
+Description: A manually operated or motor operated mechanical switching device used for changing the connections in a circuit, or for isolating a circuit or equipment from a source of power. It is required to open or close circuits when negligible current is broken or made.
+
+Concept: EnergyConsumer
+Description: Generic user of energy - a  point of consumption on the power system model.
+
+Concept: ReactivePower
+Description: Product of RMS value of the voltage and the RMS value of the quadrature component of the current.
+
+Concept: ExternalNetworkInjection
+Description: This class represents external network and it is used for IEC 60909 calculations.
+
+Concept: ActivePowerPerFrequency
+Description: Active power variation with frequency.
+
+Concept: PU
+Description: Per Unit - a positive or negative value referred to a defined base. Values typically range from -10 to +10.
+
+Concept: Junction
+Description: A point where one or more conducting equipments are connected with zero resistance.
+
+Concept: Line
+Description: Contains equipment beyond a substation belonging to a power transmission line.
+
+Concept: LinearShuntCompensator
+Description: A linear shunt compensator has banks or sections with equal admittance values.
+
+Concept: LoadBreakSwitch
+Description: A mechanical switching device capable of making, carrying, and breaking currents under normal operating conditions.
+
+Concept: NonlinearShuntCompensator
+Description: A non linear shunt compensator has bank or section admittance values that differs.
+
+Concept: NonlinearShuntCompensatorPoint
+Description: A non linear shunt compensator bank or section admittance value.
+
+Concept: PetersenCoilModeKind
+Description: The mode of operation for a Petersen coil.
+
+Concept: PhaseTapChanger
+Description: A transformer phase shifting tap model that controls the phase angle difference across the power transformer and potentially the active power flow through the power transformer.  This phase tap model may also impact the voltage magnitude.
+
+Concept: PhaseTapChangerAsymmetrical
+Description: Describes the tap model for an asymmetrical phase shifting transformer in which the difference voltage vector adds to the primary side voltage. The angle between the primary side voltage and the difference voltage is named the winding connection angle. The phase shift depends on both the difference voltage magnitude and the winding connection angle.
+
+Concept: PhaseTapChangerLinear
+Description: Describes a tap changer with a linear relation between the tap step and the phase angle difference across the transformer. This is a mathematical model that is an approximation of a real phase tap changer.
+The phase angle is computed as stepPhaseShitfIncrement times the tap position.
+The secondary side voltage magnitude is the same as at the primary side.
+
+Concept: PhaseTapChangerNonLinear
+Description: The non-linear phase tap changer describes the non-linear behavior of a phase tap changer. This is a base class for the symmetrical and asymmetrical phase tap changer models. The details of these models can be found in the IEC 61970-301 document.
+
+Concept: PhaseTapChangerSymmetrical
+Description: Describes a symmetrical phase shifting transformer tap model in which the secondary side voltage magnitude is the same as at the primary side. The difference voltage magnitude is the base in an equal-sided triangle where the sides corresponds to the primary and secondary voltages. The phase angle difference corresponds to the top angle and can be expressed as twice the arctangent of half the total difference voltage.
+
+Concept: PhaseTapChangerTable
+Description: Describes a tabular curve for how the phase angle difference and impedance varies with the tap step.
+
+Concept: PhaseTapChangerTablePoint
+Description: Describes each tap step in the phase tap changer tabular curve.
+
+Concept: PowerTransformer
+Description: An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow).
+A power transformer may be composed of separate transformer tanks that need not be identical.
+A power transformer can be modeled with or without tanks and is intended for use in both balanced and unbalanced representations.   A power transformer typically has two terminals, but may have one (grounding), three or more terminals.
+The inherited association ConductingEquipment.BaseVoltage should not be used.  The association from TransformerEnd to BaseVoltage should be used instead.
+
+Concept: PowerTransformerEnd
+Description: A PowerTransformerEnd is associated with each Terminal of a PowerTransformer.
+The impedance values r, r0, x, and x0 of a PowerTransformerEnd represents a star equivalent as follows
+1) for a two Terminal PowerTransformer the high voltage PowerTransformerEnd has non zero values on r, r0, x, and x0 while the low voltage PowerTransformerEnd has zero values for r, r0, x, and x0.
+2) for a three Terminal PowerTransformer the three PowerTransformerEnds represents a star equivalent with each leg in the star represented by r, r0, x, and x0 values.
+3) for a PowerTransformer with more than three Terminals the PowerTransformerEnd impedance values cannot be used. Instead use the TransformerMeshImpedance or split the transformer into multiple PowerTransformers.
+
+Concept: WindingConnection
+Description: Winding connection type.
+
+Concept: ProtectedSwitch
+Description: A ProtectedSwitch is a switching device that can be operated by ProtectionEquipment.
+
+Concept: RatioTapChanger
+Description: A tap changer that changes the voltage ratio impacting the voltage magnitude but not the phase angle across the transformer.
+
+Concept: TransformerControlMode
+Description: Control modes for a transformer.
+
+Concept: RatioTapChangerTable
+Description: Describes a curve for how the voltage magnitude and impedance varies with the tap step.
+
+Concept: RatioTapChangerTablePoint
+Description: Describes each tap step in the ratio tap changer tabular curve.
+
+Concept: ReactiveCapabilityCurve
+Description: Reactive power rating envelope versus the synchronous machine's active power, in both the generating and motoring modes. For each active power value there is a corresponding high and low reactive power limit  value. Typically there will be a separate curve for each coolant condition, such as hydrogen pressure.  The Y1 axis values represent reactive minimum and the Y2 axis values represent reactive maximum.
+
+Concept: RegulatingCondEq
+Description: A type of conducting equipment that can regulate a quantity (i.e. voltage or flow) at a specific point in the network.
+
+Concept: RegulatingControl
+Description: Specifies a set of equipment that works together to control a power system quantity such as voltage or flow. 
+Remote bus voltage control is possible by specifying the controlled terminal located at some place remote from the controlling equipment.
+In case multiple equipment, possibly of different types, control same terminal there must be only one RegulatingControl at that terminal. The most specific subtype of RegulatingControl shall be used in case such equipment participate in the control, e.g. TapChangerControl for tap changers.
+For flow control  load sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment.
+
+Concept: RegulatingControlModeKind
+Description: The kind of regulation model.   For example regulating voltage, reactive power, active power, etc.
+
+Concept: RotatingMachine
+Description: A rotating machine which may be used as a generator or motor.
+
+Concept: SeriesCompensator
+Description: A Series Compensator is a series capacitor or reactor or an AC transmission line without charging susceptance.  It is a two terminal device.
+
+Concept: ShortCircuitRotorKind
+Description: Type of rotor, used by short circuit applications.
+
+Concept: ShuntCompensator
+Description: A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor.  A negative value for reactivePerSection indicates that the compensator is a reactor. ShuntCompensator is a single terminal device.  Ground is implied.
+
+Concept: VoltagePerReactivePower
+Description: Voltage variation with reactive power.
+
+Concept: StaticVarCompensator
+Description: A facility for providing variable and controllable shunt reactive power. The SVC typically consists of a stepdown transformer, filter, thyristor-controlled reactor, and thyristor-switched capacitor arms.
+
+The SVC may operate in fixed MVar output mode or in voltage control mode. When in voltage control mode, the output of the SVC will be proportional to the deviation of voltage at the controlled bus from the voltage setpoint.  The SVC characteristic slope defines the proportion.  If the voltage at the controlled bus is equal to the voltage setpoint, the SVC MVar output is zero.
+
+Concept: SVCControlMode
+Description: Static VAr Compensator control mode.
+
+Concept: Switch
+Description: A generic device designed to close, or open, or both, one or more electric circuits.  All switches are two terminal devices including grounding switches.
+
+Concept: SynchronousMachine
+Description: An electromechanical device that operates with shaft rotating synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump.
+
+Concept: SynchronousMachineKind
+Description: Synchronous machine type.
+
+Concept: TapChanger
+Description: Mechanism for changing transformer winding tap positions.
+
+Concept: TapChangerControl
+Description: Describes behavior specific to tap changers, e.g. how the voltage at the end of a line varies with the load level and compensation of the voltage drop by tap adjustment.
+
+Concept: TransformerEnd
+Description: A conducting connection point of a power transformer. It corresponds to a physical transformer winding terminal.  In earlier CIM versions, the TransformerWinding class served a similar purpose, but this class is more flexible because it associates to terminal but is not a specialization of ConductingEquipment.
+
+Concept: ConformLoad
+Description: ConformLoad represent loads that follow a daily load change pattern where the pattern can be used to scale the load with a system load.
+
+Concept: ConformLoadGroup
+Description: A group of loads conforming to an allocation pattern.
+
+Concept: ConformLoadSchedule
+Description: A curve of load  versus time (X-axis) showing the active power values (Y1-axis) and reactive power (Y2-axis) for each unit of the period covered. This curve represents a typical pattern of load over the time period for a given day type and season.
+
+Concept: LoadGroup
+Description: The class is the third level in a hierarchical structure for grouping of loads for the purpose of load flow load scaling.
+
+Concept: LoadResponseCharacteristic
+Description: Models the characteristic response of the load demand due to changes in system conditions such as voltage and frequency. This is not related to demand response.
+
+If LoadResponseCharacteristic.exponentModel is True, the voltage exponents are specified and used as to calculate:
+
+Active power component = Pnominal * (Voltage/cim:BaseVoltage.nominalVoltage) ** cim:LoadResponseCharacteristic.pVoltageExponent
+
+Reactive power component = Qnominal * (Voltage/cim:BaseVoltage.nominalVoltage)** cim:LoadResponseCharacteristic.qVoltageExponent
+
+Where  * means "multiply" and ** is "raised to power of".
+
+Concept: NonConformLoad
+Description: NonConformLoad represent loads that do not follow a daily load change pattern and changes are not correlated with the daily load change pattern.
+
+Concept: NonConformLoadGroup
+Description: Loads that do not follow a daily and seasonal load variation pattern.
+
+Concept: NonConformLoadSchedule
+Description: An active power (Y1-axis) and reactive power (Y2-axis) schedule (curves) versus time (X-axis) for non-conforming loads, e.g., large industrial load or power station service (where modeled).
+
+Concept: MonthDay
+Description: MonthDay format as "--mm-dd", which conforms with XSD data type gMonthDay.
+
+Concept: EquivalentBranch
+Description: The class represents equivalent branches.
+
+Concept: EquivalentEquipment
+Description: The class represents equivalent objects that are the result of a network reduction. The class is the base for equivalent objects of different types.
+
+Concept: EquivalentInjection
+Description: This class represents equivalent injections (generation or load).  Voltage regulation is allowed only at the point of connection.
+
+Concept: EquivalentNetwork
+Description: A class that represents an external meshed network that has been reduced to an electrically equivalent model. The ConnectivityNodes contained in the equivalent are intended to reflect internal nodes of the equivalent. The boundary Connectivity nodes where the equivalent connects outside itself are NOT contained by the equivalent.
+
+Concept: EquivalentShunt
+Description: The class represents equivalent shunts.
+
+Concept: ControlArea
+Description: A control area<b> </b>is a grouping of generating units and/or loads and a cutset of tie lines (as terminals) which may be used for a variety of purposes including automatic generation control, powerflow solution area interchange control specification, and input to load forecasting.   Note that any number of overlapping control area specifications can be superimposed on the physical model.
+
+Concept: ControlAreaTypeKind
+Description: The type of control area.
+
+Concept: ControlAreaGeneratingUnit
+Description: A control area generating unit. This class is needed so that alternate control area definitions may include the same generating unit.   Note only one instance within a control area should reference a specific generating unit.
+
+Concept: TieFlow
+Description: A flow specification in terms of location and direction for a control area.
+

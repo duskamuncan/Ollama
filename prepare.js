@@ -3,47 +3,14 @@ import { OllamaEmbeddings } from "@langchain/ollama";
 import { FaissStore } from "@langchain/community/vectorstores/faiss";
 import { Document } from "@langchain/core/documents";
 
-function localName(uri) {
-  return uri.split("#").pop().split("/").pop();
-}
+const rawText = fs.readFileSync("doubles.txt", "utf-8");
 
-const raw = fs.readFileSync("triples.txt", "utf8");
-const lines = raw
-  .split("\n")
-  .map(l => l.trim())
-  .filter(Boolean);
+const conceptBlocks = rawText
+  .split("\n\n")
+  .map(b => b.trim())
+  .filter(b => b.length > 0);
 
-const concepts = {};
-
-for (const line of lines) {
-  const parts = line.split("\t");
-  if (parts.length < 3) continue;
-
-  const [s, p, ...oParts] = parts;
-  const o = oParts.join(" ").trim();
-
-  if (!s || !p || !o) continue;
-
-  const subject = localName(s);
-  const predicate = localName(p);
-  const object = o.startsWith("http") ? localName(o) : o;
-
-  if (!concepts[subject]) {
-    concepts[subject] = {
-      comment: null,
-      properties: new Set()
-    };
-  }
-
-  if (predicate === "comment" || predicate === "description" || predicate === "label") {
-    concepts[subject].comment = object;
-  }
-
-  if (predicate.includes(".")) {
-    const prop = predicate.split(".").pop();
-    concepts[subject].properties.add(prop);
-  }
-}
+console.log("Number of concepts:", conceptBlocks.length);
 
 const embeddings = new OllamaEmbeddings({
   model: "nomic-embed-text",
@@ -51,33 +18,36 @@ const embeddings = new OllamaEmbeddings({
 
 const vectorStore = await FaissStore.fromTexts([], [], embeddings);
 
-const docs = [];
+const docs = conceptBlocks.map(block => {
+  const match = block.match(/^Concept:\s*(.+)$/m);
+  const conceptName = match ? match[1].trim() : "Unknown";
 
-for (const [name, data] of Object.entries(concepts)) {
-  let text = `Concept: ${name}\n`;
+  return new Document({
+    pageContent: block,      
+    metadata: {
+      concept: conceptName,  
+      source: "rdf",
+    },
+  });
+});
 
-  if (data.comment) {
-    text += `Description: ${data.comment}\n`;
-  }
+console.log("Number of documents:", docs.length);
 
-  if (data.properties.size > 0) {
-    text += "Properties:\n";
-    for (const p of data.properties) {
-      text += `- ${p}\n`;
-    }
-  }
+const BATCH_SIZE = 50;
 
-  docs.push(
-    new Document({
-      pageContent: text.toLowerCase(),
-      metadata: { concept: name }
-    })
+console.log("Starting batch embedding...");
+
+for (let i = 0; i < docs.length; i += BATCH_SIZE) {
+  const batch = docs.slice(i, i + BATCH_SIZE);
+
+  console.log(
+    `Embedding batch ${i / BATCH_SIZE + 1} / ${Math.ceil(docs.length / BATCH_SIZE)}`
   );
+
+  await vectorStore.addDocuments(batch);
 }
 
-console.log("Concepts for FAISS:", docs.length);
-
-await vectorStore.addDocuments(docs);
+console.log("Saving FAISS ...");
 await vectorStore.save("faiss-db");
 
-console.log("FAISS base successfully created!");
+console.log("FAISS successfully created and saved!");
