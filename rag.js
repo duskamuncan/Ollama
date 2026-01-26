@@ -14,7 +14,7 @@ const FAISS_PATH = "faiss-db";
 const SEARCH_K = 170; 
 
 const embeddings = new OllamaEmbeddings({ model: "nomic-embed-text" });
-const model = new ChatOllama({ model: "gemma3:1b", temperature: 0.0 });
+const model = new ChatOllama({ model: "gemma3:1b", temperature: 0.1 });
 
 const SPARQL_PREFIXES = `
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -26,6 +26,11 @@ SPECIAL MODE — SPARQL GENERATION (STRICT)
 
 OUTPUT:
 - Use ONLY given templates, with classes from question
+- Replace imeKlase with given class name and add cim namespace in front of class name
+- Replace imeKlase.property with given class and property name. After that always write ?value.
+- rdf:type must be used and can't be changed
+- ?value must be used and can't be changed 
+- The (MAX(?value) AS ?maxValue) can't be changed
 - Use FILTER instead of '='
 - Do NOT add explanation, markdown, or extra text
 - Before every query, use this prefixes:
@@ -35,7 +40,7 @@ PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
 TEMPLATES:
 
 # 1) All instances of a class
-SELECT ?instance WHERE { ?instance rdf:type cim:ClassName . }
+SELECT ?instance ?name ?description WHERE { ?instance rdf:type imeKlase . OPTIONAL { ?instance cim:IdentifiedObject.name ?name } OPTIONAL { ?instance cim:IdentifiedObject.description ?description } }
 
 # 2) All connected elements via ConnectivityNode and Terminal
 SELECT ?source ?connected WHERE {
@@ -49,11 +54,8 @@ SELECT ?source ?connected WHERE {
 
 }
 
-# 3) Maximum value of a property of instances
-SELECT (MAX(?value) AS ?maxValue) WHERE {
-  ?instance rdf:type cim:ClassName .
-  ?instance cim:propertyName ?value .
-}
+# 3) Maximum value of a property of instances 
+SELECT (MAX(?value) AS ?maxValue) WHERE { ?instance rdf:type cim:imeKlase . ?instance cim:imeKlase.property ?value  }
 `);
 
 
@@ -110,33 +112,56 @@ async function generateSparqlQuery(question) {
   sparql = sparql.replace(/^sparql\s+/i, "");
   sparql = sparql.replace(/PREFIX\s+\w+:.*\n/gi, "").trim();
 
-  console.log("Final SPARQL sent to parser:\n", sparql);
-  return (SPARQL_PREFIXES + "\n" + sparql).trim();
+  return sparql.trim();
 }
 
 
 async function executeSparqlQuery(sparqlQuery, entsoeFilePath) {
   const engine = new QueryEngine();
+  const fileUrl = pathToFileURL(path.resolve(entsoeFilePath)).href;
 
-  const filePath = path.resolve(entsoeFilePath);
+  const PREFIXES = `
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+`;
+  //const sparqlQuery1 = "SELECT ?junction ?terminal ?node WHERE { ?junction rdf:type cim:Junction . ?terminal cim:Terminal.ConductingEquipment ?junction . ?terminal cim:Terminal.ConnectivityNode ?node . }";
+  const finalQuery =
+    sparqlQuery.includes("PREFIX rdf:")
+      ? sparqlQuery
+      : PREFIXES + "\n" + sparqlQuery;
 
-  const result = await engine.queryBindings(sparqlQuery, {
+  console.log("Final SPARQL sent to parser:\n", finalQuery);
+
+  const result = await engine.query(finalQuery, {
     sources: [
-      { type: "file", value: filePath } 
+      {
+        type: "file",
+        value: fileUrl,
+        baseIRI: fileUrl
+      }
     ],
   });
 
-  const bindings = await result.toArray();
+  const bindingsStream = await result.execute();
+  const rows = [];
 
-  return bindings.map(b => {
-    const row = {};
-    for (const [key, value] of b.entries()) {
-      row[key] = value.value;
-    }
-    return row;
+  return new Promise((resolve, reject) => {
+    bindingsStream.on("data", (binding) => {
+      const row = {};
+      for (const key of binding.keys()) {
+        const keyStr = key.value ?? String(key); 
+        row[keyStr.replace("?", "")] = binding.get(key)?.value ?? null;
+      }
+      rows.push(row);
+    });
+
+    bindingsStream.on("end", () => resolve(rows));
+    bindingsStream.on("error", (err) => {
+      console.error("Error in bindingsStream:", err);
+      reject(err);
+    });
   });
 }
-
 
 export async function runRag(question, entsoeFilePath) {
   const mode = shouldGenerateSparql(question) ? "MODE_2" : "MODE_1";

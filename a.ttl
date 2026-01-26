@@ -1,0 +1,249 @@
+@prefix ns0: <http://iec.ch/TC57/61970-552/ModelDescription/1#Model.> .
+@prefix ns1: <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject.> .
+@prefix ns2: <http://entsoe.eu/CIM/SchemaExtension/3/1#IdentifiedObject.> .
+@prefix ns3: <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.> .
+@prefix ns4: <http://entsoe.eu/CIM/SchemaExtension/3/1#ConnectivityNode.> .
+@prefix ns5: <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode.> .
+@prefix ns6: <http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment.> .
+@prefix ns7: <http://iec.ch/TC57/2013/CIM-schema-cim16#Line.> .
+@prefix ns8: <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion.> .
+@prefix ns9: <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.> .
+
+<urn:uuid:2399cbd0-9a39-11e0-aa80-0800200c9a66>
+  a <http://iec.ch/TC57/61970-552/ModelDescription/1#FullModel> ;
+  ns0:created "2014-06-01T11:20:39" ;
+  ns0:scenarioTime "2017-10-02T09:30:00Z" ;
+  ns0:version "2" ;
+  ns0:description "CGMES Conformity Assessment: MicroGridTestConfiguration (Boundary MAS). The model is owned by ENTSO-E and is provided by ENTSO-E “as it is”. To the fullest extent permitted by law, ENTSO-E shall not be liable for any damages of any kind arising out of the use of the model (including any of its subsequent modifications). ENTSO-E neither warrants, nor represents that the use of the model will not infringe the rights of third parties. Any use of the model shall  include a reference to ENTSO-E. ENTSO-E web site is the only official source of information related to the model." ;
+  ns0:modelingAuthoritySet "http://entsoe.eu/CAS2.0/MicroGridTestConfiguration" ;
+  ns0:profile "http://entsoe.eu/CIM/EquipmentBoundary/3/1", "http://entsoe.eu/CIM/EquipmentBoundaryOperation/3/1" .
+
+<http://njh.me/#_7891a026ba2c42098556665efd13ba94>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage> ;
+  ns1:description "Base Voltage 220 kV" ;
+  ns1:name "220 kV" ;
+  ns2:shortName "220" ;
+  ns3:nominalVoltage "220" .
+
+<http://njh.me/#_63893f24-5b4e-407c-9a1e-4ff71121f33c>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage> ;
+  ns1:description "Base Voltage 225 kV" ;
+  ns1:name "225 kV" ;
+  ns2:shortName "225" ;
+  ns3:nominalVoltage "225" .
+
+<http://njh.me/#_35cf638d-9a9d-4ae5-ae90-2f01ef898cb6>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage> ;
+  ns1:description "Base Voltage 380 kV" ;
+  ns1:name "380 kV" ;
+  ns2:shortName "380" ;
+  ns3:nominalVoltage "380" .
+
+<http://njh.me/#_65dd04e792584b3b912374e35dec032e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage> ;
+  ns1:description "Base Voltage 400 kV" ;
+  ns1:name "400 kV" ;
+  ns2:shortName "400" ;
+  ns3:nominalVoltage "400" .
+
+<http://njh.me/#_b675a570-cb6e-11e1-bcee-406c8f32ef58>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode> ;
+  ns1:description "RG CE; 400 kV; OHL (2)" ;
+  ns1:name "Border_AL11" ;
+  ns2:shortName "XCA_AL11" ;
+  ns2:energyIdentCodeEic "10T-ES-PT-10004U" ;
+  ns4:fromEndIsoCode "ES" ;
+  ns4:fromEndName "Cartelle" ;
+  ns4:fromEndNameTso "REE" ;
+  ns4:toEndIsoCode "PT" ;
+  ns4:toEndName "Alto Lindoso" ;
+  ns4:toEndNameTso "REN" ;
+  ns4:boundaryPoint "true" ;
+  ns5:ConnectivityNodeContainer <http://njh.me/#_d4affe50316740bdbbf4ae9c7cbf3cfd_X> .
+
+<http://njh.me/#_b67c8340-cb6e-11e1-bcee-406c8f32ef58>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode> ;
+  ns1:description "RG CE; 400 kV; OHL" ;
+  ns1:name "Border_GY11" ;
+  ns2:shortName "XWI_GY11" ;
+  ns2:energyIdentCodeEic "10T-AT-HU-00002U" ;
+  ns4:fromEndIsoCode "AT" ;
+  ns4:fromEndName "Wien" ;
+  ns4:fromEndNameTso "APG" ;
+  ns4:toEndIsoCode "HU" ;
+  ns4:toEndName "Győr" ;
+  ns4:toEndNameTso "MAVIR" ;
+  ns4:boundaryPoint "true" ;
+  ns5:ConnectivityNodeContainer <http://njh.me/#_f03d65b2a51049ffa533e433721145c1_X> .
+
+<http://njh.me/#_1c4a9e9c-ef00-42c9-9845-f64f9ca1e57a>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode> ;
+  ns1:description "HVDC-AC; 220 kV; OHL" ;
+  ns1:name "Border_HVDC-AC" ;
+  ns2:shortName "HVDC-AC-1" ;
+  ns2:energyIdentCodeEic "10T-DC-NL-00082X" ;
+  ns4:fromEndIsoCode "NL" ;
+  ns4:fromEndName "HVDC/NL" ;
+  ns4:fromEndNameTso "NL" ;
+  ns4:toEndIsoCode "BE" ;
+  ns4:toEndName "NL_AC-1" ;
+  ns4:toEndNameTso "NL-HVDC-1" ;
+  ns4:boundaryPoint "true" ;
+  ns5:ConnectivityNodeContainer <http://njh.me/#_8FE2EC11-3357-4506-BF11-80302102B3F2> .
+
+<http://njh.me/#_b67cf870-cb6e-11e1-bcee-406c8f32ef58>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode> ;
+  ns1:description "RG CE; 400 kV; OHL (2)" ;
+  ns1:name "Border_MA11" ;
+  ns2:shortName "XKA_MA11" ;
+  ns2:energyIdentCodeEic "10T-AT-SI-00001T" ;
+  ns4:fromEndIsoCode "AT" ;
+  ns4:fromEndName "Kainachtal" ;
+  ns4:fromEndNameTso "APG" ;
+  ns4:toEndIsoCode "SI" ;
+  ns4:toEndName "Maribor" ;
+  ns4:toEndNameTso "ELES" ;
+  ns4:boundaryPoint "true" ;
+  ns5:ConnectivityNodeContainer <http://njh.me/#_9d25a1f9e5d14d47b6dcde99c4380b40_X> .
+
+<http://njh.me/#_b66f15c0-cb6e-11e1-bcee-406c8f32ef58>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode> ;
+  ns1:description "RG CE; 220 kV; OHL" ;
+  ns1:name "Border_ST23" ;
+  ns2:shortName "XZE_ST23" ;
+  ns2:energyIdentCodeEic "10T-AT-DE-00016Z" ;
+  ns4:fromEndIsoCode "AT" ;
+  ns4:fromEndName "Zell/Ziller" ;
+  ns4:fromEndNameTso "APG" ;
+  ns4:toEndIsoCode "DE" ;
+  ns4:toEndName "Strass" ;
+  ns4:toEndNameTso "TIWAG-Netz" ;
+  ns4:boundaryPoint "true" ;
+  ns5:ConnectivityNodeContainer <http://njh.me/#_8d7bad8bcc634e0796e362390d9040b6_X> .
+
+<http://njh.me/#_b6978550-cb6e-11e1-bcee-406c8f32ef58>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#ConnectivityNode> ;
+  ns1:description "RG CE; 220 kV; OHL" ;
+  ns1:name "Border_ST24" ;
+  ns2:shortName "XZE_ST24" ;
+  ns2:energyIdentCodeEic "10T-AT-DE-00017X" ;
+  ns4:fromEndIsoCode "AT" ;
+  ns4:fromEndName "Zell/Ziller" ;
+  ns4:fromEndNameTso "APG" ;
+  ns4:toEndIsoCode "DE" ;
+  ns4:toEndName "Strass" ;
+  ns4:toEndNameTso "TIWAG-Netz" ;
+  ns4:boundaryPoint "true" ;
+  ns5:ConnectivityNodeContainer <http://njh.me/#_1fa19c281c8f4e1eaad9e1cab70f923e_X> .
+
+<http://njh.me/#_7e6dab445e92469892d1dcc3421cce1a>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#GeographicalRegion> ;
+  ns1:description "Economic and political union of member states located primarily in Europe" ;
+  ns1:name "EU" ;
+  ns2:energyIdentCodeEic "10T-EU-EU-000001" ;
+  ns2:shortName "EU" .
+
+<http://njh.me/#_5249A78F-6642-4fc5-968F-06E2ED18FAB7>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Junction> ;
+  ns1:name "Junction_XJ1" ;
+  ns1:description "Junction at XJ1" ;
+  ns2:shortName "XJ1" ;
+  ns2:energyIdentCodeEic "10T-BE-NL-70314J" ;
+  ns6:EquipmentContainer <http://njh.me/#_f03d65b2a51049ffa533e433721145c1_X> .
+
+<http://njh.me/#_8FE2EC11-3357-4506-BF11-80302102B3F2>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Line> ;
+  ns1:name "TieLine_HVDC-NL" ;
+  ns1:description "HVDC TieLine at NL" ;
+  ns2:shortName "HVDC_NL" ;
+  ns2:energyIdentCodeEic "10T-BE-NL-10344U" ;
+  ns7:Region <http://njh.me/#_d81ceddefca04ab8960433e4a8839325> .
+
+<http://njh.me/#_d4affe50316740bdbbf4ae9c7cbf3cfd_X>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Line> ;
+  ns1:name "TieLine_XCA_AL11" ;
+  ns1:description "TieLine at XCA_AL11" ;
+  ns2:shortName "XCA_AL11" ;
+  ns2:energyIdentCodeEic "10T-BE-NL-10314U" ;
+  ns7:Region <http://njh.me/#_d81ceddefca04ab8960433e4a8839325> .
+
+<http://njh.me/#_9d25a1f9e5d14d47b6dcde99c4380b40_X>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Line> ;
+  ns1:name "TieLine_XKA_MA11" ;
+  ns1:description "TieLine at XKA_MA11" ;
+  ns2:shortName "XKA_MA11" ;
+  ns2:energyIdentCodeEic "10T-BE-NL-10114U" ;
+  ns7:Region <http://njh.me/#_d81ceddefca04ab8960433e4a8839325> .
+
+<http://njh.me/#_f03d65b2a51049ffa533e433721145c1_X>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Line> ;
+  ns1:name "TieLine_XWI_GY11" ;
+  ns1:description "TieLine at XWI_GY11" ;
+  ns2:shortName "XWI_GY11" ;
+  ns2:energyIdentCodeEic "10T-BE-NL-10014U" ;
+  ns7:Region <http://njh.me/#_d81ceddefca04ab8960433e4a8839325> .
+
+<http://njh.me/#_8d7bad8bcc634e0796e362390d9040b6_X>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Line> ;
+  ns1:name "TieLine_XZE_ST23" ;
+  ns1:description "TieLine at XZE_ST23" ;
+  ns2:shortName "XZE_ST23" ;
+  ns2:energyIdentCodeEic "10T-BE-NL-10234U" ;
+  ns7:Region <http://njh.me/#_d81ceddefca04ab8960433e4a8839325> .
+
+<http://njh.me/#_1fa19c281c8f4e1eaad9e1cab70f923e_X>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Line> ;
+  ns1:name "TieLine_XZE_ST24" ;
+  ns1:description "TieLine at XZE_ST24" ;
+  ns2:shortName "XZE_ST24" ;
+  ns2:energyIdentCodeEic "10T-BE-NL-10274U" ;
+  ns7:Region <http://njh.me/#_d81ceddefca04ab8960433e4a8839325> .
+
+<http://njh.me/#_d81ceddefca04ab8960433e4a8839325>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion> ;
+  ns1:name "ENTSO-E" ;
+  ns8:Region <http://njh.me/#_7e6dab445e92469892d1dcc3421cce1a> ;
+  ns1:description "ENTSO-E region" ;
+  ns2:shortName "ENTSO-E" .
+
+<http://njh.me/#_b9376bea-c55d-40f3-93ca-6a81fa1186a0>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "Terminal GY11 Junction" ;
+  ns9:ConductingEquipment <http://njh.me/#_5249A78F-6642-4fc5-968F-06E2ED18FAB7> ;
+  ns9:ConnectivityNode <http://njh.me/#_b67c8340-cb6e-11e1-bcee-406c8f32ef58> .
+
+<http://njh.me/#_24C12434-E42B-497f-928F-119C6AE92079>
+  a <http://entsoe.eu/CIM/SchemaExtension/3/1#EnergySchedulingType> ;
+  ns1:name "Biomass" ;
+  ns1:description "Generation type Biomass" ;
+  ns2:shortName "EST-Biomass" .
+
+<http://njh.me/#_FB6F43D6-E71E-423a-8CEB-084BC504FD1A>
+  a <http://entsoe.eu/CIM/SchemaExtension/3/1#EnergySchedulingType> ;
+  ns1:name "Co-generation" ;
+  ns1:description "Generation type Co-generation" ;
+  ns2:shortName "CoGen" .
+
+<http://njh.me/#_1CDFB476-4E01-4488-B5A2-FDDEA0488C59>
+  a <http://entsoe.eu/CIM/SchemaExtension/3/1#EnergySchedulingType> ;
+  ns1:name "Geothermal" ;
+  ns1:description "Generation type Geothermal" ;
+  ns2:shortName "Geotherm" .
+
+<http://njh.me/#_2C897906-9B7F-4508-B132-74EA3EE1D3B0>
+  a <http://entsoe.eu/CIM/SchemaExtension/3/1#EnergySchedulingType> ;
+  ns1:name "Marine" ;
+  ns1:description "Generation type Marine" ;
+  ns2:shortName "ES-Marine" .
+
+<http://njh.me/#_A43C7A90-B4C7-460c-A607-942EFA3EFB79>
+  a <http://entsoe.eu/CIM/SchemaExtension/3/1#EnergySchedulingType> ;
+  ns1:name "Other renewable" ;
+  ns1:description "Generation type Other renewable" ;
+  ns2:shortName "OtherRenew" .
+
+<http://njh.me/#_1C405140-0F45-4534-9C90-F38F4905362C>
+  a <http://entsoe.eu/CIM/SchemaExtension/3/1#EnergySchedulingType> ;
+  ns1:name "Waste" ;
+  ns1:description "Generation type Waste" ;
+  ns2:shortName "EST-Waste" .
