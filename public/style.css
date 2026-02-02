@@ -87,3 +87,21 @@ pre {
   overflow-x: auto;
   white-space: pre-wrap;
 }
+
+#askBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+#askBtn.loading {
+  background-color: #999;
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+#askBtn:disabled {
+  cursor: not-allowed;
+}

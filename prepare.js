@@ -3,7 +3,7 @@ import { OllamaEmbeddings } from "@langchain/ollama";
 import { FaissStore } from "@langchain/community/vectorstores/faiss";
 import { Document } from "@langchain/core/documents";
 
-const rawText = fs.readFileSync("doubles.txt", "utf-8");
+const rawText = fs.readFileSync("pairs.txt", "utf-8");
 
 const conceptBlocks = rawText
   .split("\n\n")

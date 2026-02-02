@@ -1,0 +1,1832 @@
+@prefix ns0: <http://iec.ch/TC57/61970-552/ModelDescription/1#Model.> .
+@prefix ns1: <http://iec.ch/TC57/2013/CIM-schema-cim16#IdentifiedObject.> .
+@prefix ns2: <http://entsoe.eu/CIM/SchemaExtension/3/1#IdentifiedObject.> .
+@prefix ns3: <http://iec.ch/TC57/2013/CIM-schema-cim16#Equipment.> .
+@prefix ns4: <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment.> .
+@prefix ns5: <http://iec.ch/TC57/2013/CIM-schema-cim16#Conductor.> .
+@prefix ns6: <http://iec.ch/TC57/2013/CIM-schema-cim16#ConductingEquipment.> .
+@prefix ns7: <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage.> .
+@prefix ns8: <http://iec.ch/TC57/2013/CIM-schema-cim16#Switch.> .
+@prefix ns9: <http://iec.ch/TC57/2013/CIM-schema-cim16#BusbarSection.> .
+@prefix ns10: <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit.> .
+@prefix ns11: <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimit.> .
+@prefix ns12: <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer.> .
+@prefix ns13: <http://iec.ch/TC57/2013/CIM-schema-cim16#EquivalentInjection.> .
+@prefix ns14: <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit.> .
+@prefix ns15: <http://iec.ch/TC57/2013/CIM-schema-cim16#Line.> .
+@prefix ns16: <http://iec.ch/TC57/2013/CIM-schema-cim16#ShuntCompensator.> .
+@prefix ns17: <http://iec.ch/TC57/2013/CIM-schema-cim16#LinearShuntCompensator.> .
+@prefix ns18: <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingCondEq.> .
+@prefix ns19: <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic.> .
+@prefix ns20: <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet.> .
+@prefix ns21: <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType.> .
+@prefix ns22: <http://entsoe.eu/CIM/SchemaExtension/3/1#OperationalLimitType.> .
+@prefix ns23: <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformer.> .
+@prefix ns24: <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd.> .
+@prefix ns25: <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerEnd.> .
+@prefix ns26: <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChanger.> .
+@prefix ns27: <http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger.> .
+@prefix ns28: <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl.> .
+@prefix ns29: <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion.> .
+@prefix ns30: <http://iec.ch/TC57/2013/CIM-schema-cim16#Substation.> .
+@prefix ns31: <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine.> .
+@prefix ns32: <http://iec.ch/TC57/2013/CIM-schema-cim16#RotatingMachine.> .
+@prefix ns33: <http://iec.ch/TC57/2013/CIM-schema-cim16#ACDCTerminal.> .
+@prefix ns34: <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal.> .
+@prefix ns35: <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel.> .
+
+<urn:uuid:77b55f87-fc1e-4046-9599-6c6b4f991a86>
+  a <http://iec.ch/TC57/61970-552/ModelDescription/1#FullModel> ;
+  ns0:created "2014-10-24T11:51:49" ;
+  ns0:scenarioTime "2017-10-02T09:30:00Z" ;
+  ns0:version "2" ;
+  ns0:DependentOn <urn:uuid:2399cbd0-9a39-11e0-aa80-0800200c9a66> ;
+  ns0:description "CGMES Conformity Assessment: MicroGridTestConfiguration Base Case (MAS NL). The model is owned by ENTSO-E and is provided by ENTSO-E “as it is”. To the fullest extent permitted by law, ENTSO-E shall not be liable for any damages of any kind arising out of the use of the model (including any of its subsequent modifications). ENTSO-E neither warrants, nor represents that the use of the model will not infringe the rights of third parties. Any use of the model shall  include a reference to ENTSO-E. ENTSO-E web site is the only official source of information related to the model." ;
+  ns0:modelingAuthoritySet "http://tennet.eu/nl/CAS2.0/MicroGridTestConfiguration" ;
+  ns0:profile "http://entsoe.eu/CIM/EquipmentCore/3/1", "http://entsoe.eu/CIM/EquipmentShortCircuit/3/1" .
+
+<http://ftn.uns.ac.rs//#_7f43f508-2496-4b64-9146-0a40406cbe49>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment> ;
+  ns1:name "NL-Line_1" ;
+  ns2:shortName "NL-L_1" ;
+  ns2:energyIdentCodeEic "10T-AT-DE-000118" ;
+  ns1:description "10T-AT-DE-000118" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_72242f07-189e-4a06-9f7e-f7a2776ecfd9> ;
+  ns4:r "1.020000" ;
+  ns4:x "12.000000" ;
+  ns4:bch "0.0001413717" ;
+  ns5:length "30.000000" ;
+  ns4:gch "0.0000300000" ;
+  ns3:aggregate "false" ;
+  ns6:BaseVoltage <http://ftn.uns.ac.rs//#_65dd04e792584b3b912374e35dec032e> ;
+  ns4:r0 "3.060000" ;
+  ns4:x0 "36.000000" ;
+  ns4:b0ch "0.0001500000" ;
+  ns4:g0ch "0.0000300000" ;
+  ns4:shortCircuitEndTemperature "160.0000000000" .
+
+<http://ftn.uns.ac.rs//#_dad02278-bd25-476f-8f58-dbe44be72586>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment> ;
+  ns1:name "NL-Line_2" ;
+  ns2:shortName "NL-L_2" ;
+  ns1:description "tie line BE-NL" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_00faa2b5-cb42-4c43-9c9a-2a09dd9c52f5> ;
+  ns4:r "2.320000" ;
+  ns4:x "20.240000" ;
+  ns4:bch "0.0000251327" ;
+  ns5:length "40.000000" ;
+  ns4:gch "0.0000400000" ;
+  ns3:aggregate "false" ;
+  ns6:BaseVoltage <http://ftn.uns.ac.rs//#_65dd04e792584b3b912374e35dec032e> ;
+  ns4:r0 "0.696000" ;
+  ns4:x0 "6.072000" ;
+  ns4:b0ch "0.0" ;
+  ns4:g0ch "0.0000400000" ;
+  ns4:shortCircuitEndTemperature "160.0000000000" .
+
+<http://ftn.uns.ac.rs//#_a279a3dc-550b-426c-af3a-61b7be508dcc>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment> ;
+  ns1:name "NL-Line_3" ;
+  ns2:shortName "NL-L_3" ;
+  ns2:energyIdentCodeEic "10T-AT-DE-00009W" ;
+  ns1:description "10T-AT-DE-00009W" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_644936cc-1ea0-46f3-93e6-eed0e0cc8bee> ;
+  ns4:r "5.060000" ;
+  ns4:x "69.000000" ;
+  ns4:bch "0.0000202319" ;
+  ns5:length "23.000000" ;
+  ns4:gch "0.0000230000" ;
+  ns3:aggregate "false" ;
+  ns6:BaseVoltage <http://ftn.uns.ac.rs//#_7891a026ba2c42098556665efd13ba94> ;
+  ns4:r0 "15.180000" ;
+  ns4:x0 "207.000000" ;
+  ns4:b0ch "0.0000455217" ;
+  ns4:g0ch "0.0000230000" ;
+  ns4:shortCircuitEndTemperature "160.0000000000" .
+
+<http://ftn.uns.ac.rs//#_8fdc7abd-3746-481a-a65e-3df56acd8b13>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment> ;
+  ns1:name "NL-Line_4" ;
+  ns2:shortName "NL-L_4" ;
+  ns2:energyIdentCodeEic "10T-AT-DE-00009W" ;
+  ns1:description "10T-AT-DE-00009W" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_f524d9fc-48be-4feb-9e77-a15696d4210a> ;
+  ns4:r "2.200000" ;
+  ns4:x "66.000000" ;
+  ns4:bch "0.0000898495" ;
+  ns5:length "22.000000" ;
+  ns4:gch "0.0000242000" ;
+  ns3:aggregate "false" ;
+  ns6:BaseVoltage <http://ftn.uns.ac.rs//#_7891a026ba2c42098556665efd13ba94> ;
+  ns4:r0 "6.600000" ;
+  ns4:x0 "198.000000" ;
+  ns4:b0ch "0.0000435425" ;
+  ns4:g0ch "0.0000242000" ;
+  ns4:shortCircuitEndTemperature "160.0000000000" .
+
+<http://ftn.uns.ac.rs//#_e8acf6b6-99cb-45ad-b8dc-16c7866a4ddc>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#ACLineSegment> ;
+  ns1:name "NL-Line_5" ;
+  ns2:shortName "NL-L_5" ;
+  ns2:energyIdentCodeEic "10T-AT-DE-000118" ;
+  ns1:description "10T-AT-DE-000118" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_c7d37bc3-196c-4458-896b-614f810cea0f> ;
+  ns4:r "0.420000" ;
+  ns4:x "6.300000" ;
+  ns4:bch "0.0000648739" ;
+  ns5:length "35.000000" ;
+  ns4:gch "0.0000350000" ;
+  ns3:aggregate "false" ;
+  ns6:BaseVoltage <http://ftn.uns.ac.rs//#_65dd04e792584b3b912374e35dec032e> ;
+  ns4:r0 "1.260000" ;
+  ns4:x0 "18.900000" ;
+  ns4:b0ch "0.0109955743" ;
+  ns4:g0ch "0.0000350000" ;
+  ns4:shortCircuitEndTemperature "160.0000000000" .
+
+<http://ftn.uns.ac.rs//#_c1d5bff18f8011e08e4d00247eb1f55e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#BaseVoltage> ;
+  ns7:nominalVoltage "15.75" ;
+  ns1:description "Base Voltage Level" ;
+  ns2:shortName "15.75" ;
+  ns1:name "15.75 kV" .
+
+<http://ftn.uns.ac.rs//#_5f5d40ae-d52d-4631-9285-b3ceefff784c>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Breaker> ;
+  ns1:name "B1" ;
+  ns2:shortName "B1" ;
+  ns3:aggregate "false" ;
+  ns8:normalOpen "false" ;
+  ns8:retained "true" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_c1d5bfea8f8011e08e4d00247eb1f55e> .
+
+<http://ftn.uns.ac.rs//#_12733133-1f34-44f3-a020-f5b33cede919>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#BusbarSection> ;
+  ns1:name "N1230822396" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_c1d5bfea8f8011e08e4d00247eb1f55e> ;
+  ns9:ipMax "0e+000" .
+
+<http://ftn.uns.ac.rs//#_143aa0b1-2cd4-4e58-98d4-b0438bd5a39a>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#BusbarSection> ;
+  ns1:name "NL-Busbar_2" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_c1d5bfea8f8011e08e4d00247eb1f55e> ;
+  ns9:ipMax "0e+000" .
+
+<http://ftn.uns.ac.rs//#_53da4025-9d51-4eaf-b0d2-ce27fbe740d2>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#BusbarSection> ;
+  ns1:name "NL-Busbar_3" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_2a37dc57-2faf-464a-8175-bc415f9a635f> ;
+  ns9:ipMax "0e+000" .
+
+<http://ftn.uns.ac.rs//#_e6d49e32-b634-4b86-a8ca-15159f1497b5>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#BusbarSection> ;
+  ns1:name "NL-Busbar_5" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_8d8a82ba-b5b0-4e94-861a-192af055f2b8> ;
+  ns9:ipMax "0e+000" .
+
+<http://ftn.uns.ac.rs//#_a4b97f0b-39b8-452d-b51c-fd3b25fa1d9b1>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_5 - Limit" ;
+  ns10:value "1623.600000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_a2c3d48f-d768-4e1e-8841-6e9c4913f11f> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc> .
+
+<http://ftn.uns.ac.rs//#_db8675aa-6a3d-47a8-b864-a3e474c5c8851>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_5 - Limit" ;
+  ns10:value "1623.600000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_b4d8f5e2-7b7a-45eb-b65a-252843d6acf4> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc> .
+
+<http://ftn.uns.ac.rs//#_b4659169-38a4-494f-b3e2-aa83dc9a66701>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_4 - Limit" ;
+  ns10:value "1298.700000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_37cc4210-71c0-4328-a86b-df0f65e76ef4> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc> .
+
+<http://ftn.uns.ac.rs//#_0388b680-3feb-45a2-bd56-5a620472107b1>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_4 - Limit" ;
+  ns10:value "1298.700000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_03943678-b63e-44d8-bc7d-9461da496268> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc> .
+
+<http://ftn.uns.ac.rs//#_317c3033-0409-4f57-9209-4baae4b5e1651>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_3 - Limit" ;
+  ns10:value "1062.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_9a03e8ee-e832-43c8-b38e-0d43f8ef7355> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc> .
+
+<http://ftn.uns.ac.rs//#_e29f4055-0267-4d9e-a889-8afc2326e8702>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-3" ;
+  ns1:description "Ratings for element NL-Line_3 - Limit" ;
+  ns10:value "1800.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_9a03e8ee-e832-43c8-b38e-0d43f8ef7355> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_a1cc9747-6819-429e-bd5f-23ffdb1d7376> .
+
+<http://ftn.uns.ac.rs//#_62be08ea-2a9e-4284-9642-2947cb2c5f1b1>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_3 - Limit" ;
+  ns10:value "1062.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_14e9e317-a168-44a2-82ef-7c76190108a2> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc> .
+
+<http://ftn.uns.ac.rs//#_22274f03-885c-4ea8-931d-862beec6edd12>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-3" ;
+  ns1:description "Ratings for element NL-Line_3 - Limit" ;
+  ns10:value "1800.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_14e9e317-a168-44a2-82ef-7c76190108a2> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_a1cc9747-6819-429e-bd5f-23ffdb1d7376> .
+
+<http://ftn.uns.ac.rs//#_1cd93631-5573-48db-8444-0e85a91aa6f11>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_2 - Limit" ;
+  ns10:value "1103.400000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_13ee714f-6df4-4039-8519-5cf4e84ab20d> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc> .
+
+<http://ftn.uns.ac.rs//#_d73f50e0-00db-4f54-a087-b0d2204f229a1>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_2 - Limit" ;
+  ns10:value "1103.400000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_7cf4108d-d355-48f5-8556-d42c37a8e2c8> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc> .
+
+<http://ftn.uns.ac.rs//#_45b85c9e-0788-4cbb-b71b-dc1d5de04e511>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_1 - Limit" ;
+  ns10:value "1233.900000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_79a1fb3a-a66a-468c-8c78-c25714c73eba> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc> .
+
+<http://ftn.uns.ac.rs//#_a228917a-44c9-4124-b7db-ea6408b3c5bb1>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_1 - Limit" ;
+  ns10:value "1233.900000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_125eeb58-1c45-41b2-a981-7d5993b40cda> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc> .
+
+<http://ftn.uns.ac.rs//#_150183f1-3144-4d18-b5ca-328efdead2571>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-TR2_1 - Limit" ;
+  ns10:value "415.710000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_83f719ad-2083-44ea-9ebc-9f456c114bdb> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc> .
+
+<http://ftn.uns.ac.rs//#_89d45390-25dc-49a6-bb08-69b67f27cd391>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-TR2_1 - Limit" ;
+  ns10:value "755.820000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_d47a27cc-9fad-40f2-a08c-37e545c268df> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc> .
+
+<http://ftn.uns.ac.rs//#_fa85553d-9769-45fe-9b79-cecafa01c4ba1>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL_TR2_2 - Limit" ;
+  ns10:value "2975.940000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_e7c1b1c7-aaeb-470a-9cb5-93a3ec269179> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc> .
+
+<http://ftn.uns.ac.rs//#_1a886514-5f7d-418a-99b7-02330ed01ca71>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL_TR2_2 - Limit" ;
+  ns10:value "41569.200000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_261d13c4-1527-42a5-ad0d-a3b817971166> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc> .
+
+<http://ftn.uns.ac.rs//#_0c95b506-05a2-40d5-9f82-b9bf1e680a8d1>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL_TR2_3 - Limit" ;
+  ns10:value "2975.940000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_fd472104-d68c-4536-ba4a-5fd9349c0a65> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc> .
+
+<http://ftn.uns.ac.rs//#_6a927421-36cd-487a-b6b7-61dd454704471>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "90" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL_TR2_3 - Limit" ;
+  ns10:value "41569.200000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_cf3e5341-6736-4b34-b4da-e4af2073765b> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc> .
+
+<http://ftn.uns.ac.rs//#_2ddd3dac-4c0e-4355-b1eb-2e4bb45a2526>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_1 - CL-0" ;
+  ns2:shortName "CL-0" ;
+  ns1:description "Ratings for element NL-Line_1 - Limit" ;
+  ns10:value "1443.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_79a1fb3a-a66a-468c-8c78-c25714c73eba> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60> .
+
+<http://ftn.uns.ac.rs//#_802dd8b7-d55c-46bf-8a22-895e251fb8db>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_1 - CL-0" ;
+  ns2:shortName "CL-0" ;
+  ns1:description "Ratings for element NL-Line_1 - Limit" ;
+  ns10:value "1443.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_125eeb58-1c45-41b2-a981-7d5993b40cda> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60> .
+
+<http://ftn.uns.ac.rs//#_3b9b581e-dd06-4be8-81b8-9abc72450c89>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_1 - CL-1" ;
+  ns2:shortName "CL-1" ;
+  ns1:description "Ratings for element NL-Line_1 - Limit" ;
+  ns10:value "1515.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_79a1fb3a-a66a-468c-8c78-c25714c73eba> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5> .
+
+<http://ftn.uns.ac.rs//#_5baace86-1d76-428b-9045-0d6b50024316>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_1 - CL-1" ;
+  ns2:shortName "CL-1" ;
+  ns1:description "Ratings for element NL-Line_1 - Limit" ;
+  ns10:value "1515.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_125eeb58-1c45-41b2-a981-7d5993b40cda> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5> .
+
+<http://ftn.uns.ac.rs//#_45b85c9e-0788-4cbb-b71b-dc1d5de04e51>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_1 - CL-2" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_1 - Limit" ;
+  ns10:value "1371.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_79a1fb3a-a66a-468c-8c78-c25714c73eba> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950> .
+
+<http://ftn.uns.ac.rs//#_a228917a-44c9-4124-b7db-ea6408b3c5bb>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_1 - CL-2" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_1 - Limit" ;
+  ns10:value "1371.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_125eeb58-1c45-41b2-a981-7d5993b40cda> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950> .
+
+<http://ftn.uns.ac.rs//#_3341e4e1-b1f0-4832-854f-4254ddb7459b>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_2 - CL-0" ;
+  ns2:shortName "CL-0" ;
+  ns1:description "Ratings for element NL-Line_2 - Limit" ;
+  ns10:value "1299.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_13ee714f-6df4-4039-8519-5cf4e84ab20d> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60> .
+
+<http://ftn.uns.ac.rs//#_b5172307-8c71-4c82-92ec-b05592694ab1>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_2 - CL-0" ;
+  ns2:shortName "CL-0" ;
+  ns1:description "Ratings for element NL-Line_2 - Limit" ;
+  ns10:value "1299.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_7cf4108d-d355-48f5-8556-d42c37a8e2c8> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60> .
+
+<http://ftn.uns.ac.rs//#_eaa17d90-1494-42b8-803c-0a6692c493a0>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_2 - CL-1" ;
+  ns2:shortName "CL-1" ;
+  ns1:description "Ratings for element NL-Line_2 - Limit" ;
+  ns10:value "1371.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_13ee714f-6df4-4039-8519-5cf4e84ab20d> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5> .
+
+<http://ftn.uns.ac.rs//#_467f1c8f-fa42-45d5-88c1-9b8fea6f1cab>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_2 - CL-1" ;
+  ns2:shortName "CL-1" ;
+  ns1:description "Ratings for element NL-Line_2 - Limit" ;
+  ns10:value "1371.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_7cf4108d-d355-48f5-8556-d42c37a8e2c8> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5> .
+
+<http://ftn.uns.ac.rs//#_1cd93631-5573-48db-8444-0e85a91aa6f1>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_2 - CL-2" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_2 - Limit" ;
+  ns10:value "1226.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_13ee714f-6df4-4039-8519-5cf4e84ab20d> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950> .
+
+<http://ftn.uns.ac.rs//#_d73f50e0-00db-4f54-a087-b0d2204f229a>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_2 - CL-2" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_2 - Limit" ;
+  ns10:value "1226.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_7cf4108d-d355-48f5-8556-d42c37a8e2c8> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950> .
+
+<http://ftn.uns.ac.rs//#_9dd40a3a-c6df-4f16-876c-bd11c538324b>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_3 - CL-0" ;
+  ns2:shortName "CL-0" ;
+  ns1:description "Ratings for element NL-Line_3 - Limit" ;
+  ns10:value "1312.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_9a03e8ee-e832-43c8-b38e-0d43f8ef7355> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60> .
+
+<http://ftn.uns.ac.rs//#_75caf931-a43f-4e4a-a831-fe9a729feb72>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_3 - CL-0" ;
+  ns2:shortName "CL-0" ;
+  ns1:description "Ratings for element NL-Line_3 - Limit" ;
+  ns10:value "1312.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_14e9e317-a168-44a2-82ef-7c76190108a2> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60> .
+
+<http://ftn.uns.ac.rs//#_150d1dcb-f7b6-4fcd-bce9-e39c6ddf15aa>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_3 - CL-1" ;
+  ns2:shortName "CL-1" ;
+  ns1:description "Ratings for element NL-Line_3 - Limit" ;
+  ns10:value "1443.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_9a03e8ee-e832-43c8-b38e-0d43f8ef7355> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5> .
+
+<http://ftn.uns.ac.rs//#_bec4e785-5143-4ad4-b7b0-aea8e33be7e6>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_3 - CL-1" ;
+  ns2:shortName "CL-1" ;
+  ns1:description "Ratings for element NL-Line_3 - Limit" ;
+  ns10:value "1443.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_14e9e317-a168-44a2-82ef-7c76190108a2> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5> .
+
+<http://ftn.uns.ac.rs//#_317c3033-0409-4f57-9209-4baae4b5e165>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_3 - CL-2" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_3 - Limit" ;
+  ns10:value "1180.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_9a03e8ee-e832-43c8-b38e-0d43f8ef7355> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950> .
+
+<http://ftn.uns.ac.rs//#_62be08ea-2a9e-4284-9642-2947cb2c5f1b>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_3 - CL-2" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_3 - Limit" ;
+  ns10:value "1180.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_14e9e317-a168-44a2-82ef-7c76190108a2> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950> .
+
+<http://ftn.uns.ac.rs//#_e29f4055-0267-4d9e-a889-8afc2326e870>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_3 - CL-3" ;
+  ns2:shortName "CL-3" ;
+  ns1:description "Ratings for element NL-Line_3 - Limit" ;
+  ns10:value "2000.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_9a03e8ee-e832-43c8-b38e-0d43f8ef7355> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_dd9c5b59-0728-45ca-9930-0dff2a9fb390> .
+
+<http://ftn.uns.ac.rs//#_22274f03-885c-4ea8-931d-862beec6edd1>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_3 - CL-3" ;
+  ns2:shortName "CL-3" ;
+  ns1:description "Ratings for element NL-Line_3 - Limit" ;
+  ns10:value "2000.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_14e9e317-a168-44a2-82ef-7c76190108a2> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_dd9c5b59-0728-45ca-9930-0dff2a9fb390> .
+
+<http://ftn.uns.ac.rs//#_fff80a22-3a4b-4c22-94d2-2901e8085df1>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_4 - CL-0" ;
+  ns2:shortName "CL-0" ;
+  ns1:description "Ratings for element NL-Line_4 - Limit" ;
+  ns10:value "1574.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_37cc4210-71c0-4328-a86b-df0f65e76ef4> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60> .
+
+<http://ftn.uns.ac.rs//#_4224b5aa-ef0b-4f31-b2a5-002c0c696721>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_4 - CL-0" ;
+  ns2:shortName "CL-0" ;
+  ns1:description "Ratings for element NL-Line_4 - Limit" ;
+  ns10:value "1574.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_03943678-b63e-44d8-bc7d-9461da496268> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60> .
+
+<http://ftn.uns.ac.rs//#_32ba352e-5877-4d42-b7e4-49a23b78297d>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_4 - CL-1" ;
+  ns2:shortName "CL-1" ;
+  ns1:description "Ratings for element NL-Line_4 - Limit" ;
+  ns10:value "1705.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_37cc4210-71c0-4328-a86b-df0f65e76ef4> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5> .
+
+<http://ftn.uns.ac.rs//#_d6da4ddd-944f-48ab-bdb2-651883dc9dea>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_4 - CL-1" ;
+  ns2:shortName "CL-1" ;
+  ns1:description "Ratings for element NL-Line_4 - Limit" ;
+  ns10:value "1705.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_03943678-b63e-44d8-bc7d-9461da496268> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5> .
+
+<http://ftn.uns.ac.rs//#_b4659169-38a4-494f-b3e2-aa83dc9a6670>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_4 - CL-2" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_4 - Limit" ;
+  ns10:value "1443.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_37cc4210-71c0-4328-a86b-df0f65e76ef4> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950> .
+
+<http://ftn.uns.ac.rs//#_0388b680-3feb-45a2-bd56-5a620472107b>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_4 - CL-2" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_4 - Limit" ;
+  ns10:value "1443.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_03943678-b63e-44d8-bc7d-9461da496268> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950> .
+
+<http://ftn.uns.ac.rs//#_d4831248-07f3-4d9a-a06b-d39461cd16a2>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_5 - CL-0" ;
+  ns2:shortName "CL-0" ;
+  ns1:description "Ratings for element NL-Line_5 - Limit" ;
+  ns10:value "1876.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_a2c3d48f-d768-4e1e-8841-6e9c4913f11f> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60> .
+
+<http://ftn.uns.ac.rs//#_d3c7e111-afa0-4cc2-99d0-8c75e3d6fb91>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_5 - CL-0" ;
+  ns2:shortName "CL-0" ;
+  ns1:description "Ratings for element NL-Line_5 - Limit" ;
+  ns10:value "1876.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_b4d8f5e2-7b7a-45eb-b65a-252843d6acf4> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60> .
+
+<http://ftn.uns.ac.rs//#_b50d912a-8ce8-4962-a21b-f2d91dcc430e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_5 - CL-1" ;
+  ns2:shortName "CL-1" ;
+  ns1:description "Ratings for element NL-Line_5 - Limit" ;
+  ns10:value "1948.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_a2c3d48f-d768-4e1e-8841-6e9c4913f11f> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5> .
+
+<http://ftn.uns.ac.rs//#_c43551e9-eeee-415a-acf1-570fab88b426>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_5 - CL-1" ;
+  ns2:shortName "CL-1" ;
+  ns1:description "Ratings for element NL-Line_5 - Limit" ;
+  ns10:value "1948.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_b4d8f5e2-7b7a-45eb-b65a-252843d6acf4> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5> .
+
+<http://ftn.uns.ac.rs//#_a4b97f0b-39b8-452d-b51c-fd3b25fa1d9b>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_5 - CL-2" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_5 - Limit" ;
+  ns10:value "1804.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_a2c3d48f-d768-4e1e-8841-6e9c4913f11f> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950> .
+
+<http://ftn.uns.ac.rs//#_db8675aa-6a3d-47a8-b864-a3e474c5c885>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-Line_5 - CL-2" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-Line_5 - Limit" ;
+  ns10:value "1804.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_b4d8f5e2-7b7a-45eb-b65a-252843d6acf4> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950> .
+
+<http://ftn.uns.ac.rs//#_5e7f87db-9758-4098-b19e-4f365915721f>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-TR2_1 - CL-0" ;
+  ns2:shortName "CL-0" ;
+  ns1:description "Ratings for element NL-TR2_1 - Limit" ;
+  ns10:value "481.900000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_83f719ad-2083-44ea-9ebc-9f456c114bdb> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60> .
+
+<http://ftn.uns.ac.rs//#_bd6482bb-5e21-46df-a3c3-0e4a64d49f89>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-TR2_1 - CL-0" ;
+  ns2:shortName "CL-0" ;
+  ns1:description "Ratings for element NL-TR2_1 - Limit" ;
+  ns10:value "849.800000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_d47a27cc-9fad-40f2-a08c-37e545c268df> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60> .
+
+<http://ftn.uns.ac.rs//#_553477f0-ed39-499b-a07d-3c602bd8a13d>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-TR2_1 - CL-1" ;
+  ns2:shortName "CL-1" ;
+  ns1:description "Ratings for element NL-TR2_1 - Limit" ;
+  ns10:value "491.900000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_83f719ad-2083-44ea-9ebc-9f456c114bdb> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5> .
+
+<http://ftn.uns.ac.rs//#_8122651e-22ba-4320-9032-c59969020565>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-TR2_1 - CL-1" ;
+  ns2:shortName "CL-1" ;
+  ns1:description "Ratings for element NL-TR2_1 - Limit" ;
+  ns10:value "859.800000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_d47a27cc-9fad-40f2-a08c-37e545c268df> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5> .
+
+<http://ftn.uns.ac.rs//#_150183f1-3144-4d18-b5ca-328efdead257>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-TR2_1 - CL-2" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-TR2_1 - Limit" ;
+  ns10:value "461.900000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_83f719ad-2083-44ea-9ebc-9f456c114bdb> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950> .
+
+<http://ftn.uns.ac.rs//#_89d45390-25dc-49a6-bb08-69b67f27cd39>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL-TR2_1 - CL-2" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL-TR2_1 - Limit" ;
+  ns10:value "839.800000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_d47a27cc-9fad-40f2-a08c-37e545c268df> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950> .
+
+<http://ftn.uns.ac.rs//#_e2153eed-fb1f-44e2-b116-d045c5e50e3b>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL_TR2_2 - CL-0" ;
+  ns2:shortName "CL-0" ;
+  ns1:description "Ratings for element NL_TR2_2 - Limit" ;
+  ns10:value "3406.600000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_e7c1b1c7-aaeb-470a-9cb5-93a3ec269179> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60> .
+
+<http://ftn.uns.ac.rs//#_2f71df7b-6118-4973-acea-7f65a563a979>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL_TR2_2 - CL-0" ;
+  ns2:shortName "CL-0" ;
+  ns1:description "Ratings for element NL_TR2_2 - Limit" ;
+  ns10:value "47188.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_261d13c4-1527-42a5-ad0d-a3b817971166> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60> .
+
+<http://ftn.uns.ac.rs//#_b4f373a0-1d09-4f4f-9f29-f72ff6b4f62f>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL_TR2_2 - CL-1" ;
+  ns2:shortName "CL-1" ;
+  ns1:description "Ratings for element NL_TR2_2 - Limit" ;
+  ns10:value "3506.600000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_e7c1b1c7-aaeb-470a-9cb5-93a3ec269179> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5> .
+
+<http://ftn.uns.ac.rs//#_176ae6ba-d38c-4f7c-8a60-038dc4980a39>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL_TR2_2 - CL-1" ;
+  ns2:shortName "CL-1" ;
+  ns1:description "Ratings for element NL_TR2_2 - Limit" ;
+  ns10:value "48188.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_261d13c4-1527-42a5-ad0d-a3b817971166> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5> .
+
+<http://ftn.uns.ac.rs//#_fa85553d-9769-45fe-9b79-cecafa01c4ba>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL_TR2_2 - CL-2" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL_TR2_2 - Limit" ;
+  ns10:value "3306.600000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_e7c1b1c7-aaeb-470a-9cb5-93a3ec269179> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950> .
+
+<http://ftn.uns.ac.rs//#_1a886514-5f7d-418a-99b7-02330ed01ca7>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL_TR2_2 - CL-2" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL_TR2_2 - Limit" ;
+  ns10:value "46188.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_261d13c4-1527-42a5-ad0d-a3b817971166> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950> .
+
+<http://ftn.uns.ac.rs//#_e2afb3a0-94ea-4f8f-b717-7b91c603d3dc>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL_TR2_3 - CL-0" ;
+  ns2:shortName "CL-0" ;
+  ns1:description "Ratings for element NL_TR2_3 - Limit" ;
+  ns10:value "3506.600000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_fd472104-d68c-4536-ba4a-5fd9349c0a65> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60> .
+
+<http://ftn.uns.ac.rs//#_716e45d4-4092-4a1b-ba5f-c78e1da4f363>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL_TR2_3 - CL-0" ;
+  ns2:shortName "CL-0" ;
+  ns1:description "Ratings for element NL_TR2_3 - Limit" ;
+  ns10:value "47188.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_cf3e5341-6736-4b34-b4da-e4af2073765b> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60> .
+
+<http://ftn.uns.ac.rs//#_d4bc2ee3-43b8-46fb-9337-d82590af1c8b>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL_TR2_3 - CL-1" ;
+  ns2:shortName "CL-1" ;
+  ns1:description "Ratings for element NL_TR2_3 - Limit" ;
+  ns10:value "3706.600000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_fd472104-d68c-4536-ba4a-5fd9349c0a65> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5> .
+
+<http://ftn.uns.ac.rs//#_23b11495-8c2c-47cc-a561-e215196afa2b>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL_TR2_3 - CL-1" ;
+  ns2:shortName "CL-1" ;
+  ns1:description "Ratings for element NL_TR2_3 - Limit" ;
+  ns10:value "49188.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_cf3e5341-6736-4b34-b4da-e4af2073765b> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5> .
+
+<http://ftn.uns.ac.rs//#_0c95b506-05a2-40d5-9f82-b9bf1e680a8d>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL_TR2_3 - CL-2" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL_TR2_3 - Limit" ;
+  ns10:value "3306.600000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_fd472104-d68c-4536-ba4a-5fd9349c0a65> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950> .
+
+<http://ftn.uns.ac.rs//#_6a927421-36cd-487a-b6b7-61dd45470447>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#CurrentLimit> ;
+  ns1:name "NL_TR2_3 - CL-2" ;
+  ns2:shortName "CL-2" ;
+  ns1:description "Ratings for element NL_TR2_3 - Limit" ;
+  ns10:value "46188.000000" ;
+  ns11:OperationalLimitSet <http://ftn.uns.ac.rs//#_cf3e5341-6736-4b34-b4da-e4af2073765b> ;
+  ns11:OperationalLimitType <http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950> .
+
+<http://ftn.uns.ac.rs//#_69add5b4-70bd-4360-8a93-286256c0d38b>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer> ;
+  ns1:name "NL-Load_1" ;
+  ns2:shortName "NL-L_1" ;
+  ns1:description "Apple" ;
+  ns3:aggregate "false" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_c1d5bfde8f8011e08e4d00247eb1f55e> .
+
+<http://ftn.uns.ac.rs//#_25ab1b5b-6803-47e2-805a-ab7b2072e034>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer> ;
+  ns1:name "NL-Load_2" ;
+  ns2:shortName "NL-L_2" ;
+  ns1:description "Electrabel" ;
+  ns3:aggregate "true" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_c1d5bfde8f8011e08e4d00247eb1f55e> .
+
+<http://ftn.uns.ac.rs//#_b1e03a8f-6a11-4454-af58-4a4a680e857f>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#EnergyConsumer> ;
+  ns1:name "NL-Load_3" ;
+  ns2:shortName "NL-L_3" ;
+  ns1:description "Siemens" ;
+  ns3:aggregate "false" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_c1d5bfea8f8011e08e4d00247eb1f55e> ;
+  ns12:LoadResponse <http://ftn.uns.ac.rs//#_7a797ed8-c370-47cf-83df-16c40f8fff69> .
+
+<http://ftn.uns.ac.rs//#_83bea592-913e-4473-8d17-969968ff83a2>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#EquivalentInjection> ;
+  ns1:name "NL-Inj-XCA_AL11" ;
+  ns2:shortName "NL-I-XCA_AL1" ;
+  ns1:description "Eq_Injection" ;
+  ns13:regulationCapability "false" ;
+  ns13:r "0e+000" ;
+  ns13:x "0e+000" ;
+  ns13:r2 "0e+000" ;
+  ns13:x2 "0e+000" ;
+  ns13:r0 "0e+000" ;
+  ns13:x0 "0e+000" ;
+  ns6:BaseVoltage <http://ftn.uns.ac.rs//#_65dd04e792584b3b912374e35dec032e> .
+
+<http://ftn.uns.ac.rs//#_cab82e1c-1435-447b-bba0-74b592539eac>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#EquivalentInjection> ;
+  ns1:name "NL-Inj-XKA_MA11" ;
+  ns2:shortName "NL-I-XKA_MA1" ;
+  ns1:description "Eq_Injection" ;
+  ns13:regulationCapability "false" ;
+  ns13:r "0e+000" ;
+  ns13:x "0e+000" ;
+  ns13:r2 "0e+000" ;
+  ns13:x2 "0e+000" ;
+  ns13:r0 "0e+000" ;
+  ns13:x0 "0e+000" ;
+  ns6:BaseVoltage <http://ftn.uns.ac.rs//#_65dd04e792584b3b912374e35dec032e> .
+
+<http://ftn.uns.ac.rs//#_b0442899-8dbe-48c1-a1fa-adb2a5929273>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#EquivalentInjection> ;
+  ns1:name "NL-Inj-XWI_GY11" ;
+  ns2:shortName "NL-I-XWI_GY1" ;
+  ns1:description "Eq_Injection" ;
+  ns13:regulationCapability "false" ;
+  ns13:r "0e+000" ;
+  ns13:x "0e+000" ;
+  ns13:r2 "0e+000" ;
+  ns13:x2 "0e+000" ;
+  ns13:r0 "0e+000" ;
+  ns13:x0 "0e+000" ;
+  ns6:BaseVoltage <http://ftn.uns.ac.rs//#_65dd04e792584b3b912374e35dec032e> .
+
+<http://ftn.uns.ac.rs//#_12baa3f3-23b1-44e0-956f-d331e1527f37>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#EquivalentInjection> ;
+  ns1:name "NL-Inj-XZE_ST23" ;
+  ns2:shortName "NL-I-XZE_ST2" ;
+  ns1:description "Eq_Injection" ;
+  ns13:regulationCapability "false" ;
+  ns13:r "0e+000" ;
+  ns13:x "0e+000" ;
+  ns13:r2 "0e+000" ;
+  ns13:x2 "0e+000" ;
+  ns13:r0 "0e+000" ;
+  ns13:x0 "0e+000" ;
+  ns6:BaseVoltage <http://ftn.uns.ac.rs//#_7891a026ba2c42098556665efd13ba94> .
+
+<http://ftn.uns.ac.rs//#_820d95d7-26d4-4311-8b1f-026f8605b86d>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#EquivalentInjection> ;
+  ns1:name "NL-Inj-XZE_ST24" ;
+  ns2:shortName "NL-I-XZE_ST2" ;
+  ns1:description "Eq_Injection" ;
+  ns13:regulationCapability "false" ;
+  ns13:r "0e+000" ;
+  ns13:x "0e+000" ;
+  ns13:r2 "0e+000" ;
+  ns13:x2 "0e+000" ;
+  ns13:r0 "0e+000" ;
+  ns13:x0 "0e+000" ;
+  ns6:BaseVoltage <http://ftn.uns.ac.rs//#_7891a026ba2c42098556665efd13ba94> .
+
+<http://ftn.uns.ac.rs//#_b850063d-eae7-4675-bc98-4642d3076783>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit> ;
+  ns1:name "Gen-12908" ;
+  ns1:description "Machine" ;
+  ns14:initialP "150.000000" ;
+  ns14:nominalP "225.000000" ;
+  ns14:maxOperatingP "250.000000" ;
+  ns14:minOperatingP "130.000000" ;
+  ns14:genControlSource <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratorControlSource.offAGC> ;
+  ns3:aggregate "false" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_c49942d6-8b01-4b01-b5e8-f1180f84906c> .
+
+<http://ftn.uns.ac.rs//#_ca80ee09-3bed-4884-bc28-6dc89d067289>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit> ;
+  ns1:name "Gen-12910" ;
+  ns1:description "Machine" ;
+  ns14:initialP "140.000000" ;
+  ns14:nominalP "225.000000" ;
+  ns14:maxOperatingP "250.000000" ;
+  ns14:minOperatingP "130.000000" ;
+  ns14:genControlSource <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratorControlSource.offAGC> ;
+  ns3:aggregate "false" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_c49942d6-8b01-4b01-b5e8-f1180f84906c> .
+
+<http://ftn.uns.ac.rs//#_049438a6-780a-44fe-a788-ebe385d98e25>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratingUnit> ;
+  ns1:name "Gen-12923" ;
+  ns1:description "Machine" ;
+  ns14:initialP "600.492701" ;
+  ns14:nominalP "990.000000" ;
+  ns14:maxOperatingP "1000.000000" ;
+  ns14:minOperatingP "300.000000" ;
+  ns14:genControlSource <http://iec.ch/TC57/2013/CIM-schema-cim16#GeneratorControlSource.offAGC> ;
+  ns3:aggregate "false" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_c49942d6-8b01-4b01-b5e8-f1180f84906c> .
+
+<http://ftn.uns.ac.rs//#_c1d5bfe28f8011e08e4d00247eb1f55e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#GeographicalRegion> ;
+  ns1:name "NL" .
+
+<http://ftn.uns.ac.rs//#_72242f07-189e-4a06-9f7e-f7a2776ecfd9>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Line> ;
+  ns1:name "container of NL-Line_1" ;
+  ns15:Region <http://ftn.uns.ac.rs//#_c1d5bfe48f8011e08e4d00247eb1f55e> .
+
+<http://ftn.uns.ac.rs//#_00faa2b5-cb42-4c43-9c9a-2a09dd9c52f5>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Line> ;
+  ns1:name "container of NL-Line_2" ;
+  ns15:Region <http://ftn.uns.ac.rs//#_c1d5bfe48f8011e08e4d00247eb1f55e> .
+
+<http://ftn.uns.ac.rs//#_644936cc-1ea0-46f3-93e6-eed0e0cc8bee>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Line> ;
+  ns1:name "container of NL-Line_3" ;
+  ns15:Region <http://ftn.uns.ac.rs//#_c1d5bfe48f8011e08e4d00247eb1f55e> .
+
+<http://ftn.uns.ac.rs//#_f524d9fc-48be-4feb-9e77-a15696d4210a>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Line> ;
+  ns1:name "container of NL-Line_4" ;
+  ns15:Region <http://ftn.uns.ac.rs//#_c1d5bfe48f8011e08e4d00247eb1f55e> .
+
+<http://ftn.uns.ac.rs//#_c7d37bc3-196c-4458-896b-614f810cea0f>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Line> ;
+  ns1:name "container of NL-Line_5" ;
+  ns15:Region <http://ftn.uns.ac.rs//#_c1d5bfe48f8011e08e4d00247eb1f55e> .
+
+<http://ftn.uns.ac.rs//#_fbfed7e3-3dec-4829-a286-029e73535685>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#LinearShuntCompensator> ;
+  ns1:name "NL-S1" ;
+  ns2:shortName "NL-S1" ;
+  ns1:description "shunt" ;
+  ns16:normalSections "1" ;
+  ns16:maximumSections "1" ;
+  ns17:bPerSection "0.000313" ;
+  ns17:gPerSection "0e+000" ;
+  ns17:b0PerSection "-0e+000" ;
+  ns17:g0PerSection "0e+000" ;
+  ns16:nomU "400.000000" ;
+  ns18:RegulatingControl <http://ftn.uns.ac.rs//#_613dfeb3-0161-4cec-aaa9-ccddd885771b> ;
+  ns3:aggregate "false" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_c1d5bfde8f8011e08e4d00247eb1f55e> .
+
+<http://ftn.uns.ac.rs//#_7a797ed8-c370-47cf-83df-16c40f8fff69>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#LoadResponseCharacteristic> ;
+  ns1:name "NL-Load_3" ;
+  ns2:shortName "NL-L_3" ;
+  ns19:exponentModel "false" ;
+  ns19:pConstantCurrent "0.200000" ;
+  ns19:pConstantImpedance "0e+000" ;
+  ns19:pConstantPower "0.800000" ;
+  ns19:pFrequencyExponent "0e+000" ;
+  ns19:qConstantCurrent "0.300000" ;
+  ns19:qConstantImpedance "0e+000" ;
+  ns19:qConstantPower "0.700000" ;
+  ns19:pVoltageExponent "0e+000" ;
+  ns19:qFrequencyExponent "0e+000" ;
+  ns19:qVoltageExponent "0e+000" .
+
+<http://ftn.uns.ac.rs//#_a2c3d48f-d768-4e1e-8841-6e9c4913f11f>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> ;
+  ns1:name "Limits at Port 1" ;
+  ns1:description "Limit-Ratings for branch NL-Line_5 at Port 1" ;
+  ns20:Terminal <http://ftn.uns.ac.rs//#_757d4f50-707b-47a0-891c-cbaefd649631> .
+
+<http://ftn.uns.ac.rs//#_37cc4210-71c0-4328-a86b-df0f65e76ef4>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> ;
+  ns1:name "Limits at Port 1" ;
+  ns1:description "Limit-Ratings for branch NL-Line_4 at Port 1" ;
+  ns20:Terminal <http://ftn.uns.ac.rs//#_653bc4b8-518b-4adc-9d68-012fb641fb1d> .
+
+<http://ftn.uns.ac.rs//#_9a03e8ee-e832-43c8-b38e-0d43f8ef7355>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> ;
+  ns1:name "Limits at Port 1" ;
+  ns1:description "Limit-Ratings for branch NL-Line_3 at Port 1" ;
+  ns20:Terminal <http://ftn.uns.ac.rs//#_5dfee914-a4fd-4bde-a5b4-c4caa6378d10> .
+
+<http://ftn.uns.ac.rs//#_13ee714f-6df4-4039-8519-5cf4e84ab20d>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> ;
+  ns1:name "Limits at Port 1" ;
+  ns1:description "Limit-Ratings for branch NL-Line_2 at Port 1" ;
+  ns20:Terminal <http://ftn.uns.ac.rs//#_c557146e-dfc4-4020-9738-d592b188338b> .
+
+<http://ftn.uns.ac.rs//#_79a1fb3a-a66a-468c-8c78-c25714c73eba>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> ;
+  ns1:name "Limits at Port 1" ;
+  ns1:description "Limit-Ratings for branch NL-Line_1 at Port 1" ;
+  ns20:Terminal <http://ftn.uns.ac.rs//#_357e3e14-c38e-4a7e-9c95-b3dbe158f5f3> .
+
+<http://ftn.uns.ac.rs//#_83f719ad-2083-44ea-9ebc-9f456c114bdb>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> ;
+  ns1:name "Limits at Port 1" ;
+  ns1:description "Limit-Ratings for branch NL-TR2_1 at Port 1" ;
+  ns20:Terminal <http://ftn.uns.ac.rs//#_e3e0c496-5837-4f0f-a596-cc421940f73f> .
+
+<http://ftn.uns.ac.rs//#_e7c1b1c7-aaeb-470a-9cb5-93a3ec269179>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> ;
+  ns1:name "Limits at Port 1" ;
+  ns1:description "Limit-Ratings for branch NL_TR2_2 at Port 1" ;
+  ns20:Terminal <http://ftn.uns.ac.rs//#_1128e664-0653-448a-9068-e37f1a097c05> .
+
+<http://ftn.uns.ac.rs//#_fd472104-d68c-4536-ba4a-5fd9349c0a65>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> ;
+  ns1:name "Limits at Port 1" ;
+  ns1:description "Limit-Ratings for branch NL_TR2_3 at Port 1" ;
+  ns20:Terminal <http://ftn.uns.ac.rs//#_bd61b1f9-474d-424e-9709-42f75337c477> .
+
+<http://ftn.uns.ac.rs//#_b4d8f5e2-7b7a-45eb-b65a-252843d6acf4>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> ;
+  ns1:name "Limits at Port 2" ;
+  ns1:description "Limit-Ratings for branch NL-Line_5 at Port 2" ;
+  ns20:Terminal <http://ftn.uns.ac.rs//#_ae588863-b154-451d-978a-7ab08ac50fb6> .
+
+<http://ftn.uns.ac.rs//#_03943678-b63e-44d8-bc7d-9461da496268>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> ;
+  ns1:name "Limits at Port 2" ;
+  ns1:description "Limit-Ratings for branch NL-Line_4 at Port 2" ;
+  ns20:Terminal <http://ftn.uns.ac.rs//#_57979d14-d1d8-4311-ae53-aa8890423885> .
+
+<http://ftn.uns.ac.rs//#_14e9e317-a168-44a2-82ef-7c76190108a2>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> ;
+  ns1:name "Limits at Port 2" ;
+  ns1:description "Limit-Ratings for branch NL-Line_3 at Port 2" ;
+  ns20:Terminal <http://ftn.uns.ac.rs//#_6aecb9ba-5835-4b70-89bc-96d687e45779> .
+
+<http://ftn.uns.ac.rs//#_7cf4108d-d355-48f5-8556-d42c37a8e2c8>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> ;
+  ns1:name "Limits at Port 2" ;
+  ns1:description "Limit-Ratings for branch NL-Line_2 at Port 2" ;
+  ns20:Terminal <http://ftn.uns.ac.rs//#_8f308117-8bbd-4798-b145-4e78f7d049e7> .
+
+<http://ftn.uns.ac.rs//#_125eeb58-1c45-41b2-a981-7d5993b40cda>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> ;
+  ns1:name "Limits at Port 2" ;
+  ns1:description "Limit-Ratings for branch NL-Line_1 at Port 2" ;
+  ns20:Terminal <http://ftn.uns.ac.rs//#_6b1cd30c-19ba-44e1-9447-d01db6b1ef9d> .
+
+<http://ftn.uns.ac.rs//#_d47a27cc-9fad-40f2-a08c-37e545c268df>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> ;
+  ns1:name "Limits at Port 2" ;
+  ns1:description "Limit-Ratings for branch NL-TR2_1 at Port 2" ;
+  ns20:Terminal <http://ftn.uns.ac.rs//#_baa7aef1-afcd-4981-97c0-ccec7b5ad4e0> .
+
+<http://ftn.uns.ac.rs//#_261d13c4-1527-42a5-ad0d-a3b817971166>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> ;
+  ns1:name "Limits at Port 2" ;
+  ns1:description "Limit-Ratings for branch NL_TR2_2 at Port 2" ;
+  ns20:Terminal <http://ftn.uns.ac.rs//#_da232169-1c36-495a-8af6-a0d7d2b39f52> .
+
+<http://ftn.uns.ac.rs//#_cf3e5341-6736-4b34-b4da-e4af2073765b>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitSet> ;
+  ns1:name "Limits at Port 2" ;
+  ns1:description "Limit-Ratings for branch NL_TR2_3 at Port 2" ;
+  ns20:Terminal <http://ftn.uns.ac.rs//#_4f1c405f-07c9-4fb0-b64e-551896a29aa8> .
+
+<http://ftn.uns.ac.rs//#_1aee0921-7cbe-481c-9078-daf66ab2a950>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType> ;
+  ns1:name "PATL" ;
+  ns2:shortName "patl" ;
+  ns21:direction <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue> ;
+  ns22:limitType <http://entsoe.eu/CIM/SchemaExtension/3/1#LimitTypeKind.patl> .
+
+<http://ftn.uns.ac.rs//#_68cd26b8-d512-4104-a1d1-b2e8f9376ecc>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType> ;
+  ns1:name "PATLT" ;
+  ns2:shortName "patlt" ;
+  ns21:direction <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue> ;
+  ns22:limitType <http://entsoe.eu/CIM/SchemaExtension/3/1#LimitTypeKind.patlt> .
+
+<http://ftn.uns.ac.rs//#_18c8d038-31ea-4d92-9e7e-4b8a397f30a5>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType> ;
+  ns1:name "TATL10" ;
+  ns2:shortName "tatl" ;
+  ns21:direction <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue> ;
+  ns22:limitType <http://entsoe.eu/CIM/SchemaExtension/3/1#LimitTypeKind.tatl> ;
+  ns21:acceptableDuration "10.000000" .
+
+<http://ftn.uns.ac.rs//#_250e948b-70ae-4139-971b-4f0053425b60>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType> ;
+  ns1:name "TATL20" ;
+  ns2:shortName "tatl" ;
+  ns21:direction <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue> ;
+  ns22:limitType <http://entsoe.eu/CIM/SchemaExtension/3/1#LimitTypeKind.tatl> ;
+  ns21:acceptableDuration "20.000000" .
+
+<http://ftn.uns.ac.rs//#_dd9c5b59-0728-45ca-9930-0dff2a9fb390>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType> ;
+  ns1:name "TC" ;
+  ns2:shortName "tc" ;
+  ns21:direction <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue> ;
+  ns22:limitType <http://entsoe.eu/CIM/SchemaExtension/3/1#LimitTypeKind.tc> .
+
+<http://ftn.uns.ac.rs//#_a1cc9747-6819-429e-bd5f-23ffdb1d7376>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitType> ;
+  ns1:name "TCT" ;
+  ns2:shortName "tct" ;
+  ns21:direction <http://iec.ch/TC57/2013/CIM-schema-cim16#OperationalLimitDirectionKind.absoluteValue> ;
+  ns22:limitType <http://entsoe.eu/CIM/SchemaExtension/3/1#LimitTypeKind.tct> .
+
+<http://ftn.uns.ac.rs//#_e8a7eaec-51d6-4571-b3d9-c36d52073c33>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformer> ;
+  ns1:name "NL-TR2_1" ;
+  ns2:shortName "NL-T_1" ;
+  ns1:description "new transformer in 2015" ;
+  ns3:aggregate "false" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_c49942d6-8b01-4b01-b5e8-f1180f84906c> ;
+  ns23:beforeShCircuitHighestOperatingVoltage "0e+000" ;
+  ns23:beforeShCircuitHighestOperatingCurrent "0e+000" ;
+  ns23:beforeShortCircuitAnglePf "0e+000" ;
+  ns23:highSideMinOperatingU "0e+000" ;
+  ns23:isPartOfGeneratorUnit "false" ;
+  ns23:operationalValuesConsidered "false" .
+
+<http://ftn.uns.ac.rs//#_2184f365-8cd5-4b5d-8a28-9d68603bb6a4>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformer> ;
+  ns1:name "NL_TR2_2" ;
+  ns2:shortName "NL_T_2" ;
+  ns1:description "trafo" ;
+  ns3:aggregate "false" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_c49942d6-8b01-4b01-b5e8-f1180f84906c> ;
+  ns23:beforeShCircuitHighestOperatingVoltage "0e+000" ;
+  ns23:beforeShCircuitHighestOperatingCurrent "0e+000" ;
+  ns23:beforeShortCircuitAnglePf "0e+000" ;
+  ns23:highSideMinOperatingU "0e+000" ;
+  ns23:isPartOfGeneratorUnit "false" ;
+  ns23:operationalValuesConsidered "false" .
+
+<http://ftn.uns.ac.rs//#_80016742-31b3-432a-b00a-300667a1e572>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformer> ;
+  ns1:name "NL_TR2_3" ;
+  ns2:shortName "NL_T_3" ;
+  ns1:description "out of service in 2020" ;
+  ns3:aggregate "false" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_c49942d6-8b01-4b01-b5e8-f1180f84906c> ;
+  ns23:beforeShCircuitHighestOperatingVoltage "0e+000" ;
+  ns23:beforeShCircuitHighestOperatingCurrent "0e+000" ;
+  ns23:beforeShortCircuitAnglePf "0e+000" ;
+  ns23:highSideMinOperatingU "0e+000" ;
+  ns23:isPartOfGeneratorUnit "false" ;
+  ns23:operationalValuesConsidered "false" .
+
+<http://ftn.uns.ac.rs//#_c1d5c1448f8011e08e4d00247eb1f55e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd> ;
+  ns1:name "NL-TR2_1" ;
+  ns2:shortName "NL-T_1" ;
+  ns24:r "1.350000" ;
+  ns24:x "27.967436" ;
+  ns24:b "-0.0000044445" ;
+  ns24:g "0.0000005625" ;
+  ns24:r0 "1.350000" ;
+  ns24:x0 "27.967436" ;
+  ns24:b0 "0.0" ;
+  ns24:g0 "0.0" ;
+  ns25:rground "0e+000" ;
+  ns25:xground "0.0" ;
+  ns24:ratedS "320.000000" ;
+  ns24:ratedU "400.000000" ;
+  ns25:endNumber "1" ;
+  ns24:phaseAngleClock "0" ;
+  ns25:grounded "true" ;
+  ns24:connectionKind <http://iec.ch/TC57/2013/CIM-schema-cim16#WindingConnection.Yn> ;
+  ns25:BaseVoltage <http://ftn.uns.ac.rs//#_65dd04e792584b3b912374e35dec032e> ;
+  ns24:PowerTransformer <http://ftn.uns.ac.rs//#_e8a7eaec-51d6-4571-b3d9-c36d52073c33> ;
+  ns25:Terminal <http://ftn.uns.ac.rs//#_e3e0c496-5837-4f0f-a596-cc421940f73f> .
+
+<http://ftn.uns.ac.rs//#_c1d5c14d8f8011e08e4d00247eb1f55e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd> ;
+  ns1:name "NL-TR2_1" ;
+  ns2:shortName "NL-T_1" ;
+  ns24:r "0e+000" ;
+  ns24:x "0e+000" ;
+  ns24:b "0.0" ;
+  ns24:g "0.0" ;
+  ns24:r0 "0e+000" ;
+  ns24:x0 "0e+000" ;
+  ns24:b0 "0.0" ;
+  ns24:g0 "0.0" ;
+  ns25:rground "0e+000" ;
+  ns25:xground "0.0" ;
+  ns24:ratedS "320.000000" ;
+  ns24:ratedU "220.000000" ;
+  ns25:endNumber "2" ;
+  ns24:phaseAngleClock "0" ;
+  ns25:grounded "true" ;
+  ns24:connectionKind <http://iec.ch/TC57/2013/CIM-schema-cim16#WindingConnection.Yn> ;
+  ns25:BaseVoltage <http://ftn.uns.ac.rs//#_7891a026ba2c42098556665efd13ba94> ;
+  ns24:PowerTransformer <http://ftn.uns.ac.rs//#_e8a7eaec-51d6-4571-b3d9-c36d52073c33> ;
+  ns25:Terminal <http://ftn.uns.ac.rs//#_baa7aef1-afcd-4981-97c0-ccec7b5ad4e0> .
+
+<http://ftn.uns.ac.rs//#_c1d5c1518f8011e08e4d00247eb1f55e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd> ;
+  ns1:name "NL_TR2_2" ;
+  ns2:shortName "NL_T_2" ;
+  ns24:r "0.069143" ;
+  ns24:x "5.377333" ;
+  ns24:b "-0.0001420227" ;
+  ns24:g "0.0000181818" ;
+  ns24:r0 "0.069143" ;
+  ns24:x0 "5.377333" ;
+  ns24:b0 "0.0" ;
+  ns24:g0 "0.0" ;
+  ns25:rground "0e+000" ;
+  ns25:xground "0.0" ;
+  ns24:ratedS "1260.000000" ;
+  ns24:ratedU "220.000000" ;
+  ns25:endNumber "1" ;
+  ns24:phaseAngleClock "0" ;
+  ns25:grounded "true" ;
+  ns24:connectionKind <http://iec.ch/TC57/2013/CIM-schema-cim16#WindingConnection.Yn> ;
+  ns25:BaseVoltage <http://ftn.uns.ac.rs//#_7891a026ba2c42098556665efd13ba94> ;
+  ns24:PowerTransformer <http://ftn.uns.ac.rs//#_2184f365-8cd5-4b5d-8a28-9d68603bb6a4> ;
+  ns25:Terminal <http://ftn.uns.ac.rs//#_1128e664-0653-448a-9068-e37f1a097c05> .
+
+<http://ftn.uns.ac.rs//#_c1d5c15a8f8011e08e4d00247eb1f55e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd> ;
+  ns1:name "NL_TR2_2" ;
+  ns2:shortName "NL_T_2" ;
+  ns24:r "0e+000" ;
+  ns24:x "0e+000" ;
+  ns24:b "0.0" ;
+  ns24:g "0.0" ;
+  ns24:r0 "0e+000" ;
+  ns24:x0 "0e+000" ;
+  ns24:b0 "0.0" ;
+  ns24:g0 "0.0" ;
+  ns25:rground "0e+000" ;
+  ns25:xground "0.0" ;
+  ns24:ratedS "1260.000000" ;
+  ns24:ratedU "15.750000" ;
+  ns25:endNumber "2" ;
+  ns24:phaseAngleClock "0" ;
+  ns25:grounded "true" ;
+  ns24:connectionKind <http://iec.ch/TC57/2013/CIM-schema-cim16#WindingConnection.Yn> ;
+  ns25:BaseVoltage <http://ftn.uns.ac.rs//#_c1d5bff18f8011e08e4d00247eb1f55e> ;
+  ns24:PowerTransformer <http://ftn.uns.ac.rs//#_2184f365-8cd5-4b5d-8a28-9d68603bb6a4> ;
+  ns25:Terminal <http://ftn.uns.ac.rs//#_da232169-1c36-495a-8af6-a0d7d2b39f52> .
+
+<http://ftn.uns.ac.rs//#_c1d5c15e8f8011e08e4d00247eb1f55e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd> ;
+  ns1:name "NL_TR2_3" ;
+  ns2:shortName "NL_T_3" ;
+  ns24:r "0.065302" ;
+  ns24:x "5.377381" ;
+  ns24:b "-0.0001420227" ;
+  ns24:g "0.0000181818" ;
+  ns24:r0 "0.069143" ;
+  ns24:x0 "5.377333" ;
+  ns24:b0 "0.0" ;
+  ns24:g0 "0.0" ;
+  ns25:rground "0e+000" ;
+  ns25:xground "0.0" ;
+  ns24:ratedS "1260.000000" ;
+  ns24:ratedU "220.000000" ;
+  ns25:endNumber "1" ;
+  ns24:phaseAngleClock "0" ;
+  ns25:grounded "true" ;
+  ns24:connectionKind <http://iec.ch/TC57/2013/CIM-schema-cim16#WindingConnection.Yn> ;
+  ns25:BaseVoltage <http://ftn.uns.ac.rs//#_7891a026ba2c42098556665efd13ba94> ;
+  ns24:PowerTransformer <http://ftn.uns.ac.rs//#_80016742-31b3-432a-b00a-300667a1e572> ;
+  ns25:Terminal <http://ftn.uns.ac.rs//#_bd61b1f9-474d-424e-9709-42f75337c477> .
+
+<http://ftn.uns.ac.rs//#_c1d5c1678f8011e08e4d00247eb1f55e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#PowerTransformerEnd> ;
+  ns1:name "NL_TR2_3" ;
+  ns2:shortName "NL_T_3" ;
+  ns24:r "0e+000" ;
+  ns24:x "0e+000" ;
+  ns24:b "0.0" ;
+  ns24:g "0.0" ;
+  ns24:r0 "0e+000" ;
+  ns24:x0 "0e+000" ;
+  ns24:b0 "0.0" ;
+  ns24:g0 "0.0" ;
+  ns25:rground "0e+000" ;
+  ns25:xground "0.0" ;
+  ns24:ratedS "1260.000000" ;
+  ns24:ratedU "15.750000" ;
+  ns25:endNumber "2" ;
+  ns24:phaseAngleClock "0" ;
+  ns25:grounded "true" ;
+  ns24:connectionKind <http://iec.ch/TC57/2013/CIM-schema-cim16#WindingConnection.Yn> ;
+  ns25:BaseVoltage <http://ftn.uns.ac.rs//#_c1d5bff18f8011e08e4d00247eb1f55e> ;
+  ns24:PowerTransformer <http://ftn.uns.ac.rs//#_80016742-31b3-432a-b00a-300667a1e572> ;
+  ns25:Terminal <http://ftn.uns.ac.rs//#_4f1c405f-07c9-4fb0-b64e-551896a29aa8> .
+
+<http://ftn.uns.ac.rs//#_c1d5c14b8f8011e08e4d00247eb1f55e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger> ;
+  ns1:name "NL-TR2_1" ;
+  ns2:shortName "NL-T_1" ;
+  ns26:neutralU "400.000000" ;
+  ns26:lowStep "-20" ;
+  ns26:highStep "20" ;
+  ns26:neutralStep "0" ;
+  ns26:normalStep "-2" ;
+  ns27:stepVoltageIncrement "0.800000" ;
+  ns26:ltcFlag "true" ;
+  ns26:TapChangerControl <http://ftn.uns.ac.rs//#_1aaa0997-7715-4400-9435-ce74a8f67a24> ;
+  ns27:tculControlMode <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerControlMode.volt> ;
+  ns27:TransformerEnd <http://ftn.uns.ac.rs//#_c1d5c1448f8011e08e4d00247eb1f55e> .
+
+<http://ftn.uns.ac.rs//#_c1d5c1588f8011e08e4d00247eb1f55e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger> ;
+  ns1:name "NL_TR2_2" ;
+  ns2:shortName "NL_T_2" ;
+  ns26:neutralU "220.000000" ;
+  ns26:lowStep "0" ;
+  ns26:highStep "33" ;
+  ns26:neutralStep "17" ;
+  ns26:normalStep "17" ;
+  ns27:stepVoltageIncrement "0.625000" ;
+  ns26:ltcFlag "true" ;
+  ns26:TapChangerControl <http://ftn.uns.ac.rs//#_aae0af33-62c8-4062-8364-885d3372f808> ;
+  ns27:tculControlMode <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerControlMode.volt> ;
+  ns27:TransformerEnd <http://ftn.uns.ac.rs//#_c1d5c1518f8011e08e4d00247eb1f55e> .
+
+<http://ftn.uns.ac.rs//#_c1d5c1658f8011e08e4d00247eb1f55e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#RatioTapChanger> ;
+  ns1:name "NL_TR2_3" ;
+  ns2:shortName "NL_T_3" ;
+  ns26:neutralU "220.000000" ;
+  ns26:lowStep "-15" ;
+  ns26:highStep "15" ;
+  ns26:neutralStep "0" ;
+  ns26:normalStep "5" ;
+  ns27:stepVoltageIncrement "0.625000" ;
+  ns26:ltcFlag "true" ;
+  ns26:TapChangerControl <http://ftn.uns.ac.rs//#_76971b35-279e-4d3c-8873-76c6abde82c4> ;
+  ns27:tculControlMode <http://iec.ch/TC57/2013/CIM-schema-cim16#TransformerControlMode.volt> ;
+  ns27:TransformerEnd <http://ftn.uns.ac.rs//#_c1d5c15e8f8011e08e4d00247eb1f55e> .
+
+<http://ftn.uns.ac.rs//#_04f338d3-3c0d-433f-a77b-e36dd256f0f0>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl> ;
+  ns1:name "NL-G1" ;
+  ns2:shortName "NL-G1" ;
+  ns28:mode <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControlModeKind.voltage> ;
+  ns28:Terminal <http://ftn.uns.ac.rs//#_faab7959-f9bf-421b-bc3f-d364e0c1388b> .
+
+<http://ftn.uns.ac.rs//#_1b3c88f9-c2ca-4250-bd37-ae0efa2fb022>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl> ;
+  ns1:name "NL-G2" ;
+  ns2:shortName "NL-G2" ;
+  ns28:mode <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControlModeKind.voltage> ;
+  ns28:Terminal <http://ftn.uns.ac.rs//#_ae4b7cbe-349a-41c8-ace2-25ec26f14a64> .
+
+<http://ftn.uns.ac.rs//#_53e7a6c7-759b-4da2-898a-1c061d788670>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl> ;
+  ns1:name "NL-G3" ;
+  ns2:shortName "NL-G3" ;
+  ns28:mode <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControlModeKind.voltage> ;
+  ns28:Terminal <http://ftn.uns.ac.rs//#_f04ecab5-1a12-4cc0-ba56-b157ebf11a42> .
+
+<http://ftn.uns.ac.rs//#_613dfeb3-0161-4cec-aaa9-ccddd885771b>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControl> ;
+  ns1:name "NL-S1" ;
+  ns2:shortName "NL-S1" ;
+  ns28:mode <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControlModeKind.voltage> ;
+  ns28:Terminal <http://ftn.uns.ac.rs//#_a015f692-3fc5-4ec3-8d1d-977c7b499e7c> .
+
+<http://ftn.uns.ac.rs//#_c1d5bfe48f8011e08e4d00247eb1f55e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#SubGeographicalRegion> ;
+  ns1:name "TENNET TSO B.V." ;
+  ns29:Region <http://ftn.uns.ac.rs//#_c1d5bfe28f8011e08e4d00247eb1f55e> .
+
+<http://ftn.uns.ac.rs//#_c49942d6-8b01-4b01-b5e8-f1180f84906c>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Substation> ;
+  ns1:name "PP_Amsterdam" ;
+  ns2:shortName "PP_Amsterdam" ;
+  ns30:Region <http://ftn.uns.ac.rs//#_c1d5bfe48f8011e08e4d00247eb1f55e> .
+
+<http://ftn.uns.ac.rs//#_9c3b8f97-7972-477d-9dc8-87365cc0ad0e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine> ;
+  ns1:name "NL-G1" ;
+  ns2:shortName "NL-G1" ;
+  ns1:description "Machine" ;
+  ns3:aggregate "false" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_8d8a82ba-b5b0-4e94-861a-192af055f2b8> ;
+  ns31:qPercent "100.000000" ;
+  ns31:maxQ "600.000000" ;
+  ns31:minQ "0e+000" ;
+  ns32:ratedS "1100.000000" ;
+  ns31:type <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineKind.generator> ;
+  ns18:RegulatingControl <http://ftn.uns.ac.rs//#_04f338d3-3c0d-433f-a77b-e36dd256f0f0> ;
+  ns32:GeneratingUnit <http://ftn.uns.ac.rs//#_049438a6-780a-44fe-a788-ebe385d98e25> ;
+  ns32:ratedU "15.750000" ;
+  ns32:ratedPowerFactor "0.900000" ;
+  ns31:shortCircuitRotorType <http://iec.ch/TC57/2013/CIM-schema-cim16#ShortCircuitRotorKind.salientPole1> ;
+  ns31:r0 "0e+000" ;
+  ns31:r2 "0e+000" ;
+  ns31:x0 "0.110000" ;
+  ns31:x2 "0.180000" ;
+  ns31:earthingStarPointR "0e+000" ;
+  ns31:earthingStarPointX "0e+000" ;
+  ns31:r "0e+000" ;
+  ns31:satDirectSubtransX "0.210000" ;
+  ns31:satDirectSyncX "1.900000" ;
+  ns31:satDirectTransX "0e+000" ;
+  ns31:mu "0e+000" ;
+  ns31:ikk "0e+000" ;
+  ns31:voltageRegulationRange "0e+000" ;
+  ns31:earthing "true" .
+
+<http://ftn.uns.ac.rs//#_2844585c-0d35-488d-a449-685bcd57afbf>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine> ;
+  ns1:name "NL-G2" ;
+  ns2:shortName "NL-G2" ;
+  ns1:description "Machine" ;
+  ns3:aggregate "false" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_2a37dc57-2faf-464a-8175-bc415f9a635f> ;
+  ns31:qPercent "100.000000" ;
+  ns31:maxQ "200.000000" ;
+  ns31:minQ "0e+000" ;
+  ns32:ratedS "250.000000" ;
+  ns31:type <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineKind.generator> ;
+  ns18:RegulatingControl <http://ftn.uns.ac.rs//#_1b3c88f9-c2ca-4250-bd37-ae0efa2fb022> ;
+  ns32:GeneratingUnit <http://ftn.uns.ac.rs//#_ca80ee09-3bed-4884-bc28-6dc89d067289> ;
+  ns32:ratedU "15.750000" ;
+  ns32:ratedPowerFactor "0.900000" ;
+  ns31:shortCircuitRotorType <http://iec.ch/TC57/2013/CIM-schema-cim16#ShortCircuitRotorKind.salientPole1> ;
+  ns31:r0 "0e+000" ;
+  ns31:r2 "0e+000" ;
+  ns31:x0 "0.100000" ;
+  ns31:x2 "0.160000" ;
+  ns31:earthingStarPointR "0e+000" ;
+  ns31:earthingStarPointX "0e+000" ;
+  ns31:r "0e+000" ;
+  ns31:satDirectSubtransX "0.180000" ;
+  ns31:satDirectSyncX "1.800000" ;
+  ns31:satDirectTransX "0e+000" ;
+  ns31:mu "0e+000" ;
+  ns31:ikk "0e+000" ;
+  ns31:voltageRegulationRange "0e+000" ;
+  ns31:earthing "true" .
+
+<http://ftn.uns.ac.rs//#_1dc9afba-23b5-41a0-8540-b479ed8baf4b>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachine> ;
+  ns1:name "NL-G3" ;
+  ns2:shortName "NL-G3" ;
+  ns1:description "Machine" ;
+  ns3:aggregate "false" ;
+  ns3:EquipmentContainer <http://ftn.uns.ac.rs//#_2a37dc57-2faf-464a-8175-bc415f9a635f> ;
+  ns31:qPercent "100.000000" ;
+  ns31:maxQ "200.000000" ;
+  ns31:minQ "0e+000" ;
+  ns32:ratedS "250.000000" ;
+  ns31:type <http://iec.ch/TC57/2013/CIM-schema-cim16#SynchronousMachineKind.generator> ;
+  ns18:RegulatingControl <http://ftn.uns.ac.rs//#_53e7a6c7-759b-4da2-898a-1c061d788670> ;
+  ns32:GeneratingUnit <http://ftn.uns.ac.rs//#_b850063d-eae7-4675-bc98-4642d3076783> ;
+  ns32:ratedU "15.750000" ;
+  ns32:ratedPowerFactor "0.900000" ;
+  ns31:shortCircuitRotorType <http://iec.ch/TC57/2013/CIM-schema-cim16#ShortCircuitRotorKind.turboSeries1> ;
+  ns31:r0 "0e+000" ;
+  ns31:r2 "0e+000" ;
+  ns31:x0 "0.130000" ;
+  ns31:x2 "0.170000" ;
+  ns31:earthingStarPointR "0e+000" ;
+  ns31:earthingStarPointX "0e+000" ;
+  ns31:r "0e+000" ;
+  ns31:satDirectSubtransX "0.200000" ;
+  ns31:satDirectSyncX "1.900000" ;
+  ns31:satDirectTransX "0e+000" ;
+  ns31:mu "0e+000" ;
+  ns31:ikk "0e+000" ;
+  ns31:voltageRegulationRange "0e+000" ;
+  ns31:earthing "true" .
+
+<http://ftn.uns.ac.rs//#_1aaa0997-7715-4400-9435-ce74a8f67a24>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChangerControl> ;
+  ns1:name "NL-TR2_1" ;
+  ns2:shortName "NL-T_1" ;
+  ns28:mode <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControlModeKind.voltage> ;
+  ns28:Terminal <http://ftn.uns.ac.rs//#_e3e0c496-5837-4f0f-a596-cc421940f73f> .
+
+<http://ftn.uns.ac.rs//#_aae0af33-62c8-4062-8364-885d3372f808>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChangerControl> ;
+  ns1:name "NL_TR2_2" ;
+  ns2:shortName "NL_T_2" ;
+  ns28:mode <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControlModeKind.voltage> ;
+  ns28:Terminal <http://ftn.uns.ac.rs//#_da232169-1c36-495a-8af6-a0d7d2b39f52> .
+
+<http://ftn.uns.ac.rs//#_76971b35-279e-4d3c-8873-76c6abde82c4>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#TapChangerControl> ;
+  ns1:name "NL_TR2_3" ;
+  ns2:shortName "NL_T_3" ;
+  ns28:mode <http://iec.ch/TC57/2013/CIM-schema-cim16#RegulatingControlModeKind.voltage> ;
+  ns28:Terminal <http://ftn.uns.ac.rs//#_4f1c405f-07c9-4fb0-b64e-551896a29aa8> .
+
+<http://ftn.uns.ac.rs//#_8121d4c3-9cb2-47db-b40a-99678602bb2a>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "B1 - T1" ;
+  ns2:shortName "B1" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_5f5d40ae-d52d-4631-9285-b3ceefff784c> .
+
+<http://ftn.uns.ac.rs//#_5f40c3f7-9540-4e1b-aa97-6553d5524877>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "B1 - T2" ;
+  ns2:shortName "B1" ;
+  ns33:sequenceNumber "2" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_5f5d40ae-d52d-4631-9285-b3ceefff784c> .
+
+<http://ftn.uns.ac.rs//#_ecea10ff-e006-436b-a86a-beac4c2a30c1>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "N1230822396_Busbar_Section" ;
+  ns2:shortName "BB" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_12733133-1f34-44f3-a020-f5b33cede919> ;
+  ns1:description "Busbar Section" .
+
+<http://ftn.uns.ac.rs//#_50f00b94-fe0f-48fd-887e-f0d4d59eee87>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Busbar_2_Busbar_Section" ;
+  ns2:shortName "BB" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_143aa0b1-2cd4-4e58-98d4-b0438bd5a39a> ;
+  ns1:description "Busbar Section" .
+
+<http://ftn.uns.ac.rs//#_0f199d49-0093-4b51-b357-70371424d174>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Busbar_3_Busbar_Section" ;
+  ns2:shortName "BB" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_53da4025-9d51-4eaf-b0d2-ce27fbe740d2> ;
+  ns1:description "Busbar Section" .
+
+<http://ftn.uns.ac.rs//#_42800bad-5e47-42e6-b9b0-1fb8fc5831aa>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Busbar_5_Busbar_Section" ;
+  ns2:shortName "BB" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_e6d49e32-b634-4b86-a8ca-15159f1497b5> ;
+  ns1:description "Busbar Section" .
+
+<http://ftn.uns.ac.rs//#_faab7959-f9bf-421b-bc3f-d364e0c1388b>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-G1 - T1" ;
+  ns2:shortName "NL-G1" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_9c3b8f97-7972-477d-9dc8-87365cc0ad0e> .
+
+<http://ftn.uns.ac.rs//#_ae4b7cbe-349a-41c8-ace2-25ec26f14a64>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-G2 - T1" ;
+  ns2:shortName "NL-G2" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_2844585c-0d35-488d-a449-685bcd57afbf> .
+
+<http://ftn.uns.ac.rs//#_f04ecab5-1a12-4cc0-ba56-b157ebf11a42>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-G3 - T1" ;
+  ns2:shortName "NL-G3" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_1dc9afba-23b5-41a0-8540-b479ed8baf4b> .
+
+<http://ftn.uns.ac.rs//#_39d27c17-1e5b-4edc-a7ec-65a2d56542df>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Inj-XCA_AL11 - T1" ;
+  ns2:shortName "NL-I-XCA_AL1" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_83bea592-913e-4473-8d17-969968ff83a2> .
+
+<http://ftn.uns.ac.rs//#_f970233f-b573-49d9-9fc3-3a2a59ed3bbb>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Inj-XKA_MA11 - T1" ;
+  ns2:shortName "NL-I-XKA_MA1" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_cab82e1c-1435-447b-bba0-74b592539eac> .
+
+<http://ftn.uns.ac.rs//#_f48d48c7-e9f6-460c-898f-cc68a96efdeb>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Inj-XWI_GY11 - T1" ;
+  ns2:shortName "NL-I-XWI_GY1" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_b0442899-8dbe-48c1-a1fa-adb2a5929273> .
+
+<http://ftn.uns.ac.rs//#_24dd035c-0a8c-4351-aeb2-08d6622b42ae>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Inj-XZE_ST23 - T1" ;
+  ns2:shortName "NL-I-XZE_ST2" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_12baa3f3-23b1-44e0-956f-d331e1527f37> .
+
+<http://ftn.uns.ac.rs//#_26e50b4b-9a19-420d-98ce-bc4f11971cd7>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Inj-XZE_ST24 - T1" ;
+  ns2:shortName "NL-I-XZE_ST2" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_820d95d7-26d4-4311-8b1f-026f8605b86d> .
+
+<http://ftn.uns.ac.rs//#_357e3e14-c38e-4a7e-9c95-b3dbe158f5f3>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Line_1 - T1" ;
+  ns2:shortName "NL-L_1" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_7f43f508-2496-4b64-9146-0a40406cbe49> ;
+  ns2:energyIdentCodeEic "10T-AT-DE-000118" .
+
+<http://ftn.uns.ac.rs//#_6b1cd30c-19ba-44e1-9447-d01db6b1ef9d>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Line_1 - T2" ;
+  ns2:shortName "NL-L_1" ;
+  ns33:sequenceNumber "2" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_7f43f508-2496-4b64-9146-0a40406cbe49> ;
+  ns2:energyIdentCodeEic "10T-AT-DE-000118" .
+
+<http://ftn.uns.ac.rs//#_c557146e-dfc4-4020-9738-d592b188338b>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Line_2 - T1" ;
+  ns2:shortName "NL-L_2" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_dad02278-bd25-476f-8f58-dbe44be72586> .
+
+<http://ftn.uns.ac.rs//#_8f308117-8bbd-4798-b145-4e78f7d049e7>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Line_2 - T2" ;
+  ns2:shortName "NL-L_2" ;
+  ns33:sequenceNumber "2" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_dad02278-bd25-476f-8f58-dbe44be72586> .
+
+<http://ftn.uns.ac.rs//#_5dfee914-a4fd-4bde-a5b4-c4caa6378d10>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Line_3 - T1" ;
+  ns2:shortName "NL-L_3" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_a279a3dc-550b-426c-af3a-61b7be508dcc> ;
+  ns2:energyIdentCodeEic "10T-AT-DE-00009W" .
+
+<http://ftn.uns.ac.rs//#_6aecb9ba-5835-4b70-89bc-96d687e45779>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Line_3 - T2" ;
+  ns2:shortName "NL-L_3" ;
+  ns33:sequenceNumber "2" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_a279a3dc-550b-426c-af3a-61b7be508dcc> ;
+  ns2:energyIdentCodeEic "10T-AT-DE-00009W" .
+
+<http://ftn.uns.ac.rs//#_653bc4b8-518b-4adc-9d68-012fb641fb1d>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Line_4 - T1" ;
+  ns2:shortName "NL-L_4" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_8fdc7abd-3746-481a-a65e-3df56acd8b13> ;
+  ns2:energyIdentCodeEic "10T-AT-DE-00009W" .
+
+<http://ftn.uns.ac.rs//#_57979d14-d1d8-4311-ae53-aa8890423885>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Line_4 - T2" ;
+  ns2:shortName "NL-L_4" ;
+  ns33:sequenceNumber "2" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_8fdc7abd-3746-481a-a65e-3df56acd8b13> ;
+  ns2:energyIdentCodeEic "10T-AT-DE-00009W" .
+
+<http://ftn.uns.ac.rs//#_757d4f50-707b-47a0-891c-cbaefd649631>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Line_5 - T1" ;
+  ns2:shortName "NL-L_5" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_e8acf6b6-99cb-45ad-b8dc-16c7866a4ddc> ;
+  ns2:energyIdentCodeEic "10T-AT-DE-000118" .
+
+<http://ftn.uns.ac.rs//#_ae588863-b154-451d-978a-7ab08ac50fb6>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Line_5 - T2" ;
+  ns2:shortName "NL-L_5" ;
+  ns33:sequenceNumber "2" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_e8acf6b6-99cb-45ad-b8dc-16c7866a4ddc> ;
+  ns2:energyIdentCodeEic "10T-AT-DE-000118" .
+
+<http://ftn.uns.ac.rs//#_f461fd2d-1e41-4a3e-8213-7cc33c77a089>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Load_1 - T1" ;
+  ns2:shortName "NL-L_1" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_69add5b4-70bd-4360-8a93-286256c0d38b> .
+
+<http://ftn.uns.ac.rs//#_6dad1a97-6874-4206-a5a5-837e495325f8>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Load_2 - T1" ;
+  ns2:shortName "NL-L_2" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_25ab1b5b-6803-47e2-805a-ab7b2072e034> .
+
+<http://ftn.uns.ac.rs//#_fab54e9c-b12e-4e47-a9f2-fec4ef96c0c0>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-Load_3 - T1" ;
+  ns2:shortName "NL-L_3" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_b1e03a8f-6a11-4454-af58-4a4a680e857f> .
+
+<http://ftn.uns.ac.rs//#_a015f692-3fc5-4ec3-8d1d-977c7b499e7c>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-S1 - T1" ;
+  ns2:shortName "NL-S1" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_fbfed7e3-3dec-4829-a286-029e73535685> .
+
+<http://ftn.uns.ac.rs//#_e3e0c496-5837-4f0f-a596-cc421940f73f>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-TR2_1 - T1" ;
+  ns2:shortName "NL-T_1" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_e8a7eaec-51d6-4571-b3d9-c36d52073c33> .
+
+<http://ftn.uns.ac.rs//#_baa7aef1-afcd-4981-97c0-ccec7b5ad4e0>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL-TR2_1 - T2" ;
+  ns2:shortName "NL-T_1" ;
+  ns33:sequenceNumber "2" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_e8a7eaec-51d6-4571-b3d9-c36d52073c33> .
+
+<http://ftn.uns.ac.rs//#_1128e664-0653-448a-9068-e37f1a097c05>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL_TR2_2 - T1" ;
+  ns2:shortName "NL_T_2" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_2184f365-8cd5-4b5d-8a28-9d68603bb6a4> .
+
+<http://ftn.uns.ac.rs//#_da232169-1c36-495a-8af6-a0d7d2b39f52>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL_TR2_2 - T2" ;
+  ns2:shortName "NL_T_2" ;
+  ns33:sequenceNumber "2" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_2184f365-8cd5-4b5d-8a28-9d68603bb6a4> .
+
+<http://ftn.uns.ac.rs//#_bd61b1f9-474d-424e-9709-42f75337c477>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL_TR2_3 - T1" ;
+  ns2:shortName "NL_T_3" ;
+  ns33:sequenceNumber "1" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_80016742-31b3-432a-b00a-300667a1e572> .
+
+<http://ftn.uns.ac.rs//#_4f1c405f-07c9-4fb0-b64e-551896a29aa8>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#Terminal> ;
+  ns1:name "NL_TR2_3 - T2" ;
+  ns2:shortName "NL_T_3" ;
+  ns33:sequenceNumber "2" ;
+  ns34:phases <http://iec.ch/TC57/2013/CIM-schema-cim16#PhaseCode.ABC> ;
+  ns34:ConductingEquipment <http://ftn.uns.ac.rs//#_80016742-31b3-432a-b00a-300667a1e572> .
+
+<http://ftn.uns.ac.rs//#_2a37dc57-2faf-464a-8175-bc415f9a635f>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel> ;
+  ns1:name "15.8" ;
+  ns35:lowVoltageLimit "14.175000" ;
+  ns35:highVoltageLimit "17.325000" ;
+  ns35:Substation <http://ftn.uns.ac.rs//#_c49942d6-8b01-4b01-b5e8-f1180f84906c> ;
+  ns35:BaseVoltage <http://ftn.uns.ac.rs//#_c1d5bff18f8011e08e4d00247eb1f55e> .
+
+<http://ftn.uns.ac.rs//#_8d8a82ba-b5b0-4e94-861a-192af055f2b8>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel> ;
+  ns1:name "15.8" ;
+  ns35:lowVoltageLimit "14.175000" ;
+  ns35:highVoltageLimit "17.325000" ;
+  ns35:Substation <http://ftn.uns.ac.rs//#_c49942d6-8b01-4b01-b5e8-f1180f84906c> ;
+  ns35:BaseVoltage <http://ftn.uns.ac.rs//#_c1d5bff18f8011e08e4d00247eb1f55e> .
+
+<http://ftn.uns.ac.rs//#_c1d5bfea8f8011e08e4d00247eb1f55e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel> ;
+  ns1:name "220.0" ;
+  ns35:lowVoltageLimit "198.000000" ;
+  ns35:highVoltageLimit "242.000000" ;
+  ns35:Substation <http://ftn.uns.ac.rs//#_c49942d6-8b01-4b01-b5e8-f1180f84906c> ;
+  ns35:BaseVoltage <http://ftn.uns.ac.rs//#_7891a026ba2c42098556665efd13ba94> .
+
+<http://ftn.uns.ac.rs//#_c1d5bfde8f8011e08e4d00247eb1f55e>
+  a <http://iec.ch/TC57/2013/CIM-schema-cim16#VoltageLevel> ;
+  ns1:name "400.0" ;
+  ns35:lowVoltageLimit "360.000000" ;
+  ns35:highVoltageLimit "440.000000" ;
+  ns35:Substation <http://ftn.uns.ac.rs//#_c49942d6-8b01-4b01-b5e8-f1180f84906c> ;
+  ns35:BaseVoltage <http://ftn.uns.ac.rs//#_65dd04e792584b3b912374e35dec032e> .

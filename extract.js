@@ -51,6 +51,6 @@ store.statements.forEach(st => {
   output += `Description: ${description}\n\n`;
 });
 
-fs.writeFileSync('doubles.txt', output, 'utf8');
+fs.writeFileSync('pairs.txt', output, 'utf8');
 
-console.log('Concepts saved in doubles.txt');
+console.log('Concepts saved in pairs.txt');

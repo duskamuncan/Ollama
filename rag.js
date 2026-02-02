@@ -9,6 +9,8 @@ import { HumanMessage, SystemMessage } from "@langchain/core/messages";
 import { QueryEngine } from "@comunica/query-sparql-file";
 import { pathToFileURL } from "url";
 
+import { performance } from "perf_hooks";
+
 
 const FAISS_PATH = "faiss-db";
 const SEARCH_K = 170; 
@@ -164,11 +166,18 @@ PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
 }
 
 export async function runRag(question, entsoeFilePath) {
+  const startTime = performance.now();
   const mode = shouldGenerateSparql(question) ? "MODE_2" : "MODE_1";
 
   if (mode === "MODE_1") {
     const cimContext = await getContextFromFaiss(question);
     const answer = await generateAnswer(cimContext, question);
+
+    const endTime = performance.now();
+    const durationSeconds = (endTime - startTime) / 1000;
+    console.log(
+      `Answer generation took ${durationSeconds.toFixed(2)} s`
+    );
     return { mode, answer };
   }
 
@@ -178,6 +187,12 @@ export async function runRag(question, entsoeFilePath) {
     throw new Error("Generated SPARQL is empty. Cannot execute query.");
   }
   const results = await executeSparqlQuery(sparqlQuery, entsoeFilePath);
+   const endTime = performance.now();
+   const durationSeconds = (endTime - startTime) / 1000;
+ 
+  console.log(
+    `SPARQL generation + execution took ${durationSeconds.toFixed(2)} s`
+  );
 
   return {
     mode,
