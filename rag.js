@@ -29,7 +29,7 @@ SPECIAL MODE — SPARQL GENERATION (STRICT)
 OUTPUT:
 - Use ONLY given templates, with classes from question
 - Replace imeKlase with given class name and add cim namespace in front of class name
-- Replace imeKlase.property with given class and property name. After that always write ?value.
+- Replace "imeKlase.r" with given class and property name. After that always write ?value.
 - rdf:type must be used and can't be changed
 - ?value must be used and can't be changed 
 - The (MAX(?value) AS ?maxValue) can't be changed
@@ -56,8 +56,11 @@ SELECT ?source ?connected WHERE {
 
 }
 
-# 3) Maximum value of a property of instances 
-SELECT (MAX(?value) AS ?maxValue) WHERE { ?instance rdf:type cim:imeKlase . ?instance cim:imeKlase.property ?value  }
+# 3) Maximum value of a property of instance of class 
+SELECT (MAX(?value) AS ?maxValue) WHERE { ?instance cim:imeKlase.r ?value  }
+
+# 4) Three top values of a property of class
+SELECT ?value WHERE { ?instance cim:imeKlase.r ?value } ORDER BY Desc(?value) Limit 3
 `);
 
 
@@ -127,6 +130,9 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
 `;
   //const sparqlQuery1 = "SELECT ?junction ?terminal ?node WHERE { ?junction rdf:type cim:Junction . ?terminal cim:Terminal.ConductingEquipment ?junction . ?terminal cim:Terminal.ConnectivityNode ?node . }";
+  //SELECT (MAX(?value) AS ?maxValue) WHERE { ?instance rdf:type cim:imeKlase . ?instance cim:imeKlase.property ?value  }
+
+  //const sparqlQuery1 = "SELECT ?value WHERE { ?instance cim:ACLineSegment.r ?value } ORDER BY Asc(?value) Limit 3"
   const finalQuery =
     sparqlQuery.includes("PREFIX rdf:")
       ? sparqlQuery

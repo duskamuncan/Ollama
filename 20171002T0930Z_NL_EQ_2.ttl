@@ -1,0 +1,1618 @@
+@prefix cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#> .
+@prefix entsoe: <http://entsoe.eu/CIM/SchemaExtension/3/1#> .
+@prefix md: <http://iec.ch/TC57/61970-552/ModelDescription/1#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ftn: <http://ftn.uns.ac.rs/Diplomski#>.
+
+<urn:uuid:77b55f87-fc1e-4046-9599-6c6b4f991a86> a md:FullModel ;
+	md:Model.created "2014-10-24T11:51:49" ;
+	md:Model.scenarioTime "2017-10-02T09:30:00Z" ;
+	md:Model.version "2" ;
+	md:Model.DependentOn <urn:uuid:2399cbd0-9a39-11e0-aa80-0800200c9a66> ;
+	md:Model.description "CGMES Conformity Assessment: MicroGridTestConfiguration Base Case (MAS NL). The model is owned by ENTSO-E and is provided by ENTSO-E “as it is”. To the fullest extent permitted by law, ENTSO-E shall not be liable for any damages of any kind arising out of the use of the model (including any of its subsequent modifications). ENTSO-E neither warrants, nor represents that the use of the model will not infringe the rights of third parties. Any use of the model shall  include a reference to ENTSO-E. ENTSO-E web site is the only official source of information related to the model." ;
+	md:Model.modelingAuthoritySet "http://tennet.eu/nl/CAS2.0/MicroGridTestConfiguration" ;
+	md:Model.profile "http://entsoe.eu/CIM/EquipmentCore/3/1" , "http://entsoe.eu/CIM/EquipmentShortCircuit/3/1" .
+
+ftn:_7f43f508-2496-4b64-9146-0a40406cbe49 a cim:ACLineSegment ;
+	cim:IdentifiedObject.name "NL-Line_1" ;
+	entsoe:IdentifiedObject.shortName "NL-L_1" ;
+	entsoe:IdentifiedObject.energyIdentCodeEic "10T-AT-DE-000118" ;
+	cim:IdentifiedObject.description "10T-AT-DE-000118" ;
+	cim:Equipment.EquipmentContainer ftn:_72242f07-189e-4a06-9f7e-f7a2776ecfd9 ;
+	cim:ACLineSegment.r "1.020000" ;
+	cim:ACLineSegment.x "12.000000" ;
+	cim:ACLineSegment.bch "0.0001413717" ;
+	cim:Conductor.length "30.000000" ;
+	cim:ACLineSegment.gch "0.0000300000" ;
+	cim:Equipment.aggregate "false" ;
+	cim:ConductingEquipment.BaseVoltage ftn:_65dd04e792584b3b912374e35dec032e ;
+	cim:ACLineSegment.r0 "3.060000" ;
+	cim:ACLineSegment.x0 "36.000000" ;
+	cim:ACLineSegment.b0ch "0.0001500000" ;
+	cim:ACLineSegment.g0ch "0.0000300000" ;
+	cim:ACLineSegment.shortCircuitEndTemperature "160.0000000000" .
+
+ftn:_dad02278-bd25-476f-8f58-dbe44be72586 a cim:ACLineSegment ;
+	cim:IdentifiedObject.name "NL-Line_2" ;
+	entsoe:IdentifiedObject.shortName "NL-L_2" ;
+	cim:IdentifiedObject.description "tie line BE-NL" ;
+	cim:Equipment.EquipmentContainer ftn:_00faa2b5-cb42-4c43-9c9a-2a09dd9c52f5 ;
+	cim:ACLineSegment.r "2.320000" ;
+	cim:ACLineSegment.x "20.240000" ;
+	cim:ACLineSegment.bch "0.0000251327" ;
+	cim:Conductor.length "40.000000" ;
+	cim:ACLineSegment.gch "0.0000400000" ;
+	cim:Equipment.aggregate "false" ;
+	cim:ConductingEquipment.BaseVoltage ftn:_65dd04e792584b3b912374e35dec032e ;
+	cim:ACLineSegment.r0 "0.696000" ;
+	cim:ACLineSegment.x0 "6.072000" ;
+	cim:ACLineSegment.b0ch "0.0" ;
+	cim:ACLineSegment.g0ch "0.0000400000" ;
+	cim:ACLineSegment.shortCircuitEndTemperature "160.0000000000" .
+
+ftn:_a279a3dc-550b-426c-af3a-61b7be508dcc a cim:ACLineSegment ;
+	cim:IdentifiedObject.name "NL-Line_3" ;
+	entsoe:IdentifiedObject.shortName "NL-L_3" ;
+	entsoe:IdentifiedObject.energyIdentCodeEic "10T-AT-DE-00009W" ;
+	cim:IdentifiedObject.description "10T-AT-DE-00009W" ;
+	cim:Equipment.EquipmentContainer ftn:_644936cc-1ea0-46f3-93e6-eed0e0cc8bee ;
+	cim:ACLineSegment.r "5.060000" ;
+	cim:ACLineSegment.x "69.000000" ;
+	cim:ACLineSegment.bch "0.0000202319" ;
+	cim:Conductor.length "23.000000" ;
+	cim:ACLineSegment.gch "0.0000230000" ;
+	cim:Equipment.aggregate "false" ;
+	cim:ConductingEquipment.BaseVoltage ftn:_7891a026ba2c42098556665efd13ba94 ;
+	cim:ACLineSegment.r0 "15.180000" ;
+	cim:ACLineSegment.x0 "207.000000" ;
+	cim:ACLineSegment.b0ch "0.0000455217" ;
+	cim:ACLineSegment.g0ch "0.0000230000" ;
+	cim:ACLineSegment.shortCircuitEndTemperature "160.0000000000" .
+
+ftn:_8fdc7abd-3746-481a-a65e-3df56acd8b13 a cim:ACLineSegment ;
+	cim:IdentifiedObject.name "NL-Line_4" ;
+	entsoe:IdentifiedObject.shortName "NL-L_4" ;
+	entsoe:IdentifiedObject.energyIdentCodeEic "10T-AT-DE-00009W" ;
+	cim:IdentifiedObject.description "10T-AT-DE-00009W" ;
+	cim:Equipment.EquipmentContainer ftn:_f524d9fc-48be-4feb-9e77-a15696d4210a ;
+	cim:ACLineSegment.r "2.200000" ;
+	cim:ACLineSegment.x "66.000000" ;
+	cim:ACLineSegment.bch "0.0000898495" ;
+	cim:Conductor.length "22.000000" ;
+	cim:ACLineSegment.gch "0.0000242000" ;
+	cim:Equipment.aggregate "false" ;
+	cim:ConductingEquipment.BaseVoltage ftn:_7891a026ba2c42098556665efd13ba94 ;
+	cim:ACLineSegment.r0 "6.600000" ;
+	cim:ACLineSegment.x0 "198.000000" ;
+	cim:ACLineSegment.b0ch "0.0000435425" ;
+	cim:ACLineSegment.g0ch "0.0000242000" ;
+	cim:ACLineSegment.shortCircuitEndTemperature "160.0000000000" .
+
+ftn:_e8acf6b6-99cb-45ad-b8dc-16c7866a4ddc a cim:ACLineSegment ;
+	cim:IdentifiedObject.name "NL-Line_5" ;
+	entsoe:IdentifiedObject.shortName "NL-L_5" ;
+	entsoe:IdentifiedObject.energyIdentCodeEic "10T-AT-DE-000118" ;
+	cim:IdentifiedObject.description "10T-AT-DE-000118" ;
+	cim:Equipment.EquipmentContainer ftn:_c7d37bc3-196c-4458-896b-614f810cea0f ;
+	cim:ACLineSegment.r "0.420000" ;
+	cim:ACLineSegment.x "6.300000" ;
+	cim:ACLineSegment.bch "0.0000648739" ;
+	cim:Conductor.length "35.000000" ;
+	cim:ACLineSegment.gch "0.0000350000" ;
+	cim:Equipment.aggregate "false" ;
+	cim:ConductingEquipment.BaseVoltage ftn:_65dd04e792584b3b912374e35dec032e ;
+	cim:ACLineSegment.r0 "1.260000" ;
+	cim:ACLineSegment.x0 "18.900000" ;
+	cim:ACLineSegment.b0ch "0.0109955743" ;
+	cim:ACLineSegment.g0ch "0.0000350000" ;
+	cim:ACLineSegment.shortCircuitEndTemperature "160.0000000000" .
+
+ftn:_c1d5bff18f8011e08e4d00247eb1f55e a cim:BaseVoltage ;
+	cim:BaseVoltage.nominalVoltage "15.75" ;
+	cim:IdentifiedObject.description "Base Voltage Level" ;
+	entsoe:IdentifiedObject.shortName "15.75" ;
+	cim:IdentifiedObject.name "15.75 kV" .
+
+ftn:_5f5d40ae-d52d-4631-9285-b3ceefff784c a cim:Breaker ;
+	cim:IdentifiedObject.name "B1" ;
+	entsoe:IdentifiedObject.shortName "B1" ;
+	cim:Equipment.aggregate "false" ;
+	cim:Switch.normalOpen "false" ;
+	cim:Switch.retained "true" ;
+	cim:Equipment.EquipmentContainer ftn:_c1d5bfea8f8011e08e4d00247eb1f55e .
+
+ftn:_12733133-1f34-44f3-a020-f5b33cede919 a cim:BusbarSection ;
+	cim:IdentifiedObject.name "N1230822396" ;
+	cim:Equipment.EquipmentContainer ftn:_c1d5bfea8f8011e08e4d00247eb1f55e ;
+	cim:BusbarSection.ipMax "0e+000" .
+
+ftn:_143aa0b1-2cd4-4e58-98d4-b0438bd5a39a a cim:BusbarSection ;
+	cim:IdentifiedObject.name "NL-Busbar_2" ;
+	cim:Equipment.EquipmentContainer ftn:_c1d5bfea8f8011e08e4d00247eb1f55e ;
+	cim:BusbarSection.ipMax "0e+000" .
+
+ftn:_53da4025-9d51-4eaf-b0d2-ce27fbe740d2 a cim:BusbarSection ;
+	cim:IdentifiedObject.name "NL-Busbar_3" ;
+	cim:Equipment.EquipmentContainer ftn:_2a37dc57-2faf-464a-8175-bc415f9a635f ;
+	cim:BusbarSection.ipMax "0e+000" .
+
+ftn:_e6d49e32-b634-4b86-a8ca-15159f1497b5 a cim:BusbarSection ;
+	cim:IdentifiedObject.name "NL-Busbar_5" ;
+	cim:Equipment.EquipmentContainer ftn:_8d8a82ba-b5b0-4e94-861a-192af055f2b8 ;
+	cim:BusbarSection.ipMax "0e+000" .
+
+ftn:_a4b97f0b-39b8-452d-b51c-fd3b25fa1d9b1 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_5 - Limit" ;
+	cim:CurrentLimit.value "1623.600000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_a2c3d48f-d768-4e1e-8841-6e9c4913f11f ;
+	cim:OperationalLimit.OperationalLimitType ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc .
+
+ftn:_db8675aa-6a3d-47a8-b864-a3e474c5c8851 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_5 - Limit" ;
+	cim:CurrentLimit.value "1623.600000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_b4d8f5e2-7b7a-45eb-b65a-252843d6acf4 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc .
+
+ftn:_b4659169-38a4-494f-b3e2-aa83dc9a66701 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_4 - Limit" ;
+	cim:CurrentLimit.value "1298.700000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_37cc4210-71c0-4328-a86b-df0f65e76ef4 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc .
+
+ftn:_0388b680-3feb-45a2-bd56-5a620472107b1 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_4 - Limit" ;
+	cim:CurrentLimit.value "1298.700000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_03943678-b63e-44d8-bc7d-9461da496268 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc .
+
+ftn:_317c3033-0409-4f57-9209-4baae4b5e1651 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_3 - Limit" ;
+	cim:CurrentLimit.value "1062.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_9a03e8ee-e832-43c8-b38e-0d43f8ef7355 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc .
+
+ftn:_e29f4055-0267-4d9e-a889-8afc2326e8702 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-3" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_3 - Limit" ;
+	cim:CurrentLimit.value "1800.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_9a03e8ee-e832-43c8-b38e-0d43f8ef7355 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_a1cc9747-6819-429e-bd5f-23ffdb1d7376 .
+
+ftn:_62be08ea-2a9e-4284-9642-2947cb2c5f1b1 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_3 - Limit" ;
+	cim:CurrentLimit.value "1062.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_14e9e317-a168-44a2-82ef-7c76190108a2 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc .
+
+ftn:_22274f03-885c-4ea8-931d-862beec6edd12 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-3" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_3 - Limit" ;
+	cim:CurrentLimit.value "1800.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_14e9e317-a168-44a2-82ef-7c76190108a2 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_a1cc9747-6819-429e-bd5f-23ffdb1d7376 .
+
+ftn:_1cd93631-5573-48db-8444-0e85a91aa6f11 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_2 - Limit" ;
+	cim:CurrentLimit.value "1103.400000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_13ee714f-6df4-4039-8519-5cf4e84ab20d ;
+	cim:OperationalLimit.OperationalLimitType ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc .
+
+ftn:_d73f50e0-00db-4f54-a087-b0d2204f229a1 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_2 - Limit" ;
+	cim:CurrentLimit.value "1103.400000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_7cf4108d-d355-48f5-8556-d42c37a8e2c8 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc .
+
+ftn:_45b85c9e-0788-4cbb-b71b-dc1d5de04e511 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_1 - Limit" ;
+	cim:CurrentLimit.value "1233.900000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_79a1fb3a-a66a-468c-8c78-c25714c73eba ;
+	cim:OperationalLimit.OperationalLimitType ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc .
+
+ftn:_a228917a-44c9-4124-b7db-ea6408b3c5bb1 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_1 - Limit" ;
+	cim:CurrentLimit.value "1233.900000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_125eeb58-1c45-41b2-a981-7d5993b40cda ;
+	cim:OperationalLimit.OperationalLimitType ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc .
+
+ftn:_150183f1-3144-4d18-b5ca-328efdead2571 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-TR2_1 - Limit" ;
+	cim:CurrentLimit.value "415.710000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_83f719ad-2083-44ea-9ebc-9f456c114bdb ;
+	cim:OperationalLimit.OperationalLimitType ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc .
+
+ftn:_89d45390-25dc-49a6-bb08-69b67f27cd391 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-TR2_1 - Limit" ;
+	cim:CurrentLimit.value "755.820000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_d47a27cc-9fad-40f2-a08c-37e545c268df ;
+	cim:OperationalLimit.OperationalLimitType ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc .
+
+ftn:_fa85553d-9769-45fe-9b79-cecafa01c4ba1 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL_TR2_2 - Limit" ;
+	cim:CurrentLimit.value "2975.940000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_e7c1b1c7-aaeb-470a-9cb5-93a3ec269179 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc .
+
+ftn:_1a886514-5f7d-418a-99b7-02330ed01ca71 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL_TR2_2 - Limit" ;
+	cim:CurrentLimit.value "41569.200000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_261d13c4-1527-42a5-ad0d-a3b817971166 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc .
+
+ftn:_0c95b506-05a2-40d5-9f82-b9bf1e680a8d1 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL_TR2_3 - Limit" ;
+	cim:CurrentLimit.value "2975.940000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_fd472104-d68c-4536-ba4a-5fd9349c0a65 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc .
+
+ftn:_6a927421-36cd-487a-b6b7-61dd454704471 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "90" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL_TR2_3 - Limit" ;
+	cim:CurrentLimit.value "41569.200000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_cf3e5341-6736-4b34-b4da-e4af2073765b ;
+	cim:OperationalLimit.OperationalLimitType ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc .
+
+ftn:_2ddd3dac-4c0e-4355-b1eb-2e4bb45a2526 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_1 - CL-0" ;
+	entsoe:IdentifiedObject.shortName "CL-0" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_1 - Limit" ;
+	cim:CurrentLimit.value "1443.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_79a1fb3a-a66a-468c-8c78-c25714c73eba ;
+	cim:OperationalLimit.OperationalLimitType ftn:_250e948b-70ae-4139-971b-4f0053425b60 .
+
+ftn:_802dd8b7-d55c-46bf-8a22-895e251fb8db a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_1 - CL-0" ;
+	entsoe:IdentifiedObject.shortName "CL-0" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_1 - Limit" ;
+	cim:CurrentLimit.value "1443.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_125eeb58-1c45-41b2-a981-7d5993b40cda ;
+	cim:OperationalLimit.OperationalLimitType ftn:_250e948b-70ae-4139-971b-4f0053425b60 .
+
+ftn:_3b9b581e-dd06-4be8-81b8-9abc72450c89 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_1 - CL-1" ;
+	entsoe:IdentifiedObject.shortName "CL-1" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_1 - Limit" ;
+	cim:CurrentLimit.value "1515.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_79a1fb3a-a66a-468c-8c78-c25714c73eba ;
+	cim:OperationalLimit.OperationalLimitType ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 .
+
+ftn:_5baace86-1d76-428b-9045-0d6b50024316 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_1 - CL-1" ;
+	entsoe:IdentifiedObject.shortName "CL-1" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_1 - Limit" ;
+	cim:CurrentLimit.value "1515.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_125eeb58-1c45-41b2-a981-7d5993b40cda ;
+	cim:OperationalLimit.OperationalLimitType ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 .
+
+ftn:_45b85c9e-0788-4cbb-b71b-dc1d5de04e51 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_1 - CL-2" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_1 - Limit" ;
+	cim:CurrentLimit.value "1371.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_79a1fb3a-a66a-468c-8c78-c25714c73eba ;
+	cim:OperationalLimit.OperationalLimitType ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 .
+
+ftn:_a228917a-44c9-4124-b7db-ea6408b3c5bb a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_1 - CL-2" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_1 - Limit" ;
+	cim:CurrentLimit.value "1371.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_125eeb58-1c45-41b2-a981-7d5993b40cda ;
+	cim:OperationalLimit.OperationalLimitType ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 .
+
+ftn:_3341e4e1-b1f0-4832-854f-4254ddb7459b a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_2 - CL-0" ;
+	entsoe:IdentifiedObject.shortName "CL-0" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_2 - Limit" ;
+	cim:CurrentLimit.value "1299.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_13ee714f-6df4-4039-8519-5cf4e84ab20d ;
+	cim:OperationalLimit.OperationalLimitType ftn:_250e948b-70ae-4139-971b-4f0053425b60 .
+
+ftn:_b5172307-8c71-4c82-92ec-b05592694ab1 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_2 - CL-0" ;
+	entsoe:IdentifiedObject.shortName "CL-0" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_2 - Limit" ;
+	cim:CurrentLimit.value "1299.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_7cf4108d-d355-48f5-8556-d42c37a8e2c8 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_250e948b-70ae-4139-971b-4f0053425b60 .
+
+ftn:_eaa17d90-1494-42b8-803c-0a6692c493a0 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_2 - CL-1" ;
+	entsoe:IdentifiedObject.shortName "CL-1" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_2 - Limit" ;
+	cim:CurrentLimit.value "1371.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_13ee714f-6df4-4039-8519-5cf4e84ab20d ;
+	cim:OperationalLimit.OperationalLimitType ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 .
+
+ftn:_467f1c8f-fa42-45d5-88c1-9b8fea6f1cab a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_2 - CL-1" ;
+	entsoe:IdentifiedObject.shortName "CL-1" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_2 - Limit" ;
+	cim:CurrentLimit.value "1371.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_7cf4108d-d355-48f5-8556-d42c37a8e2c8 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 .
+
+ftn:_1cd93631-5573-48db-8444-0e85a91aa6f1 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_2 - CL-2" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_2 - Limit" ;
+	cim:CurrentLimit.value "1226.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_13ee714f-6df4-4039-8519-5cf4e84ab20d ;
+	cim:OperationalLimit.OperationalLimitType ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 .
+
+ftn:_d73f50e0-00db-4f54-a087-b0d2204f229a a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_2 - CL-2" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_2 - Limit" ;
+	cim:CurrentLimit.value "1226.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_7cf4108d-d355-48f5-8556-d42c37a8e2c8 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 .
+
+ftn:_9dd40a3a-c6df-4f16-876c-bd11c538324b a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_3 - CL-0" ;
+	entsoe:IdentifiedObject.shortName "CL-0" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_3 - Limit" ;
+	cim:CurrentLimit.value "1312.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_9a03e8ee-e832-43c8-b38e-0d43f8ef7355 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_250e948b-70ae-4139-971b-4f0053425b60 .
+
+ftn:_75caf931-a43f-4e4a-a831-fe9a729feb72 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_3 - CL-0" ;
+	entsoe:IdentifiedObject.shortName "CL-0" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_3 - Limit" ;
+	cim:CurrentLimit.value "1312.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_14e9e317-a168-44a2-82ef-7c76190108a2 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_250e948b-70ae-4139-971b-4f0053425b60 .
+
+ftn:_150d1dcb-f7b6-4fcd-bce9-e39c6ddf15aa a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_3 - CL-1" ;
+	entsoe:IdentifiedObject.shortName "CL-1" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_3 - Limit" ;
+	cim:CurrentLimit.value "1443.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_9a03e8ee-e832-43c8-b38e-0d43f8ef7355 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 .
+
+ftn:_bec4e785-5143-4ad4-b7b0-aea8e33be7e6 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_3 - CL-1" ;
+	entsoe:IdentifiedObject.shortName "CL-1" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_3 - Limit" ;
+	cim:CurrentLimit.value "1443.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_14e9e317-a168-44a2-82ef-7c76190108a2 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 .
+
+ftn:_317c3033-0409-4f57-9209-4baae4b5e165 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_3 - CL-2" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_3 - Limit" ;
+	cim:CurrentLimit.value "1180.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_9a03e8ee-e832-43c8-b38e-0d43f8ef7355 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 .
+
+ftn:_62be08ea-2a9e-4284-9642-2947cb2c5f1b a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_3 - CL-2" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_3 - Limit" ;
+	cim:CurrentLimit.value "1180.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_14e9e317-a168-44a2-82ef-7c76190108a2 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 .
+
+ftn:_e29f4055-0267-4d9e-a889-8afc2326e870 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_3 - CL-3" ;
+	entsoe:IdentifiedObject.shortName "CL-3" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_3 - Limit" ;
+	cim:CurrentLimit.value "2000.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_9a03e8ee-e832-43c8-b38e-0d43f8ef7355 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_dd9c5b59-0728-45ca-9930-0dff2a9fb390 .
+
+ftn:_22274f03-885c-4ea8-931d-862beec6edd1 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_3 - CL-3" ;
+	entsoe:IdentifiedObject.shortName "CL-3" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_3 - Limit" ;
+	cim:CurrentLimit.value "2000.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_14e9e317-a168-44a2-82ef-7c76190108a2 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_dd9c5b59-0728-45ca-9930-0dff2a9fb390 .
+
+ftn:_fff80a22-3a4b-4c22-94d2-2901e8085df1 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_4 - CL-0" ;
+	entsoe:IdentifiedObject.shortName "CL-0" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_4 - Limit" ;
+	cim:CurrentLimit.value "1574.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_37cc4210-71c0-4328-a86b-df0f65e76ef4 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_250e948b-70ae-4139-971b-4f0053425b60 .
+
+ftn:_4224b5aa-ef0b-4f31-b2a5-002c0c696721 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_4 - CL-0" ;
+	entsoe:IdentifiedObject.shortName "CL-0" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_4 - Limit" ;
+	cim:CurrentLimit.value "1574.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_03943678-b63e-44d8-bc7d-9461da496268 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_250e948b-70ae-4139-971b-4f0053425b60 .
+
+ftn:_32ba352e-5877-4d42-b7e4-49a23b78297d a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_4 - CL-1" ;
+	entsoe:IdentifiedObject.shortName "CL-1" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_4 - Limit" ;
+	cim:CurrentLimit.value "1705.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_37cc4210-71c0-4328-a86b-df0f65e76ef4 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 .
+
+ftn:_d6da4ddd-944f-48ab-bdb2-651883dc9dea a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_4 - CL-1" ;
+	entsoe:IdentifiedObject.shortName "CL-1" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_4 - Limit" ;
+	cim:CurrentLimit.value "1705.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_03943678-b63e-44d8-bc7d-9461da496268 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 .
+
+ftn:_b4659169-38a4-494f-b3e2-aa83dc9a6670 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_4 - CL-2" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_4 - Limit" ;
+	cim:CurrentLimit.value "1443.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_37cc4210-71c0-4328-a86b-df0f65e76ef4 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 .
+
+ftn:_0388b680-3feb-45a2-bd56-5a620472107b a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_4 - CL-2" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_4 - Limit" ;
+	cim:CurrentLimit.value "1443.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_03943678-b63e-44d8-bc7d-9461da496268 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 .
+
+ftn:_d4831248-07f3-4d9a-a06b-d39461cd16a2 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_5 - CL-0" ;
+	entsoe:IdentifiedObject.shortName "CL-0" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_5 - Limit" ;
+	cim:CurrentLimit.value "1876.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_a2c3d48f-d768-4e1e-8841-6e9c4913f11f ;
+	cim:OperationalLimit.OperationalLimitType ftn:_250e948b-70ae-4139-971b-4f0053425b60 .
+
+ftn:_d3c7e111-afa0-4cc2-99d0-8c75e3d6fb91 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_5 - CL-0" ;
+	entsoe:IdentifiedObject.shortName "CL-0" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_5 - Limit" ;
+	cim:CurrentLimit.value "1876.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_b4d8f5e2-7b7a-45eb-b65a-252843d6acf4 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_250e948b-70ae-4139-971b-4f0053425b60 .
+
+ftn:_b50d912a-8ce8-4962-a21b-f2d91dcc430e a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_5 - CL-1" ;
+	entsoe:IdentifiedObject.shortName "CL-1" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_5 - Limit" ;
+	cim:CurrentLimit.value "1948.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_a2c3d48f-d768-4e1e-8841-6e9c4913f11f ;
+	cim:OperationalLimit.OperationalLimitType ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 .
+
+ftn:_c43551e9-eeee-415a-acf1-570fab88b426 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_5 - CL-1" ;
+	entsoe:IdentifiedObject.shortName "CL-1" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_5 - Limit" ;
+	cim:CurrentLimit.value "1948.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_b4d8f5e2-7b7a-45eb-b65a-252843d6acf4 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 .
+
+ftn:_a4b97f0b-39b8-452d-b51c-fd3b25fa1d9b a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_5 - CL-2" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_5 - Limit" ;
+	cim:CurrentLimit.value "1804.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_a2c3d48f-d768-4e1e-8841-6e9c4913f11f ;
+	cim:OperationalLimit.OperationalLimitType ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 .
+
+ftn:_db8675aa-6a3d-47a8-b864-a3e474c5c885 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-Line_5 - CL-2" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-Line_5 - Limit" ;
+	cim:CurrentLimit.value "1804.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_b4d8f5e2-7b7a-45eb-b65a-252843d6acf4 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 .
+
+ftn:_5e7f87db-9758-4098-b19e-4f365915721f a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-TR2_1 - CL-0" ;
+	entsoe:IdentifiedObject.shortName "CL-0" ;
+	cim:IdentifiedObject.description "Ratings for element NL-TR2_1 - Limit" ;
+	cim:CurrentLimit.value "481.900000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_83f719ad-2083-44ea-9ebc-9f456c114bdb ;
+	cim:OperationalLimit.OperationalLimitType ftn:_250e948b-70ae-4139-971b-4f0053425b60 .
+
+ftn:_bd6482bb-5e21-46df-a3c3-0e4a64d49f89 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-TR2_1 - CL-0" ;
+	entsoe:IdentifiedObject.shortName "CL-0" ;
+	cim:IdentifiedObject.description "Ratings for element NL-TR2_1 - Limit" ;
+	cim:CurrentLimit.value "849.800000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_d47a27cc-9fad-40f2-a08c-37e545c268df ;
+	cim:OperationalLimit.OperationalLimitType ftn:_250e948b-70ae-4139-971b-4f0053425b60 .
+
+ftn:_553477f0-ed39-499b-a07d-3c602bd8a13d a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-TR2_1 - CL-1" ;
+	entsoe:IdentifiedObject.shortName "CL-1" ;
+	cim:IdentifiedObject.description "Ratings for element NL-TR2_1 - Limit" ;
+	cim:CurrentLimit.value "491.900000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_83f719ad-2083-44ea-9ebc-9f456c114bdb ;
+	cim:OperationalLimit.OperationalLimitType ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 .
+
+ftn:_8122651e-22ba-4320-9032-c59969020565 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-TR2_1 - CL-1" ;
+	entsoe:IdentifiedObject.shortName "CL-1" ;
+	cim:IdentifiedObject.description "Ratings for element NL-TR2_1 - Limit" ;
+	cim:CurrentLimit.value "859.800000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_d47a27cc-9fad-40f2-a08c-37e545c268df ;
+	cim:OperationalLimit.OperationalLimitType ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 .
+
+ftn:_150183f1-3144-4d18-b5ca-328efdead257 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-TR2_1 - CL-2" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-TR2_1 - Limit" ;
+	cim:CurrentLimit.value "461.900000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_83f719ad-2083-44ea-9ebc-9f456c114bdb ;
+	cim:OperationalLimit.OperationalLimitType ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 .
+
+ftn:_89d45390-25dc-49a6-bb08-69b67f27cd39 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL-TR2_1 - CL-2" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL-TR2_1 - Limit" ;
+	cim:CurrentLimit.value "839.800000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_d47a27cc-9fad-40f2-a08c-37e545c268df ;
+	cim:OperationalLimit.OperationalLimitType ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 .
+
+ftn:_e2153eed-fb1f-44e2-b116-d045c5e50e3b a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL_TR2_2 - CL-0" ;
+	entsoe:IdentifiedObject.shortName "CL-0" ;
+	cim:IdentifiedObject.description "Ratings for element NL_TR2_2 - Limit" ;
+	cim:CurrentLimit.value "3406.600000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_e7c1b1c7-aaeb-470a-9cb5-93a3ec269179 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_250e948b-70ae-4139-971b-4f0053425b60 .
+
+ftn:_2f71df7b-6118-4973-acea-7f65a563a979 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL_TR2_2 - CL-0" ;
+	entsoe:IdentifiedObject.shortName "CL-0" ;
+	cim:IdentifiedObject.description "Ratings for element NL_TR2_2 - Limit" ;
+	cim:CurrentLimit.value "47188.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_261d13c4-1527-42a5-ad0d-a3b817971166 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_250e948b-70ae-4139-971b-4f0053425b60 .
+
+ftn:_b4f373a0-1d09-4f4f-9f29-f72ff6b4f62f a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL_TR2_2 - CL-1" ;
+	entsoe:IdentifiedObject.shortName "CL-1" ;
+	cim:IdentifiedObject.description "Ratings for element NL_TR2_2 - Limit" ;
+	cim:CurrentLimit.value "3506.600000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_e7c1b1c7-aaeb-470a-9cb5-93a3ec269179 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 .
+
+ftn:_176ae6ba-d38c-4f7c-8a60-038dc4980a39 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL_TR2_2 - CL-1" ;
+	entsoe:IdentifiedObject.shortName "CL-1" ;
+	cim:IdentifiedObject.description "Ratings for element NL_TR2_2 - Limit" ;
+	cim:CurrentLimit.value "48188.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_261d13c4-1527-42a5-ad0d-a3b817971166 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 .
+
+ftn:_fa85553d-9769-45fe-9b79-cecafa01c4ba a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL_TR2_2 - CL-2" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL_TR2_2 - Limit" ;
+	cim:CurrentLimit.value "3306.600000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_e7c1b1c7-aaeb-470a-9cb5-93a3ec269179 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 .
+
+ftn:_1a886514-5f7d-418a-99b7-02330ed01ca7 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL_TR2_2 - CL-2" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL_TR2_2 - Limit" ;
+	cim:CurrentLimit.value "46188.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_261d13c4-1527-42a5-ad0d-a3b817971166 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 .
+
+ftn:_e2afb3a0-94ea-4f8f-b717-7b91c603d3dc a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL_TR2_3 - CL-0" ;
+	entsoe:IdentifiedObject.shortName "CL-0" ;
+	cim:IdentifiedObject.description "Ratings for element NL_TR2_3 - Limit" ;
+	cim:CurrentLimit.value "3506.600000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_fd472104-d68c-4536-ba4a-5fd9349c0a65 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_250e948b-70ae-4139-971b-4f0053425b60 .
+
+ftn:_716e45d4-4092-4a1b-ba5f-c78e1da4f363 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL_TR2_3 - CL-0" ;
+	entsoe:IdentifiedObject.shortName "CL-0" ;
+	cim:IdentifiedObject.description "Ratings for element NL_TR2_3 - Limit" ;
+	cim:CurrentLimit.value "47188.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_cf3e5341-6736-4b34-b4da-e4af2073765b ;
+	cim:OperationalLimit.OperationalLimitType ftn:_250e948b-70ae-4139-971b-4f0053425b60 .
+
+ftn:_d4bc2ee3-43b8-46fb-9337-d82590af1c8b a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL_TR2_3 - CL-1" ;
+	entsoe:IdentifiedObject.shortName "CL-1" ;
+	cim:IdentifiedObject.description "Ratings for element NL_TR2_3 - Limit" ;
+	cim:CurrentLimit.value "3706.600000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_fd472104-d68c-4536-ba4a-5fd9349c0a65 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 .
+
+ftn:_23b11495-8c2c-47cc-a561-e215196afa2b a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL_TR2_3 - CL-1" ;
+	entsoe:IdentifiedObject.shortName "CL-1" ;
+	cim:IdentifiedObject.description "Ratings for element NL_TR2_3 - Limit" ;
+	cim:CurrentLimit.value "49188.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_cf3e5341-6736-4b34-b4da-e4af2073765b ;
+	cim:OperationalLimit.OperationalLimitType ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 .
+
+ftn:_0c95b506-05a2-40d5-9f82-b9bf1e680a8d a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL_TR2_3 - CL-2" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL_TR2_3 - Limit" ;
+	cim:CurrentLimit.value "3306.600000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_fd472104-d68c-4536-ba4a-5fd9349c0a65 ;
+	cim:OperationalLimit.OperationalLimitType ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 .
+
+ftn:_6a927421-36cd-487a-b6b7-61dd45470447 a cim:CurrentLimit ;
+	cim:IdentifiedObject.name "NL_TR2_3 - CL-2" ;
+	entsoe:IdentifiedObject.shortName "CL-2" ;
+	cim:IdentifiedObject.description "Ratings for element NL_TR2_3 - Limit" ;
+	cim:CurrentLimit.value "46188.000000" ;
+	cim:OperationalLimit.OperationalLimitSet ftn:_cf3e5341-6736-4b34-b4da-e4af2073765b ;
+	cim:OperationalLimit.OperationalLimitType ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 .
+
+ftn:_69add5b4-70bd-4360-8a93-286256c0d38b a cim:EnergyConsumer ;
+	cim:IdentifiedObject.name "NL-Load_1" ;
+	entsoe:IdentifiedObject.shortName "NL-L_1" ;
+	cim:IdentifiedObject.description "Apple" ;
+	cim:Equipment.aggregate "false" ;
+	cim:Equipment.EquipmentContainer ftn:_c1d5bfde8f8011e08e4d00247eb1f55e .
+
+ftn:_25ab1b5b-6803-47e2-805a-ab7b2072e034 a cim:EnergyConsumer ;
+	cim:IdentifiedObject.name "NL-Load_2" ;
+	entsoe:IdentifiedObject.shortName "NL-L_2" ;
+	cim:IdentifiedObject.description "Electrabel" ;
+	cim:Equipment.aggregate "true" ;
+	cim:Equipment.EquipmentContainer ftn:_c1d5bfde8f8011e08e4d00247eb1f55e .
+
+ftn:_b1e03a8f-6a11-4454-af58-4a4a680e857f a cim:EnergyConsumer ;
+	cim:IdentifiedObject.name "NL-Load_3" ;
+	entsoe:IdentifiedObject.shortName "NL-L_3" ;
+	cim:IdentifiedObject.description "Siemens" ;
+	cim:Equipment.aggregate "false" ;
+	cim:Equipment.EquipmentContainer ftn:_c1d5bfea8f8011e08e4d00247eb1f55e ;
+	cim:EnergyConsumer.LoadResponse ftn:_7a797ed8-c370-47cf-83df-16c40f8fff69 .
+
+ftn:_83bea592-913e-4473-8d17-969968ff83a2 a cim:EquivalentInjection ;
+	cim:IdentifiedObject.name "NL-Inj-XCA_AL11" ;
+	entsoe:IdentifiedObject.shortName "NL-I-XCA_AL1" ;
+	cim:IdentifiedObject.description "Eq_Injection" ;
+	cim:EquivalentInjection.regulationCapability "false" ;
+	cim:EquivalentInjection.r "0e+000" ;
+	cim:EquivalentInjection.x "0e+000" ;
+	cim:EquivalentInjection.r2 "0e+000" ;
+	cim:EquivalentInjection.x2 "0e+000" ;
+	cim:EquivalentInjection.r0 "0e+000" ;
+	cim:EquivalentInjection.x0 "0e+000" ;
+	cim:ConductingEquipment.BaseVoltage ftn:_65dd04e792584b3b912374e35dec032e .
+
+ftn:_cab82e1c-1435-447b-bba0-74b592539eac a cim:EquivalentInjection ;
+	cim:IdentifiedObject.name "NL-Inj-XKA_MA11" ;
+	entsoe:IdentifiedObject.shortName "NL-I-XKA_MA1" ;
+	cim:IdentifiedObject.description "Eq_Injection" ;
+	cim:EquivalentInjection.regulationCapability "false" ;
+	cim:EquivalentInjection.r "0e+000" ;
+	cim:EquivalentInjection.x "0e+000" ;
+	cim:EquivalentInjection.r2 "0e+000" ;
+	cim:EquivalentInjection.x2 "0e+000" ;
+	cim:EquivalentInjection.r0 "0e+000" ;
+	cim:EquivalentInjection.x0 "0e+000" ;
+	cim:ConductingEquipment.BaseVoltage ftn:_65dd04e792584b3b912374e35dec032e .
+
+ftn:_b0442899-8dbe-48c1-a1fa-adb2a5929273 a cim:EquivalentInjection ;
+	cim:IdentifiedObject.name "NL-Inj-XWI_GY11" ;
+	entsoe:IdentifiedObject.shortName "NL-I-XWI_GY1" ;
+	cim:IdentifiedObject.description "Eq_Injection" ;
+	cim:EquivalentInjection.regulationCapability "false" ;
+	cim:EquivalentInjection.r "0e+000" ;
+	cim:EquivalentInjection.x "0e+000" ;
+	cim:EquivalentInjection.r2 "0e+000" ;
+	cim:EquivalentInjection.x2 "0e+000" ;
+	cim:EquivalentInjection.r0 "0e+000" ;
+	cim:EquivalentInjection.x0 "0e+000" ;
+	cim:ConductingEquipment.BaseVoltage ftn:_65dd04e792584b3b912374e35dec032e .
+
+ftn:_12baa3f3-23b1-44e0-956f-d331e1527f37 a cim:EquivalentInjection ;
+	cim:IdentifiedObject.name "NL-Inj-XZE_ST23" ;
+	entsoe:IdentifiedObject.shortName "NL-I-XZE_ST2" ;
+	cim:IdentifiedObject.description "Eq_Injection" ;
+	cim:EquivalentInjection.regulationCapability "false" ;
+	cim:EquivalentInjection.r "0e+000" ;
+	cim:EquivalentInjection.x "0e+000" ;
+	cim:EquivalentInjection.r2 "0e+000" ;
+	cim:EquivalentInjection.x2 "0e+000" ;
+	cim:EquivalentInjection.r0 "0e+000" ;
+	cim:EquivalentInjection.x0 "0e+000" ;
+	cim:ConductingEquipment.BaseVoltage ftn:_7891a026ba2c42098556665efd13ba94 .
+
+ftn:_820d95d7-26d4-4311-8b1f-026f8605b86d a cim:EquivalentInjection ;
+	cim:IdentifiedObject.name "NL-Inj-XZE_ST24" ;
+	entsoe:IdentifiedObject.shortName "NL-I-XZE_ST2" ;
+	cim:IdentifiedObject.description "Eq_Injection" ;
+	cim:EquivalentInjection.regulationCapability "false" ;
+	cim:EquivalentInjection.r "0e+000" ;
+	cim:EquivalentInjection.x "0e+000" ;
+	cim:EquivalentInjection.r2 "0e+000" ;
+	cim:EquivalentInjection.x2 "0e+000" ;
+	cim:EquivalentInjection.r0 "0e+000" ;
+	cim:EquivalentInjection.x0 "0e+000" ;
+	cim:ConductingEquipment.BaseVoltage ftn:_7891a026ba2c42098556665efd13ba94 .
+
+ftn:_b850063d-eae7-4675-bc98-4642d3076783 a cim:GeneratingUnit ;
+	cim:IdentifiedObject.name "Gen-12908" ;
+	cim:IdentifiedObject.description "Machine" ;
+	cim:GeneratingUnit.initialP "150.000000" ;
+	cim:GeneratingUnit.nominalP "225.000000" ;
+	cim:GeneratingUnit.maxOperatingP "250.000000" ;
+	cim:GeneratingUnit.minOperatingP "130.000000" ;
+	cim:GeneratingUnit.genControlSource cim:GeneratorControlSource.offAGC ;
+	cim:Equipment.aggregate "false" ;
+	cim:Equipment.EquipmentContainer ftn:_c49942d6-8b01-4b01-b5e8-f1180f84906c .
+
+ftn:_ca80ee09-3bed-4884-bc28-6dc89d067289 a cim:GeneratingUnit ;
+	cim:IdentifiedObject.name "Gen-12910" ;
+	cim:IdentifiedObject.description "Machine" ;
+	cim:GeneratingUnit.initialP "140.000000" ;
+	cim:GeneratingUnit.nominalP "225.000000" ;
+	cim:GeneratingUnit.maxOperatingP "250.000000" ;
+	cim:GeneratingUnit.minOperatingP "130.000000" ;
+	cim:GeneratingUnit.genControlSource cim:GeneratorControlSource.offAGC ;
+	cim:Equipment.aggregate "false" ;
+	cim:Equipment.EquipmentContainer ftn:_c49942d6-8b01-4b01-b5e8-f1180f84906c .
+
+ftn:_049438a6-780a-44fe-a788-ebe385d98e25 a cim:GeneratingUnit ;
+	cim:IdentifiedObject.name "Gen-12923" ;
+	cim:IdentifiedObject.description "Machine" ;
+	cim:GeneratingUnit.initialP "600.492701" ;
+	cim:GeneratingUnit.nominalP "990.000000" ;
+	cim:GeneratingUnit.maxOperatingP "1000.000000" ;
+	cim:GeneratingUnit.minOperatingP "300.000000" ;
+	cim:GeneratingUnit.genControlSource cim:GeneratorControlSource.offAGC ;
+	cim:Equipment.aggregate "false" ;
+	cim:Equipment.EquipmentContainer ftn:_c49942d6-8b01-4b01-b5e8-f1180f84906c .
+
+ftn:_c1d5bfe28f8011e08e4d00247eb1f55e a cim:GeographicalRegion ;
+	cim:IdentifiedObject.name "NL" .
+
+ftn:_72242f07-189e-4a06-9f7e-f7a2776ecfd9 a cim:Line ;
+	cim:IdentifiedObject.name "container of NL-Line_1" ;
+	cim:Line.Region ftn:_c1d5bfe48f8011e08e4d00247eb1f55e .
+
+ftn:_00faa2b5-cb42-4c43-9c9a-2a09dd9c52f5 a cim:Line ;
+	cim:IdentifiedObject.name "container of NL-Line_2" ;
+	cim:Line.Region ftn:_c1d5bfe48f8011e08e4d00247eb1f55e .
+
+ftn:_644936cc-1ea0-46f3-93e6-eed0e0cc8bee a cim:Line ;
+	cim:IdentifiedObject.name "container of NL-Line_3" ;
+	cim:Line.Region ftn:_c1d5bfe48f8011e08e4d00247eb1f55e .
+
+ftn:_f524d9fc-48be-4feb-9e77-a15696d4210a a cim:Line ;
+	cim:IdentifiedObject.name "container of NL-Line_4" ;
+	cim:Line.Region ftn:_c1d5bfe48f8011e08e4d00247eb1f55e .
+
+ftn:_c7d37bc3-196c-4458-896b-614f810cea0f a cim:Line ;
+	cim:IdentifiedObject.name "container of NL-Line_5" ;
+	cim:Line.Region ftn:_c1d5bfe48f8011e08e4d00247eb1f55e .
+
+ftn:_fbfed7e3-3dec-4829-a286-029e73535685 a cim:LinearShuntCompensator ;
+	cim:IdentifiedObject.name "NL-S1" ;
+	entsoe:IdentifiedObject.shortName "NL-S1" ;
+	cim:IdentifiedObject.description "shunt" ;
+	cim:ShuntCompensator.normalSections "1" ;
+	cim:ShuntCompensator.maximumSections "1" ;
+	cim:LinearShuntCompensator.bPerSection "0.000313" ;
+	cim:LinearShuntCompensator.gPerSection "0e+000" ;
+	cim:LinearShuntCompensator.b0PerSection "-0e+000" ;
+	cim:LinearShuntCompensator.g0PerSection "0e+000" ;
+	cim:ShuntCompensator.nomU "400.000000" ;
+	cim:RegulatingCondEq.RegulatingControl ftn:_613dfeb3-0161-4cec-aaa9-ccddd885771b ;
+	cim:Equipment.aggregate "false" ;
+	cim:Equipment.EquipmentContainer ftn:_c1d5bfde8f8011e08e4d00247eb1f55e .
+
+ftn:_7a797ed8-c370-47cf-83df-16c40f8fff69 a cim:LoadResponseCharacteristic ;
+	cim:IdentifiedObject.name "NL-Load_3" ;
+	entsoe:IdentifiedObject.shortName "NL-L_3" ;
+	cim:LoadResponseCharacteristic.exponentModel "false" ;
+	cim:LoadResponseCharacteristic.pConstantCurrent "0.200000" ;
+	cim:LoadResponseCharacteristic.pConstantImpedance "0e+000" ;
+	cim:LoadResponseCharacteristic.pConstantPower "0.800000" ;
+	cim:LoadResponseCharacteristic.pFrequencyExponent "0e+000" ;
+	cim:LoadResponseCharacteristic.qConstantCurrent "0.300000" ;
+	cim:LoadResponseCharacteristic.qConstantImpedance "0e+000" ;
+	cim:LoadResponseCharacteristic.qConstantPower "0.700000" ;
+	cim:LoadResponseCharacteristic.pVoltageExponent "0e+000" ;
+	cim:LoadResponseCharacteristic.qFrequencyExponent "0e+000" ;
+	cim:LoadResponseCharacteristic.qVoltageExponent "0e+000" .
+
+ftn:_a2c3d48f-d768-4e1e-8841-6e9c4913f11f a cim:OperationalLimitSet ;
+	cim:IdentifiedObject.name "Limits at Port 1" ;
+	cim:IdentifiedObject.description "Limit-Ratings for branch NL-Line_5 at Port 1" ;
+	cim:OperationalLimitSet.Terminal ftn:_757d4f50-707b-47a0-891c-cbaefd649631 .
+
+ftn:_37cc4210-71c0-4328-a86b-df0f65e76ef4 a cim:OperationalLimitSet ;
+	cim:IdentifiedObject.name "Limits at Port 1" ;
+	cim:IdentifiedObject.description "Limit-Ratings for branch NL-Line_4 at Port 1" ;
+	cim:OperationalLimitSet.Terminal ftn:_653bc4b8-518b-4adc-9d68-012fb641fb1d .
+
+ftn:_9a03e8ee-e832-43c8-b38e-0d43f8ef7355 a cim:OperationalLimitSet ;
+	cim:IdentifiedObject.name "Limits at Port 1" ;
+	cim:IdentifiedObject.description "Limit-Ratings for branch NL-Line_3 at Port 1" ;
+	cim:OperationalLimitSet.Terminal ftn:_5dfee914-a4fd-4bde-a5b4-c4caa6378d10 .
+
+ftn:_13ee714f-6df4-4039-8519-5cf4e84ab20d a cim:OperationalLimitSet ;
+	cim:IdentifiedObject.name "Limits at Port 1" ;
+	cim:IdentifiedObject.description "Limit-Ratings for branch NL-Line_2 at Port 1" ;
+	cim:OperationalLimitSet.Terminal ftn:_c557146e-dfc4-4020-9738-d592b188338b .
+
+ftn:_79a1fb3a-a66a-468c-8c78-c25714c73eba a cim:OperationalLimitSet ;
+	cim:IdentifiedObject.name "Limits at Port 1" ;
+	cim:IdentifiedObject.description "Limit-Ratings for branch NL-Line_1 at Port 1" ;
+	cim:OperationalLimitSet.Terminal ftn:_357e3e14-c38e-4a7e-9c95-b3dbe158f5f3 .
+
+ftn:_83f719ad-2083-44ea-9ebc-9f456c114bdb a cim:OperationalLimitSet ;
+	cim:IdentifiedObject.name "Limits at Port 1" ;
+	cim:IdentifiedObject.description "Limit-Ratings for branch NL-TR2_1 at Port 1" ;
+	cim:OperationalLimitSet.Terminal ftn:_e3e0c496-5837-4f0f-a596-cc421940f73f .
+
+ftn:_e7c1b1c7-aaeb-470a-9cb5-93a3ec269179 a cim:OperationalLimitSet ;
+	cim:IdentifiedObject.name "Limits at Port 1" ;
+	cim:IdentifiedObject.description "Limit-Ratings for branch NL_TR2_2 at Port 1" ;
+	cim:OperationalLimitSet.Terminal ftn:_1128e664-0653-448a-9068-e37f1a097c05 .
+
+ftn:_fd472104-d68c-4536-ba4a-5fd9349c0a65 a cim:OperationalLimitSet ;
+	cim:IdentifiedObject.name "Limits at Port 1" ;
+	cim:IdentifiedObject.description "Limit-Ratings for branch NL_TR2_3 at Port 1" ;
+	cim:OperationalLimitSet.Terminal ftn:_bd61b1f9-474d-424e-9709-42f75337c477 .
+
+ftn:_b4d8f5e2-7b7a-45eb-b65a-252843d6acf4 a cim:OperationalLimitSet ;
+	cim:IdentifiedObject.name "Limits at Port 2" ;
+	cim:IdentifiedObject.description "Limit-Ratings for branch NL-Line_5 at Port 2" ;
+	cim:OperationalLimitSet.Terminal ftn:_ae588863-b154-451d-978a-7ab08ac50fb6 .
+
+ftn:_03943678-b63e-44d8-bc7d-9461da496268 a cim:OperationalLimitSet ;
+	cim:IdentifiedObject.name "Limits at Port 2" ;
+	cim:IdentifiedObject.description "Limit-Ratings for branch NL-Line_4 at Port 2" ;
+	cim:OperationalLimitSet.Terminal ftn:_57979d14-d1d8-4311-ae53-aa8890423885 .
+
+ftn:_14e9e317-a168-44a2-82ef-7c76190108a2 a cim:OperationalLimitSet ;
+	cim:IdentifiedObject.name "Limits at Port 2" ;
+	cim:IdentifiedObject.description "Limit-Ratings for branch NL-Line_3 at Port 2" ;
+	cim:OperationalLimitSet.Terminal ftn:_6aecb9ba-5835-4b70-89bc-96d687e45779 .
+
+ftn:_7cf4108d-d355-48f5-8556-d42c37a8e2c8 a cim:OperationalLimitSet ;
+	cim:IdentifiedObject.name "Limits at Port 2" ;
+	cim:IdentifiedObject.description "Limit-Ratings for branch NL-Line_2 at Port 2" ;
+	cim:OperationalLimitSet.Terminal ftn:_8f308117-8bbd-4798-b145-4e78f7d049e7 .
+
+ftn:_125eeb58-1c45-41b2-a981-7d5993b40cda a cim:OperationalLimitSet ;
+	cim:IdentifiedObject.name "Limits at Port 2" ;
+	cim:IdentifiedObject.description "Limit-Ratings for branch NL-Line_1 at Port 2" ;
+	cim:OperationalLimitSet.Terminal ftn:_6b1cd30c-19ba-44e1-9447-d01db6b1ef9d .
+
+ftn:_d47a27cc-9fad-40f2-a08c-37e545c268df a cim:OperationalLimitSet ;
+	cim:IdentifiedObject.name "Limits at Port 2" ;
+	cim:IdentifiedObject.description "Limit-Ratings for branch NL-TR2_1 at Port 2" ;
+	cim:OperationalLimitSet.Terminal ftn:_baa7aef1-afcd-4981-97c0-ccec7b5ad4e0 .
+
+ftn:_261d13c4-1527-42a5-ad0d-a3b817971166 a cim:OperationalLimitSet ;
+	cim:IdentifiedObject.name "Limits at Port 2" ;
+	cim:IdentifiedObject.description "Limit-Ratings for branch NL_TR2_2 at Port 2" ;
+	cim:OperationalLimitSet.Terminal ftn:_da232169-1c36-495a-8af6-a0d7d2b39f52 .
+
+ftn:_cf3e5341-6736-4b34-b4da-e4af2073765b a cim:OperationalLimitSet ;
+	cim:IdentifiedObject.name "Limits at Port 2" ;
+	cim:IdentifiedObject.description "Limit-Ratings for branch NL_TR2_3 at Port 2" ;
+	cim:OperationalLimitSet.Terminal ftn:_4f1c405f-07c9-4fb0-b64e-551896a29aa8 .
+
+ftn:_1aee0921-7cbe-481c-9078-daf66ab2a950 a cim:OperationalLimitType ;
+	cim:IdentifiedObject.name "PATL" ;
+	entsoe:IdentifiedObject.shortName "patl" ;
+	cim:OperationalLimitType.direction cim:OperationalLimitDirectionKind.absoluteValue ;
+	entsoe:OperationalLimitType.limitType entsoe:LimitTypeKind.patl .
+
+ftn:_68cd26b8-d512-4104-a1d1-b2e8f9376ecc a cim:OperationalLimitType ;
+	cim:IdentifiedObject.name "PATLT" ;
+	entsoe:IdentifiedObject.shortName "patlt" ;
+	cim:OperationalLimitType.direction cim:OperationalLimitDirectionKind.absoluteValue ;
+	entsoe:OperationalLimitType.limitType entsoe:LimitTypeKind.patlt .
+
+ftn:_18c8d038-31ea-4d92-9e7e-4b8a397f30a5 a cim:OperationalLimitType ;
+	cim:IdentifiedObject.name "TATL10" ;
+	entsoe:IdentifiedObject.shortName "tatl" ;
+	cim:OperationalLimitType.direction cim:OperationalLimitDirectionKind.absoluteValue ;
+	entsoe:OperationalLimitType.limitType entsoe:LimitTypeKind.tatl ;
+	cim:OperationalLimitType.acceptableDuration "10.000000" .
+
+ftn:_250e948b-70ae-4139-971b-4f0053425b60 a cim:OperationalLimitType ;
+	cim:IdentifiedObject.name "TATL20" ;
+	entsoe:IdentifiedObject.shortName "tatl" ;
+	cim:OperationalLimitType.direction cim:OperationalLimitDirectionKind.absoluteValue ;
+	entsoe:OperationalLimitType.limitType entsoe:LimitTypeKind.tatl ;
+	cim:OperationalLimitType.acceptableDuration "20.000000" .
+
+ftn:_dd9c5b59-0728-45ca-9930-0dff2a9fb390 a cim:OperationalLimitType ;
+	cim:IdentifiedObject.name "TC" ;
+	entsoe:IdentifiedObject.shortName "tc" ;
+	cim:OperationalLimitType.direction cim:OperationalLimitDirectionKind.absoluteValue ;
+	entsoe:OperationalLimitType.limitType entsoe:LimitTypeKind.tc .
+
+ftn:_a1cc9747-6819-429e-bd5f-23ffdb1d7376 a cim:OperationalLimitType ;
+	cim:IdentifiedObject.name "TCT" ;
+	entsoe:IdentifiedObject.shortName "tct" ;
+	cim:OperationalLimitType.direction cim:OperationalLimitDirectionKind.absoluteValue ;
+	entsoe:OperationalLimitType.limitType entsoe:LimitTypeKind.tct .
+
+ftn:_e8a7eaec-51d6-4571-b3d9-c36d52073c33 a cim:PowerTransformer ;
+	cim:IdentifiedObject.name "NL-TR2_1" ;
+	entsoe:IdentifiedObject.shortName "NL-T_1" ;
+	cim:IdentifiedObject.description "new transformer in 2015" ;
+	cim:Equipment.aggregate "false" ;
+	cim:Equipment.EquipmentContainer ftn:_c49942d6-8b01-4b01-b5e8-f1180f84906c ;
+	cim:PowerTransformer.beforeShCircuitHighestOperatingVoltage "0e+000" ;
+	cim:PowerTransformer.beforeShCircuitHighestOperatingCurrent "0e+000" ;
+	cim:PowerTransformer.beforeShortCircuitAnglePf "0e+000" ;
+	cim:PowerTransformer.highSideMinOperatingU "0e+000" ;
+	cim:PowerTransformer.isPartOfGeneratorUnit "false" ;
+	cim:PowerTransformer.operationalValuesConsidered "false" .
+
+ftn:_2184f365-8cd5-4b5d-8a28-9d68603bb6a4 a cim:PowerTransformer ;
+	cim:IdentifiedObject.name "NL_TR2_2" ;
+	entsoe:IdentifiedObject.shortName "NL_T_2" ;
+	cim:IdentifiedObject.description "trafo" ;
+	cim:Equipment.aggregate "false" ;
+	cim:Equipment.EquipmentContainer ftn:_c49942d6-8b01-4b01-b5e8-f1180f84906c ;
+	cim:PowerTransformer.beforeShCircuitHighestOperatingVoltage "0e+000" ;
+	cim:PowerTransformer.beforeShCircuitHighestOperatingCurrent "0e+000" ;
+	cim:PowerTransformer.beforeShortCircuitAnglePf "0e+000" ;
+	cim:PowerTransformer.highSideMinOperatingU "0e+000" ;
+	cim:PowerTransformer.isPartOfGeneratorUnit "false" ;
+	cim:PowerTransformer.operationalValuesConsidered "false" .
+
+ftn:_80016742-31b3-432a-b00a-300667a1e572 a cim:PowerTransformer ;
+	cim:IdentifiedObject.name "NL_TR2_3" ;
+	entsoe:IdentifiedObject.shortName "NL_T_3" ;
+	cim:IdentifiedObject.description "out of service in 2020" ;
+	cim:Equipment.aggregate "false" ;
+	cim:Equipment.EquipmentContainer ftn:_c49942d6-8b01-4b01-b5e8-f1180f84906c ;
+	cim:PowerTransformer.beforeShCircuitHighestOperatingVoltage "0e+000" ;
+	cim:PowerTransformer.beforeShCircuitHighestOperatingCurrent "0e+000" ;
+	cim:PowerTransformer.beforeShortCircuitAnglePf "0e+000" ;
+	cim:PowerTransformer.highSideMinOperatingU "0e+000" ;
+	cim:PowerTransformer.isPartOfGeneratorUnit "false" ;
+	cim:PowerTransformer.operationalValuesConsidered "false" .
+
+ftn:_c1d5c1448f8011e08e4d00247eb1f55e a cim:PowerTransformerEnd ;
+	cim:IdentifiedObject.name "NL-TR2_1" ;
+	entsoe:IdentifiedObject.shortName "NL-T_1" ;
+	cim:PowerTransformerEnd.r "1.350000" ;
+	cim:PowerTransformerEnd.x "27.967436" ;
+	cim:PowerTransformerEnd.b "-0.0000044445" ;
+	cim:PowerTransformerEnd.g "0.0000005625" ;
+	cim:PowerTransformerEnd.r0 "1.350000" ;
+	cim:PowerTransformerEnd.x0 "27.967436" ;
+	cim:PowerTransformerEnd.b0 "0.0" ;
+	cim:PowerTransformerEnd.g0 "0.0" ;
+	cim:TransformerEnd.rground "0e+000" ;
+	cim:TransformerEnd.xground "0.0" ;
+	cim:PowerTransformerEnd.ratedS "320.000000" ;
+	cim:PowerTransformerEnd.ratedU "400.000000" ;
+	cim:TransformerEnd.endNumber "1" ;
+	cim:PowerTransformerEnd.phaseAngleClock "0" ;
+	cim:TransformerEnd.grounded "true" ;
+	cim:PowerTransformerEnd.connectionKind cim:WindingConnection.Yn ;
+	cim:TransformerEnd.BaseVoltage ftn:_65dd04e792584b3b912374e35dec032e ;
+	cim:PowerTransformerEnd.PowerTransformer ftn:_e8a7eaec-51d6-4571-b3d9-c36d52073c33 ;
+	cim:TransformerEnd.Terminal ftn:_e3e0c496-5837-4f0f-a596-cc421940f73f .
+
+ftn:_c1d5c14d8f8011e08e4d00247eb1f55e a cim:PowerTransformerEnd ;
+	cim:IdentifiedObject.name "NL-TR2_1" ;
+	entsoe:IdentifiedObject.shortName "NL-T_1" ;
+	cim:PowerTransformerEnd.r "0e+000" ;
+	cim:PowerTransformerEnd.x "0e+000" ;
+	cim:PowerTransformerEnd.b "0.0" ;
+	cim:PowerTransformerEnd.g "0.0" ;
+	cim:PowerTransformerEnd.r0 "0e+000" ;
+	cim:PowerTransformerEnd.x0 "0e+000" ;
+	cim:PowerTransformerEnd.b0 "0.0" ;
+	cim:PowerTransformerEnd.g0 "0.0" ;
+	cim:TransformerEnd.rground "0e+000" ;
+	cim:TransformerEnd.xground "0.0" ;
+	cim:PowerTransformerEnd.ratedS "320.000000" ;
+	cim:PowerTransformerEnd.ratedU "220.000000" ;
+	cim:TransformerEnd.endNumber "2" ;
+	cim:PowerTransformerEnd.phaseAngleClock "0" ;
+	cim:TransformerEnd.grounded "true" ;
+	cim:PowerTransformerEnd.connectionKind cim:WindingConnection.Yn ;
+	cim:TransformerEnd.BaseVoltage ftn:_7891a026ba2c42098556665efd13ba94 ;
+	cim:PowerTransformerEnd.PowerTransformer ftn:_e8a7eaec-51d6-4571-b3d9-c36d52073c33 ;
+	cim:TransformerEnd.Terminal ftn:_baa7aef1-afcd-4981-97c0-ccec7b5ad4e0 .
+
+ftn:_c1d5c1518f8011e08e4d00247eb1f55e a cim:PowerTransformerEnd ;
+	cim:IdentifiedObject.name "NL_TR2_2" ;
+	entsoe:IdentifiedObject.shortName "NL_T_2" ;
+	cim:PowerTransformerEnd.r "0.069143" ;
+	cim:PowerTransformerEnd.x "5.377333" ;
+	cim:PowerTransformerEnd.b "-0.0001420227" ;
+	cim:PowerTransformerEnd.g "0.0000181818" ;
+	cim:PowerTransformerEnd.r0 "0.069143" ;
+	cim:PowerTransformerEnd.x0 "5.377333" ;
+	cim:PowerTransformerEnd.b0 "0.0" ;
+	cim:PowerTransformerEnd.g0 "0.0" ;
+	cim:TransformerEnd.rground "0e+000" ;
+	cim:TransformerEnd.xground "0.0" ;
+	cim:PowerTransformerEnd.ratedS "1260.000000" ;
+	cim:PowerTransformerEnd.ratedU "220.000000" ;
+	cim:TransformerEnd.endNumber "1" ;
+	cim:PowerTransformerEnd.phaseAngleClock "0" ;
+	cim:TransformerEnd.grounded "true" ;
+	cim:PowerTransformerEnd.connectionKind cim:WindingConnection.Yn ;
+	cim:TransformerEnd.BaseVoltage ftn:_7891a026ba2c42098556665efd13ba94 ;
+	cim:PowerTransformerEnd.PowerTransformer ftn:_2184f365-8cd5-4b5d-8a28-9d68603bb6a4 ;
+	cim:TransformerEnd.Terminal ftn:_1128e664-0653-448a-9068-e37f1a097c05 .
+
+ftn:_c1d5c15a8f8011e08e4d00247eb1f55e a cim:PowerTransformerEnd ;
+	cim:IdentifiedObject.name "NL_TR2_2" ;
+	entsoe:IdentifiedObject.shortName "NL_T_2" ;
+	cim:PowerTransformerEnd.r "0e+000" ;
+	cim:PowerTransformerEnd.x "0e+000" ;
+	cim:PowerTransformerEnd.b "0.0" ;
+	cim:PowerTransformerEnd.g "0.0" ;
+	cim:PowerTransformerEnd.r0 "0e+000" ;
+	cim:PowerTransformerEnd.x0 "0e+000" ;
+	cim:PowerTransformerEnd.b0 "0.0" ;
+	cim:PowerTransformerEnd.g0 "0.0" ;
+	cim:TransformerEnd.rground "0e+000" ;
+	cim:TransformerEnd.xground "0.0" ;
+	cim:PowerTransformerEnd.ratedS "1260.000000" ;
+	cim:PowerTransformerEnd.ratedU "15.750000" ;
+	cim:TransformerEnd.endNumber "2" ;
+	cim:PowerTransformerEnd.phaseAngleClock "0" ;
+	cim:TransformerEnd.grounded "true" ;
+	cim:PowerTransformerEnd.connectionKind cim:WindingConnection.Yn ;
+	cim:TransformerEnd.BaseVoltage ftn:_c1d5bff18f8011e08e4d00247eb1f55e ;
+	cim:PowerTransformerEnd.PowerTransformer ftn:_2184f365-8cd5-4b5d-8a28-9d68603bb6a4 ;
+	cim:TransformerEnd.Terminal ftn:_da232169-1c36-495a-8af6-a0d7d2b39f52 .
+
+ftn:_c1d5c15e8f8011e08e4d00247eb1f55e a cim:PowerTransformerEnd ;
+	cim:IdentifiedObject.name "NL_TR2_3" ;
+	entsoe:IdentifiedObject.shortName "NL_T_3" ;
+	cim:PowerTransformerEnd.r "0.065302" ;
+	cim:PowerTransformerEnd.x "5.377381" ;
+	cim:PowerTransformerEnd.b "-0.0001420227" ;
+	cim:PowerTransformerEnd.g "0.0000181818" ;
+	cim:PowerTransformerEnd.r0 "0.069143" ;
+	cim:PowerTransformerEnd.x0 "5.377333" ;
+	cim:PowerTransformerEnd.b0 "0.0" ;
+	cim:PowerTransformerEnd.g0 "0.0" ;
+	cim:TransformerEnd.rground "0e+000" ;
+	cim:TransformerEnd.xground "0.0" ;
+	cim:PowerTransformerEnd.ratedS "1260.000000" ;
+	cim:PowerTransformerEnd.ratedU "220.000000" ;
+	cim:TransformerEnd.endNumber "1" ;
+	cim:PowerTransformerEnd.phaseAngleClock "0" ;
+	cim:TransformerEnd.grounded "true" ;
+	cim:PowerTransformerEnd.connectionKind cim:WindingConnection.Yn ;
+	cim:TransformerEnd.BaseVoltage ftn:_7891a026ba2c42098556665efd13ba94 ;
+	cim:PowerTransformerEnd.PowerTransformer ftn:_80016742-31b3-432a-b00a-300667a1e572 ;
+	cim:TransformerEnd.Terminal ftn:_bd61b1f9-474d-424e-9709-42f75337c477 .
+
+ftn:_c1d5c1678f8011e08e4d00247eb1f55e a cim:PowerTransformerEnd ;
+	cim:IdentifiedObject.name "NL_TR2_3" ;
+	entsoe:IdentifiedObject.shortName "NL_T_3" ;
+	cim:PowerTransformerEnd.r "0e+000" ;
+	cim:PowerTransformerEnd.x "0e+000" ;
+	cim:PowerTransformerEnd.b "0.0" ;
+	cim:PowerTransformerEnd.g "0.0" ;
+	cim:PowerTransformerEnd.r0 "0e+000" ;
+	cim:PowerTransformerEnd.x0 "0e+000" ;
+	cim:PowerTransformerEnd.b0 "0.0" ;
+	cim:PowerTransformerEnd.g0 "0.0" ;
+	cim:TransformerEnd.rground "0e+000" ;
+	cim:TransformerEnd.xground "0.0" ;
+	cim:PowerTransformerEnd.ratedS "1260.000000" ;
+	cim:PowerTransformerEnd.ratedU "15.750000" ;
+	cim:TransformerEnd.endNumber "2" ;
+	cim:PowerTransformerEnd.phaseAngleClock "0" ;
+	cim:TransformerEnd.grounded "true" ;
+	cim:PowerTransformerEnd.connectionKind cim:WindingConnection.Yn ;
+	cim:TransformerEnd.BaseVoltage ftn:_c1d5bff18f8011e08e4d00247eb1f55e ;
+	cim:PowerTransformerEnd.PowerTransformer ftn:_80016742-31b3-432a-b00a-300667a1e572 ;
+	cim:TransformerEnd.Terminal ftn:_4f1c405f-07c9-4fb0-b64e-551896a29aa8 .
+
+ftn:_c1d5c14b8f8011e08e4d00247eb1f55e a cim:RatioTapChanger ;
+	cim:IdentifiedObject.name "NL-TR2_1" ;
+	entsoe:IdentifiedObject.shortName "NL-T_1" ;
+	cim:TapChanger.neutralU "400.000000" ;
+	cim:TapChanger.lowStep "-20" ;
+	cim:TapChanger.highStep "20" ;
+	cim:TapChanger.neutralStep "0" ;
+	cim:TapChanger.normalStep "-2" ;
+	cim:RatioTapChanger.stepVoltageIncrement "0.800000" ;
+	cim:TapChanger.ltcFlag "true" ;
+	cim:TapChanger.TapChangerControl ftn:_1aaa0997-7715-4400-9435-ce74a8f67a24 ;
+	cim:RatioTapChanger.tculControlMode cim:TransformerControlMode.volt ;
+	cim:RatioTapChanger.TransformerEnd ftn:_c1d5c1448f8011e08e4d00247eb1f55e .
+
+ftn:_c1d5c1588f8011e08e4d00247eb1f55e a cim:RatioTapChanger ;
+	cim:IdentifiedObject.name "NL_TR2_2" ;
+	entsoe:IdentifiedObject.shortName "NL_T_2" ;
+	cim:TapChanger.neutralU "220.000000" ;
+	cim:TapChanger.lowStep "0" ;
+	cim:TapChanger.highStep "33" ;
+	cim:TapChanger.neutralStep "17" ;
+	cim:TapChanger.normalStep "17" ;
+	cim:RatioTapChanger.stepVoltageIncrement "0.625000" ;
+	cim:TapChanger.ltcFlag "true" ;
+	cim:TapChanger.TapChangerControl ftn:_aae0af33-62c8-4062-8364-885d3372f808 ;
+	cim:RatioTapChanger.tculControlMode cim:TransformerControlMode.volt ;
+	cim:RatioTapChanger.TransformerEnd ftn:_c1d5c1518f8011e08e4d00247eb1f55e .
+
+ftn:_c1d5c1658f8011e08e4d00247eb1f55e a cim:RatioTapChanger ;
+	cim:IdentifiedObject.name "NL_TR2_3" ;
+	entsoe:IdentifiedObject.shortName "NL_T_3" ;
+	cim:TapChanger.neutralU "220.000000" ;
+	cim:TapChanger.lowStep "-15" ;
+	cim:TapChanger.highStep "15" ;
+	cim:TapChanger.neutralStep "0" ;
+	cim:TapChanger.normalStep "5" ;
+	cim:RatioTapChanger.stepVoltageIncrement "0.625000" ;
+	cim:TapChanger.ltcFlag "true" ;
+	cim:TapChanger.TapChangerControl ftn:_76971b35-279e-4d3c-8873-76c6abde82c4 ;
+	cim:RatioTapChanger.tculControlMode cim:TransformerControlMode.volt ;
+	cim:RatioTapChanger.TransformerEnd ftn:_c1d5c15e8f8011e08e4d00247eb1f55e .
+
+ftn:_04f338d3-3c0d-433f-a77b-e36dd256f0f0 a cim:RegulatingControl ;
+	cim:IdentifiedObject.name "NL-G1" ;
+	entsoe:IdentifiedObject.shortName "NL-G1" ;
+	cim:RegulatingControl.mode cim:RegulatingControlModeKind.voltage ;
+	cim:RegulatingControl.Terminal ftn:_faab7959-f9bf-421b-bc3f-d364e0c1388b .
+
+ftn:_1b3c88f9-c2ca-4250-bd37-ae0efa2fb022 a cim:RegulatingControl ;
+	cim:IdentifiedObject.name "NL-G2" ;
+	entsoe:IdentifiedObject.shortName "NL-G2" ;
+	cim:RegulatingControl.mode cim:RegulatingControlModeKind.voltage ;
+	cim:RegulatingControl.Terminal ftn:_ae4b7cbe-349a-41c8-ace2-25ec26f14a64 .
+
+ftn:_53e7a6c7-759b-4da2-898a-1c061d788670 a cim:RegulatingControl ;
+	cim:IdentifiedObject.name "NL-G3" ;
+	entsoe:IdentifiedObject.shortName "NL-G3" ;
+	cim:RegulatingControl.mode cim:RegulatingControlModeKind.voltage ;
+	cim:RegulatingControl.Terminal ftn:_f04ecab5-1a12-4cc0-ba56-b157ebf11a42 .
+
+ftn:_613dfeb3-0161-4cec-aaa9-ccddd885771b a cim:RegulatingControl ;
+	cim:IdentifiedObject.name "NL-S1" ;
+	entsoe:IdentifiedObject.shortName "NL-S1" ;
+	cim:RegulatingControl.mode cim:RegulatingControlModeKind.voltage ;
+	cim:RegulatingControl.Terminal ftn:_a015f692-3fc5-4ec3-8d1d-977c7b499e7c .
+
+ftn:_c1d5bfe48f8011e08e4d00247eb1f55e a cim:SubGeographicalRegion ;
+	cim:IdentifiedObject.name "TENNET TSO B.V." ;
+	cim:SubGeographicalRegion.Region ftn:_c1d5bfe28f8011e08e4d00247eb1f55e .
+
+ftn:_c49942d6-8b01-4b01-b5e8-f1180f84906c a cim:Substation ;
+	cim:IdentifiedObject.name "PP_Amsterdam" ;
+	entsoe:IdentifiedObject.shortName "PP_Amsterdam" ;
+	cim:Substation.Region ftn:_c1d5bfe48f8011e08e4d00247eb1f55e .
+
+ftn:_9c3b8f97-7972-477d-9dc8-87365cc0ad0e a cim:SynchronousMachine ;
+	cim:IdentifiedObject.name "NL-G1" ;
+	entsoe:IdentifiedObject.shortName "NL-G1" ;
+	cim:IdentifiedObject.description "Machine" ;
+	cim:Equipment.aggregate "false" ;
+	cim:Equipment.EquipmentContainer ftn:_8d8a82ba-b5b0-4e94-861a-192af055f2b8 ;
+	cim:SynchronousMachine.qPercent "100.000000" ;
+	cim:SynchronousMachine.maxQ "600.000000" ;
+	cim:SynchronousMachine.minQ "0e+000" ;
+	cim:RotatingMachine.ratedS "1100.000000" ;
+	cim:SynchronousMachine.type cim:SynchronousMachineKind.generator ;
+	cim:RegulatingCondEq.RegulatingControl ftn:_04f338d3-3c0d-433f-a77b-e36dd256f0f0 ;
+	cim:RotatingMachine.GeneratingUnit ftn:_049438a6-780a-44fe-a788-ebe385d98e25 ;
+	cim:RotatingMachine.ratedU "15.750000" ;
+	cim:RotatingMachine.ratedPowerFactor "0.900000" ;
+	cim:SynchronousMachine.shortCircuitRotorType cim:ShortCircuitRotorKind.salientPole1 ;
+	cim:SynchronousMachine.r0 "0e+000" ;
+	cim:SynchronousMachine.r2 "0e+000" ;
+	cim:SynchronousMachine.x0 "0.110000" ;
+	cim:SynchronousMachine.x2 "0.180000" ;
+	cim:SynchronousMachine.earthingStarPointR "0e+000" ;
+	cim:SynchronousMachine.earthingStarPointX "0e+000" ;
+	cim:SynchronousMachine.r "0e+000" ;
+	cim:SynchronousMachine.satDirectSubtransX "0.210000" ;
+	cim:SynchronousMachine.satDirectSyncX "1.900000" ;
+	cim:SynchronousMachine.satDirectTransX "0e+000" ;
+	cim:SynchronousMachine.mu "0e+000" ;
+	cim:SynchronousMachine.ikk "0e+000" ;
+	cim:SynchronousMachine.voltageRegulationRange "0e+000" ;
+	cim:SynchronousMachine.earthing "true" .
+
+ftn:_2844585c-0d35-488d-a449-685bcd57afbf a cim:SynchronousMachine ;
+	cim:IdentifiedObject.name "NL-G2" ;
+	entsoe:IdentifiedObject.shortName "NL-G2" ;
+	cim:IdentifiedObject.description "Machine" ;
+	cim:Equipment.aggregate "false" ;
+	cim:Equipment.EquipmentContainer ftn:_2a37dc57-2faf-464a-8175-bc415f9a635f ;
+	cim:SynchronousMachine.qPercent "100.000000" ;
+	cim:SynchronousMachine.maxQ "200.000000" ;
+	cim:SynchronousMachine.minQ "0e+000" ;
+	cim:RotatingMachine.ratedS "250.000000" ;
+	cim:SynchronousMachine.type cim:SynchronousMachineKind.generator ;
+	cim:RegulatingCondEq.RegulatingControl ftn:_1b3c88f9-c2ca-4250-bd37-ae0efa2fb022 ;
+	cim:RotatingMachine.GeneratingUnit ftn:_ca80ee09-3bed-4884-bc28-6dc89d067289 ;
+	cim:RotatingMachine.ratedU "15.750000" ;
+	cim:RotatingMachine.ratedPowerFactor "0.900000" ;
+	cim:SynchronousMachine.shortCircuitRotorType cim:ShortCircuitRotorKind.salientPole1 ;
+	cim:SynchronousMachine.r0 "0e+000" ;
+	cim:SynchronousMachine.r2 "0e+000" ;
+	cim:SynchronousMachine.x0 "0.100000" ;
+	cim:SynchronousMachine.x2 "0.160000" ;
+	cim:SynchronousMachine.earthingStarPointR "0e+000" ;
+	cim:SynchronousMachine.earthingStarPointX "0e+000" ;
+	cim:SynchronousMachine.r "0e+000" ;
+	cim:SynchronousMachine.satDirectSubtransX "0.180000" ;
+	cim:SynchronousMachine.satDirectSyncX "1.800000" ;
+	cim:SynchronousMachine.satDirectTransX "0e+000" ;
+	cim:SynchronousMachine.mu "0e+000" ;
+	cim:SynchronousMachine.ikk "0e+000" ;
+	cim:SynchronousMachine.voltageRegulationRange "0e+000" ;
+	cim:SynchronousMachine.earthing "true" .
+
+ftn:_1dc9afba-23b5-41a0-8540-b479ed8baf4b a cim:SynchronousMachine ;
+	cim:IdentifiedObject.name "NL-G3" ;
+	entsoe:IdentifiedObject.shortName "NL-G3" ;
+	cim:IdentifiedObject.description "Machine" ;
+	cim:Equipment.aggregate "false" ;
+	cim:Equipment.EquipmentContainer ftn:_2a37dc57-2faf-464a-8175-bc415f9a635f ;
+	cim:SynchronousMachine.qPercent "100.000000" ;
+	cim:SynchronousMachine.maxQ "200.000000" ;
+	cim:SynchronousMachine.minQ "0e+000" ;
+	cim:RotatingMachine.ratedS "250.000000" ;
+	cim:SynchronousMachine.type cim:SynchronousMachineKind.generator ;
+	cim:RegulatingCondEq.RegulatingControl ftn:_53e7a6c7-759b-4da2-898a-1c061d788670 ;
+	cim:RotatingMachine.GeneratingUnit ftn:_b850063d-eae7-4675-bc98-4642d3076783 ;
+	cim:RotatingMachine.ratedU "15.750000" ;
+	cim:RotatingMachine.ratedPowerFactor "0.900000" ;
+	cim:SynchronousMachine.shortCircuitRotorType cim:ShortCircuitRotorKind.turboSeries1 ;
+	cim:SynchronousMachine.r0 "0e+000" ;
+	cim:SynchronousMachine.r2 "0e+000" ;
+	cim:SynchronousMachine.x0 "0.130000" ;
+	cim:SynchronousMachine.x2 "0.170000" ;
+	cim:SynchronousMachine.earthingStarPointR "0e+000" ;
+	cim:SynchronousMachine.earthingStarPointX "0e+000" ;
+	cim:SynchronousMachine.r "0e+000" ;
+	cim:SynchronousMachine.satDirectSubtransX "0.200000" ;
+	cim:SynchronousMachine.satDirectSyncX "1.900000" ;
+	cim:SynchronousMachine.satDirectTransX "0e+000" ;
+	cim:SynchronousMachine.mu "0e+000" ;
+	cim:SynchronousMachine.ikk "0e+000" ;
+	cim:SynchronousMachine.voltageRegulationRange "0e+000" ;
+	cim:SynchronousMachine.earthing "true" .
+
+ftn:_1aaa0997-7715-4400-9435-ce74a8f67a24 a cim:TapChangerControl ;
+	cim:IdentifiedObject.name "NL-TR2_1" ;
+	entsoe:IdentifiedObject.shortName "NL-T_1" ;
+	cim:RegulatingControl.mode cim:RegulatingControlModeKind.voltage ;
+	cim:RegulatingControl.Terminal ftn:_e3e0c496-5837-4f0f-a596-cc421940f73f .
+
+ftn:_aae0af33-62c8-4062-8364-885d3372f808 a cim:TapChangerControl ;
+	cim:IdentifiedObject.name "NL_TR2_2" ;
+	entsoe:IdentifiedObject.shortName "NL_T_2" ;
+	cim:RegulatingControl.mode cim:RegulatingControlModeKind.voltage ;
+	cim:RegulatingControl.Terminal ftn:_da232169-1c36-495a-8af6-a0d7d2b39f52 .
+
+ftn:_76971b35-279e-4d3c-8873-76c6abde82c4 a cim:TapChangerControl ;
+	cim:IdentifiedObject.name "NL_TR2_3" ;
+	entsoe:IdentifiedObject.shortName "NL_T_3" ;
+	cim:RegulatingControl.mode cim:RegulatingControlModeKind.voltage ;
+	cim:RegulatingControl.Terminal ftn:_4f1c405f-07c9-4fb0-b64e-551896a29aa8 .
+
+ftn:_8121d4c3-9cb2-47db-b40a-99678602bb2a a cim:Terminal ;
+	cim:IdentifiedObject.name "B1 - T1" ;
+	entsoe:IdentifiedObject.shortName "B1" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_5f5d40ae-d52d-4631-9285-b3ceefff784c .
+
+ftn:_5f40c3f7-9540-4e1b-aa97-6553d5524877 a cim:Terminal ;
+	cim:IdentifiedObject.name "B1 - T2" ;
+	entsoe:IdentifiedObject.shortName "B1" ;
+	cim:ACDCTerminal.sequenceNumber "2" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_5f5d40ae-d52d-4631-9285-b3ceefff784c .
+
+ftn:_ecea10ff-e006-436b-a86a-beac4c2a30c1 a cim:Terminal ;
+	cim:IdentifiedObject.name "N1230822396_Busbar_Section" ;
+	entsoe:IdentifiedObject.shortName "BB" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_12733133-1f34-44f3-a020-f5b33cede919 ;
+	cim:IdentifiedObject.description "Busbar Section" .
+
+ftn:_50f00b94-fe0f-48fd-887e-f0d4d59eee87 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Busbar_2_Busbar_Section" ;
+	entsoe:IdentifiedObject.shortName "BB" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_143aa0b1-2cd4-4e58-98d4-b0438bd5a39a ;
+	cim:IdentifiedObject.description "Busbar Section" .
+
+ftn:_0f199d49-0093-4b51-b357-70371424d174 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Busbar_3_Busbar_Section" ;
+	entsoe:IdentifiedObject.shortName "BB" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_53da4025-9d51-4eaf-b0d2-ce27fbe740d2 ;
+	cim:IdentifiedObject.description "Busbar Section" .
+
+ftn:_42800bad-5e47-42e6-b9b0-1fb8fc5831aa a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Busbar_5_Busbar_Section" ;
+	entsoe:IdentifiedObject.shortName "BB" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_e6d49e32-b634-4b86-a8ca-15159f1497b5 ;
+	cim:IdentifiedObject.description "Busbar Section" .
+
+ftn:_faab7959-f9bf-421b-bc3f-d364e0c1388b a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-G1 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-G1" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_9c3b8f97-7972-477d-9dc8-87365cc0ad0e .
+
+ftn:_ae4b7cbe-349a-41c8-ace2-25ec26f14a64 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-G2 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-G2" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_2844585c-0d35-488d-a449-685bcd57afbf .
+
+ftn:_f04ecab5-1a12-4cc0-ba56-b157ebf11a42 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-G3 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-G3" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_1dc9afba-23b5-41a0-8540-b479ed8baf4b .
+
+ftn:_39d27c17-1e5b-4edc-a7ec-65a2d56542df a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Inj-XCA_AL11 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-I-XCA_AL1" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_83bea592-913e-4473-8d17-969968ff83a2 .
+
+ftn:_f970233f-b573-49d9-9fc3-3a2a59ed3bbb a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Inj-XKA_MA11 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-I-XKA_MA1" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_cab82e1c-1435-447b-bba0-74b592539eac .
+
+ftn:_f48d48c7-e9f6-460c-898f-cc68a96efdeb a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Inj-XWI_GY11 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-I-XWI_GY1" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_b0442899-8dbe-48c1-a1fa-adb2a5929273 .
+
+ftn:_24dd035c-0a8c-4351-aeb2-08d6622b42ae a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Inj-XZE_ST23 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-I-XZE_ST2" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_12baa3f3-23b1-44e0-956f-d331e1527f37 .
+
+ftn:_26e50b4b-9a19-420d-98ce-bc4f11971cd7 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Inj-XZE_ST24 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-I-XZE_ST2" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_820d95d7-26d4-4311-8b1f-026f8605b86d .
+
+ftn:_357e3e14-c38e-4a7e-9c95-b3dbe158f5f3 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Line_1 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-L_1" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_7f43f508-2496-4b64-9146-0a40406cbe49 ;
+	entsoe:IdentifiedObject.energyIdentCodeEic "10T-AT-DE-000118" .
+
+ftn:_6b1cd30c-19ba-44e1-9447-d01db6b1ef9d a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Line_1 - T2" ;
+	entsoe:IdentifiedObject.shortName "NL-L_1" ;
+	cim:ACDCTerminal.sequenceNumber "2" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_7f43f508-2496-4b64-9146-0a40406cbe49 ;
+	entsoe:IdentifiedObject.energyIdentCodeEic "10T-AT-DE-000118" .
+
+ftn:_c557146e-dfc4-4020-9738-d592b188338b a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Line_2 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-L_2" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_dad02278-bd25-476f-8f58-dbe44be72586 .
+
+ftn:_8f308117-8bbd-4798-b145-4e78f7d049e7 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Line_2 - T2" ;
+	entsoe:IdentifiedObject.shortName "NL-L_2" ;
+	cim:ACDCTerminal.sequenceNumber "2" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_dad02278-bd25-476f-8f58-dbe44be72586 .
+
+ftn:_5dfee914-a4fd-4bde-a5b4-c4caa6378d10 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Line_3 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-L_3" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_a279a3dc-550b-426c-af3a-61b7be508dcc ;
+	entsoe:IdentifiedObject.energyIdentCodeEic "10T-AT-DE-00009W" .
+
+ftn:_6aecb9ba-5835-4b70-89bc-96d687e45779 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Line_3 - T2" ;
+	entsoe:IdentifiedObject.shortName "NL-L_3" ;
+	cim:ACDCTerminal.sequenceNumber "2" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_a279a3dc-550b-426c-af3a-61b7be508dcc ;
+	entsoe:IdentifiedObject.energyIdentCodeEic "10T-AT-DE-00009W" .
+
+ftn:_653bc4b8-518b-4adc-9d68-012fb641fb1d a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Line_4 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-L_4" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_8fdc7abd-3746-481a-a65e-3df56acd8b13 ;
+	entsoe:IdentifiedObject.energyIdentCodeEic "10T-AT-DE-00009W" .
+
+ftn:_57979d14-d1d8-4311-ae53-aa8890423885 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Line_4 - T2" ;
+	entsoe:IdentifiedObject.shortName "NL-L_4" ;
+	cim:ACDCTerminal.sequenceNumber "2" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_8fdc7abd-3746-481a-a65e-3df56acd8b13 ;
+	entsoe:IdentifiedObject.energyIdentCodeEic "10T-AT-DE-00009W" .
+
+ftn:_757d4f50-707b-47a0-891c-cbaefd649631 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Line_5 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-L_5" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_e8acf6b6-99cb-45ad-b8dc-16c7866a4ddc ;
+	entsoe:IdentifiedObject.energyIdentCodeEic "10T-AT-DE-000118" .
+
+ftn:_ae588863-b154-451d-978a-7ab08ac50fb6 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Line_5 - T2" ;
+	entsoe:IdentifiedObject.shortName "NL-L_5" ;
+	cim:ACDCTerminal.sequenceNumber "2" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_e8acf6b6-99cb-45ad-b8dc-16c7866a4ddc ;
+	entsoe:IdentifiedObject.energyIdentCodeEic "10T-AT-DE-000118" .
+
+ftn:_f461fd2d-1e41-4a3e-8213-7cc33c77a089 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Load_1 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-L_1" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_69add5b4-70bd-4360-8a93-286256c0d38b .
+
+ftn:_6dad1a97-6874-4206-a5a5-837e495325f8 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Load_2 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-L_2" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_25ab1b5b-6803-47e2-805a-ab7b2072e034 .
+
+ftn:_fab54e9c-b12e-4e47-a9f2-fec4ef96c0c0 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-Load_3 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-L_3" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_b1e03a8f-6a11-4454-af58-4a4a680e857f .
+
+ftn:_a015f692-3fc5-4ec3-8d1d-977c7b499e7c a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-S1 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-S1" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_fbfed7e3-3dec-4829-a286-029e73535685 .
+
+ftn:_e3e0c496-5837-4f0f-a596-cc421940f73f a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-TR2_1 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL-T_1" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_e8a7eaec-51d6-4571-b3d9-c36d52073c33 .
+
+ftn:_baa7aef1-afcd-4981-97c0-ccec7b5ad4e0 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL-TR2_1 - T2" ;
+	entsoe:IdentifiedObject.shortName "NL-T_1" ;
+	cim:ACDCTerminal.sequenceNumber "2" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_e8a7eaec-51d6-4571-b3d9-c36d52073c33 .
+
+ftn:_1128e664-0653-448a-9068-e37f1a097c05 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL_TR2_2 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL_T_2" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_2184f365-8cd5-4b5d-8a28-9d68603bb6a4 .
+
+ftn:_da232169-1c36-495a-8af6-a0d7d2b39f52 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL_TR2_2 - T2" ;
+	entsoe:IdentifiedObject.shortName "NL_T_2" ;
+	cim:ACDCTerminal.sequenceNumber "2" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_2184f365-8cd5-4b5d-8a28-9d68603bb6a4 .
+
+ftn:_bd61b1f9-474d-424e-9709-42f75337c477 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL_TR2_3 - T1" ;
+	entsoe:IdentifiedObject.shortName "NL_T_3" ;
+	cim:ACDCTerminal.sequenceNumber "1" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_80016742-31b3-432a-b00a-300667a1e572 .
+
+ftn:_4f1c405f-07c9-4fb0-b64e-551896a29aa8 a cim:Terminal ;
+	cim:IdentifiedObject.name "NL_TR2_3 - T2" ;
+	entsoe:IdentifiedObject.shortName "NL_T_3" ;
+	cim:ACDCTerminal.sequenceNumber "2" ;
+	cim:Terminal.phases cim:PhaseCode.ABC ;
+	cim:Terminal.ConductingEquipment ftn:_80016742-31b3-432a-b00a-300667a1e572 .
+
+ftn:_2a37dc57-2faf-464a-8175-bc415f9a635f a cim:VoltageLevel ;
+	cim:IdentifiedObject.name "15.8" ;
+	cim:VoltageLevel.lowVoltageLimit "14.175000" ;
+	cim:VoltageLevel.highVoltageLimit "17.325000" ;
+	cim:VoltageLevel.Substation ftn:_c49942d6-8b01-4b01-b5e8-f1180f84906c ;
+	cim:VoltageLevel.BaseVoltage ftn:_c1d5bff18f8011e08e4d00247eb1f55e .
+
+ftn:_8d8a82ba-b5b0-4e94-861a-192af055f2b8 a cim:VoltageLevel ;
+	cim:IdentifiedObject.name "15.8" ;
+	cim:VoltageLevel.lowVoltageLimit "14.175000" ;
+	cim:VoltageLevel.highVoltageLimit "17.325000" ;
+	cim:VoltageLevel.Substation ftn:_c49942d6-8b01-4b01-b5e8-f1180f84906c ;
+	cim:VoltageLevel.BaseVoltage ftn:_c1d5bff18f8011e08e4d00247eb1f55e .
+
+ftn:_c1d5bfea8f8011e08e4d00247eb1f55e a cim:VoltageLevel ;
+	cim:IdentifiedObject.name "220.0" ;
+	cim:VoltageLevel.lowVoltageLimit "198.000000" ;
+	cim:VoltageLevel.highVoltageLimit "242.000000" ;
+	cim:VoltageLevel.Substation ftn:_c49942d6-8b01-4b01-b5e8-f1180f84906c ;
+	cim:VoltageLevel.BaseVoltage ftn:_7891a026ba2c42098556665efd13ba94 .
+
+ftn:_c1d5bfde8f8011e08e4d00247eb1f55e a cim:VoltageLevel ;
+	cim:IdentifiedObject.name "400.0" ;
+	cim:VoltageLevel.lowVoltageLimit "360.000000" ;
+	cim:VoltageLevel.highVoltageLimit "440.000000" ;
+	cim:VoltageLevel.Substation ftn:_c49942d6-8b01-4b01-b5e8-f1180f84906c ;
+	cim:VoltageLevel.BaseVoltage ftn:_65dd04e792584b3b912374e35dec032 .
